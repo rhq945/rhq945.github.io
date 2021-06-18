@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The Summarize of Computer Network1-Introduction1.The differences between Computer Networks and Distributed System(1)Computer Network is a collection of autonomous computers interconnected by a single">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/04/12/Computer%20Network/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="The Summarize of Computer Network1-Introduction1.The differences between Computer Networks and Distributed System(1)Computer Network is a collection of autonomous computers interconnected by a single">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/14372/Desktop/1.png">
+<meta property="og:image" content="c:/Users/14372/Desktop/2.png">
+<meta property="og:image" content="c:/Users/14372/Desktop/3.png">
+<meta property="og:image" content="c:/Users/14372/AppData/Roaming/Typora/typora-user-images/image-20210615214036395.png">
+<meta property="og:image" content="c:/Users/14372/AppData/Roaming/Typora/typora-user-images/image-20210617150858434.png">
+<meta property="og:image" content="c:/Users/14372/AppData/Roaming/Typora/typora-user-images/image-20210617172830374.png">
+<meta property="og:image" content="c:/Users/14372/AppData/Roaming/Typora/typora-user-images/image-20210617191032341.png">
+<meta property="og:image" content="file:///D:/Tencent%20Softwares/QQ/Files/1437290395/Image/C2C/283D9772F65A47D381974C898302EE5C.png">
+<meta property="og:image" content="c:/Users/14372/AppData/Roaming/Typora/typora-user-images/image-20210617200142849.png">
+<meta property="article:published_time" content="2021-04-12T12:23:45.133Z">
+<meta property="article:modified_time" content="2021-06-18T12:52:56.436Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/14372/Desktop/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Computer Network" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/12/Computer%20Network/" class="article-date">
+  <time class="dt-published" datetime="2021-04-12T12:23:45.133Z" itemprop="datePublished">2021-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="The-Summarize-of-Computer-Network"><a href="#The-Summarize-of-Computer-Network" class="headerlink" title="The Summarize of Computer Network"></a>The Summarize of Computer Network</h1><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1-Introduction"></a>1-Introduction</h2><h3 id="1-The-differences-between-Computer-Networks-and-Distributed-System"><a href="#1-The-differences-between-Computer-Networks-and-Distributed-System" class="headerlink" title="1.The differences between Computer Networks and Distributed System"></a><em>1.The differences between Computer Networks and Distributed System</em></h3><p>(1)Computer Network is a collection of autonomous computers interconnected by a single technology, but Distributed system is a collection of independent computers appears to its users as a single coherent system.</p>
+<p>(2) A distributed system is a software system built on top of a network,gives it a high degree of cohesiveness and transparency. The difference of CN and DS lies with the software(especially the operating system)</p>
+<p>(3)Distributed system example : the World Wide Web</p>
+<h3 id="2-Transmission-technology"><a href="#2-Transmission-technology" class="headerlink" title="2.Transmission technology"></a><em>2.Transmission technology</em></h3><h3 id="1-Broadcast-networks"><a href="#1-Broadcast-networks" class="headerlink" title="(1)Broadcast networks:"></a>(1)Broadcast networks:</h3><p>the communication channel is shared by all the machines on the network,an address field within each packet specifies the <u>intend recipient.</u>(目的接收方)</p>
+<p>i)Broadcasting :addressing a packet to all destinations</p>
+<p>ii)Multicasting :support transmission to a subset of machines</p>
+<p>iii)Two broadcast networks: Bus(line),Ring(circle)</p>
+<h3 id="2-Point-to-point-links"><a href="#2-Point-to-point-links" class="headerlink" title="(2)Point-to-point links:,"></a>(2)Point-to-point links:,</h3><p>Also called unicasting. There re one or more immediate machines in the middle of channel , and we need to find a best length of different routes(路由)</p>
+<h3 id="3-Classification-by-scale"><a href="#3-Classification-by-scale" class="headerlink" title="3.Classification by scale"></a><em>3.Classification by scale</em></h3><p>PAN-&gt;LAN-&gt;MAN-&gt;WAN-&gt;The Internet</p>
+<h4 id="（1）LAN-Local-Area-Networks"><a href="#（1）LAN-Local-Area-Networks" class="headerlink" title="（1）LAN(Local Area Networks)"></a>（1）LAN(Local Area Networks)</h4><p>Each computer has a radio modem and an antenna that are used to communicated with other machines.</p>
+<p>Including Channel allocation(信道冲突算法)</p>
+<h4 id="（2）WAN"><a href="#（2）WAN" class="headerlink" title="（2）WAN"></a>（2）WAN</h4><p>Providing connections from a LAN to the Internet</p>
+<p>Including Routing algorithm(路由算法)</p>
+<h3 id="4-Protocol-Hierarchies"><a href="#4-Protocol-Hierarchies" class="headerlink" title="4. Protocol Hierarchies"></a>4. Protocol Hierarchies</h3><h4 id="definition"><a href="#definition" class="headerlink" title="definition"></a>definition</h4><p> Networks are organized as a stack of layers.</p>
+<h4 id="Layer-5-Peers"><a href="#Layer-5-Peers" class="headerlink" title="Layer 5 Peers"></a>Layer 5 Peers</h4><p>![](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\BC23C70BA0110A797A28C99B7D3B1096.png)</p>
+<h3 id="5-QoS-Quality-of-service"><a href="#5-QoS-Quality-of-service" class="headerlink" title="5.QoS(Quality  of  service)"></a>5.QoS(Quality  of  service)</h3><p>Such as carrying live video,QoS is more about <u>timeliness of delivery</u>  </p>
+<p>There are also other QoS such as <u>high throughput</u>,</p>
+<h3 id="6-Connection-Oriented-and-Connectionless-Services"><a href="#6-Connection-Oriented-and-Connectionless-Services" class="headerlink" title="6. Connection-Oriented and Connectionless Services"></a>6. Connection-Oriented and Connectionless Services</h3><h4 id="1-Differences-between-Connection-Oriented-and-Connectionless-Services"><a href="#1-Differences-between-Connection-Oriented-and-Connectionless-Services" class="headerlink" title="(1) Differences between Connection-Oriented and Connectionless Services:"></a>(1) Differences between Connection-Oriented and Connectionless Services:</h4><p>(a) Connection-Oriented need to establish a connection at first.</p>
+<p>(b) Using Connection-Oriented service, the bits will arrive in the order they were sent.</p>
+<p>(c) For Connectionless Services, each message carries the full destination address.</p>
+<h4 id="2-Connection-Oriented"><a href="#2-Connection-Oriented" class="headerlink" title="(2)Connection-Oriented"></a>(2)Connection-Oriented</h4><p>Most typical example: telephone system.</p>
+<p>establish a connection–&gt;uses the connection–&gt;releases the connection, the bits will arrive in the order they were sent.</p>
+<h4 id="3-Connectionless-Services"><a href="#3-Connectionless-Services" class="headerlink" title="(3)Connectionless Services"></a>(3)Connectionless Services</h4><p>(a)Each message carries the full destination address,and  is routed through the intermediate nodes inside the system independent of all the subsequent messages.</p>
+<p>(b)Store-and-Forward switching. </p>
+<p>The intermediate nodes receive a message in full before sending it on to the next node </p>
+<p>(c)Cut-through switching.</p>
+<p>Onward transmission of a message at a node starts before it is completely received by the node.</p>
+<h4 id="4-Reliable-service"><a href="#4-Reliable-service" class="headerlink" title="(4)Reliable service"></a>(4)Reliable service</h4><p>The receiver acknowledge the receipt of each message so the sender is sure that it arrived.</p>
+<p>Connection-Oriented and Connectionless Services can all be reliable and unreliable.</p>
+<h5 id="a-Reliable-Connection-Oriented-service"><a href="#a-Reliable-Connection-Oriented-service" class="headerlink" title="(a)Reliable Connection-Oriented service:"></a>(a)Reliable Connection-Oriented service:</h5><p>typical example: file transfer </p>
+<p>Reliable message stream: the message boundaries are preserved,Example: Sequence of pages</p>
+<p>Reliable byte stream: simply a stream of bytes, no message boundary .Example: Movie download</p>
+<h5 id="b-Unreliable-Connection-Oriented-service"><a href="#b-Unreliable-Connection-Oriented-service" class="headerlink" title="(b)Unreliable Connection-Oriented service:"></a>(b)Unreliable Connection-Oriented service:</h5><p>Example: Voice over IP.</p>
+<h5 id="c-Connection-less-service"><a href="#c-Connection-less-service" class="headerlink" title="(c)Connection-less service:"></a>(c)Connection-less service:</h5><p>Unreliable datagram: example: Electronic junk mail</p>
+<p>Acknowledged datagram: example: Text messaging</p>
+<p>Request-reply: Database query</p>
+<p>Unreliable Connection-less service also called <u>datagram service</u></p>
+<h3 id="7-Protocol-Terminology-协议术语"><a href="#7-Protocol-Terminology-协议术语" class="headerlink" title="7.Protocol  Terminology(协议术语)"></a>7.Protocol  Terminology(协议术语)</h3><p>Service: Relates to an interface between two layers, with the lower layer being the service provider and the upper layer being the service user  </p>
+<p>Protocol: A set of rules governing the format and meaning of the packets and messages that are exchanged by the peer.</p>
+<h2 id="3-The-Data-Link-Layer"><a href="#3-The-Data-Link-Layer" class="headerlink" title="3-The  Data Link Layer"></a>3-The  Data Link Layer</h2><h3 id="3-1-Services-Provided-to-The-Network-Layer-Provide-service-interface-to-the-network-layer"><a href="#3-1-Services-Provided-to-The-Network-Layer-Provide-service-interface-to-the-network-layer" class="headerlink" title="3.1- Services Provided to The Network Layer        //    Provide  service interface to the network layer"></a>3.1- Services Provided to The Network Layer        //    Provide  service interface to the network layer</h3><h4 id="1-Diferent-services-："><a href="#1-Diferent-services-：" class="headerlink" title="1.Diferent services ："></a>1.Diferent services ：</h4><h4 id="1-Unacknowledged-connectionless-service"><a href="#1-Unacknowledged-connectionless-service" class="headerlink" title="(1)Unacknowledged connectionless service"></a>(1)Unacknowledged connectionless service</h4><p> most LAN uses this type of service in the data link layer</p>
+<h4 id="2-Acknowledged-connectionless-service"><a href="#2-Acknowledged-connectionless-service" class="headerlink" title="(2)Acknowledged connectionless service"></a>(2)Acknowledged connectionless service</h4><p> this can be used over unreliable channels ,such as <u>wireless systems</u></p>
+<h4 id="3-Acknowledged-connection-oriented-service"><a href="#3-Acknowledged-connection-oriented-service" class="headerlink" title="(3)Acknowledged connection-oriented service"></a>(3)Acknowledged connection-oriented service</h4><h3 id="3-2-Framing"><a href="#3-2-Framing" class="headerlink" title="3.2- Framing"></a>3.2- Framing</h3><h4 id="1-Character-Count"><a href="#1-Character-Count" class="headerlink" title="(1)Character Count"></a>(1)Character Count</h4><p>Use a field in the header to specify the number of characters in the frame.</p>
+<p>disadvantage: if this field occur an error when transferring , this type of framing while be destroyed</p>
+<p>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\08A5AB1B36DE8EF87614A1AE4E1C30C6.png)</p>
+<h4 id="2-Byte-Stuffing"><a href="#2-Byte-Stuffing" class="headerlink" title="(2)Byte Stuffing"></a>(2)Byte Stuffing</h4><p>By using a flag byte stuffing,make special bytes at both start and end of each frame.</p>
+<p>The end of the last frame is the start of the new frame.</p>
+<p>Also ,if this flag byte is also used in the data frame,we need a ESC to make a difference. We also need a ESC when an ESC is used in the frame.</p>
+<p>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\2F445852B410600B02C826AAE96750AE.png)  </p>
+<h4 id="3-Bit-Stuffing"><a href="#3-Bit-Stuffing" class="headerlink" title="(3)Bit Stuffing"></a>(3)Bit Stuffing</h4><p>Can be understood like : byte stuffing’s byte is token place by a special bit: 01111110=0x7E</p>
+<p>If this bit is used in data frame, we need to put in a ‘0’ after 5 coiled ‘1’,for example: 01111110—&gt;011111010,so that detector won’t treat it as a flag bit.</p>
+<p><strong>A disadvantage of Byte Stuffing and Bit Stuffing is that the length of a frame depends on the contents of the data it carries. If the data consists solely of flag bytes,as for Byte Stuffing, the length of frame has to become  200% of the data frame length ,as for Bit  Stuffing, the length of frame has to become  125% (1+1/8) of the data frame length.</strong></p>
+<h4 id="4-Physical-Layer-Coding-Violations"><a href="#4-Physical-Layer-Coding-Violations" class="headerlink" title="(4)Physical Layer Coding Violations"></a>(4)Physical Layer Coding Violations</h4><p>Just use the redundant coding to represent different status.</p>
+<h3 id="3-3-Error-Control"><a href="#3-3-Error-Control" class="headerlink" title="3.3- Error Control"></a>3.3- Error Control</h3><h4 id="1-Classifications-Lost-frames-and-Damaged-frames"><a href="#1-Classifications-Lost-frames-and-Damaged-frames" class="headerlink" title="(1)Classifications :Lost frames and Damaged frames"></a>(1)Classifications :Lost frames and Damaged frames</h4><h3 id="2-Single-bit-amp-Burst-Error"><a href="#2-Single-bit-amp-Burst-Error" class="headerlink" title="(2)Single-bit &amp; Burst Error"></a>(2)Single-bit &amp; Burst Error</h3><p>Need to notice: the length of burst error is the length from then first error to the last error</p>
+<h3 id="3-Error-Detecting"><a href="#3-Error-Detecting" class="headerlink" title="(3)Error Detecting"></a>(3)Error Detecting</h3><h4 id="a-Parity"><a href="#a-Parity" class="headerlink" title="(a)Parity"></a>(a)Parity</h4><h4 id="b-Checksum"><a href="#b-Checksum" class="headerlink" title="(b)Checksum"></a>(b)Checksum</h4><h4 id="c-CRC-循环冗余检验码"><a href="#c-CRC-循环冗余检验码" class="headerlink" title="(c)CRC(循环冗余检验码)"></a>(c)CRC(循环冗余检验码)</h4><p>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\E2E67B457FEF429E80D1CB541105FCA5.png)</p>
+<h4 id="CRC-can-detect-all-the-odd-number-error-all"><a href="#CRC-can-detect-all-the-odd-number-error-all" class="headerlink" title="CRC can detect all the odd number error,all"></a>CRC can detect all the odd number error,all</h4><h3 id="4-Error-Correcting"><a href="#4-Error-Correcting" class="headerlink" title="(4)Error Correcting"></a>(4)Error Correcting</h3><h4 id="a-Hamming-code"><a href="#a-Hamming-code" class="headerlink" title="(a)Hamming code"></a>(a)<strong>Hamming code</strong></h4><h4 id="Hamming-Distance-The-number-of-bit-positions-in-which-2-codewords-differ-Hamming-distance-of-a-valid-encoding-set-is-the-shortest-Hamming-distance-in-this-set"><a href="#Hamming-Distance-The-number-of-bit-positions-in-which-2-codewords-differ-Hamming-distance-of-a-valid-encoding-set-is-the-shortest-Hamming-distance-in-this-set" class="headerlink" title="Hamming Distance : The number of bit positions in which 2 codewords differ .Hamming distance of a valid encoding set is the shortest Hamming distance in this set."></a>Hamming Distance : The number of bit positions in which 2 codewords differ .Hamming distance of a valid encoding set is the shortest Hamming distance in this set.</h4><p>To detect d-bit errors, a code must have a minimum Hamming distance of at least d+1.</p>
+<p>To correct d-bit errors, a code must have a minimum Hamming distance of at least 2d+1.</p>
+<p>Hamming code can only correct single error.</p>
+<p>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\93CE0FBB27B28E91E1A87F9695D06484.png)</p>
+<h4 id="b-Binary-convolutional-codes"><a href="#b-Binary-convolutional-codes" class="headerlink" title="(b)Binary convolutional codes"></a>(b)Binary convolutional codes</h4><h4 id="c-Reed-Solomon-codes"><a href="#c-Reed-Solomon-codes" class="headerlink" title="(c)Reed-Solomon codes"></a>(c)Reed-Solomon codes</h4><h4 id="d-Low-Density-Parity-Check-codes"><a href="#d-Low-Density-Parity-Check-codes" class="headerlink" title="(d)Low-Density Parity Check codes"></a>(d)Low-Density Parity Check codes</h4><h3 id="Flow-Control-Regulating-data-flow-so-that-slow-receivers-won’t-be-swamped-by-fast-senders"><a href="#Flow-Control-Regulating-data-flow-so-that-slow-receivers-won’t-be-swamped-by-fast-senders" class="headerlink" title="Flow Control       //    Regulating data flow,so that slow receivers won’t be swamped by fast senders"></a>Flow Control       //    Regulating data flow,so that slow receivers won’t be swamped by fast senders</h3><h3 id="3-4-Elementary-Data-Link-Protocols"><a href="#3-4-Elementary-Data-Link-Protocols" class="headerlink" title="3.4- Elementary  Data  Link  Protocols"></a>3.4- Elementary  Data  Link  Protocols</h3><h3 id="3-5-Sliding-Windows-Protocols"><a href="#3-5-Sliding-Windows-Protocols" class="headerlink" title="3.5- Sliding  Windows  Protocols"></a>3.5- Sliding  Windows  Protocols</h3><h3 id="3-6-Example-Data-Link-Protocols"><a href="#3-6-Example-Data-Link-Protocols" class="headerlink" title="3.6-  Example Data  Link  Protocols"></a>3.6-  Example Data  Link  Protocols</h3><h2 id="4-The-MAC-Medium-Access-Control-Sublayer"><a href="#4-The-MAC-Medium-Access-Control-Sublayer" class="headerlink" title="4-The MAC(Medium Access Control) Sublayer"></a>4-The MAC(Medium Access Control) Sublayer</h2><p>Study field: broadcast channels,which also called multiaccess channels or random access channels</p>
+<p>The protocols used to determine who goes next on a multiaccess channel belong to a subplayer of the data link layer called the <strong>MAC</strong> </p>
+<h3 id="4-1-The-channel-allocation-problem"><a href="#4-1-The-channel-allocation-problem" class="headerlink" title="4.1-  The channel allocation problem"></a>4.1-  The channel allocation problem</h3><p><strong>Theme: How to allocate a single broadcast channel among competing users</strong></p>
+<h4 id="The-poor-performance-of-static-FDM-queueing-theory"><a href="#The-poor-performance-of-static-FDM-queueing-theory" class="headerlink" title="The poor performance of static FDM: queueing theory"></a>The poor performance of static FDM: queueing theory</h4><p>a channel of capacity <strong><em>C</em></strong> bps;</p>
+<p>mean time delay(时延): <strong><em>T</em></strong> ;</p>
+<p>the frames arrive randomly with an average arrival rate : <strong><em>λ</em></strong> frames/sec ；</p>
+<p>the average length of frames is <strong><em>1/μ</em></strong>；</p>
+<p>the service rate(服务率) of the channel is <strong><em>μC</em></strong> frames/sec</p>
+<p><strong>The standard queueing theory result: T = 1/(μC-λ)</strong></p>
+<h4 id="Dynamic-channel-allocation"><a href="#Dynamic-channel-allocation" class="headerlink" title="Dynamic channel allocation"></a>Dynamic channel allocation</h4><h5 id="The-assumption-bases-on-5-keys"><a href="#The-assumption-bases-on-5-keys" class="headerlink" title="The assumption bases on 5 keys:"></a>The assumption bases on 5 keys:</h5><p>Independent traffic</p>
+<p>Single Channel</p>
+<p>Observable Collision</p>
+<p>Continuous or Slotted Time</p>
+<p>Carrier Sense or No Carrier Sense</p>
+<h3 id="4-2-Multiple-Access-Protocols"><a href="#4-2-Multiple-Access-Protocols" class="headerlink" title="4.2- Multiple Access Protocols"></a>4.2- Multiple Access Protocols</h3><h4 id="ALOHA"><a href="#ALOHA" class="headerlink" title="ALOHA"></a>ALOHA</h4><p>一个帧成功发送的条件：设发送一帧所需时间为T，且帧长固定，必须在发送该帧前后各一段时间T内(共2T时间间隔)没有其他帧发送。</p>
+<h5 id="Pure-ALOHA"><a href="#Pure-ALOHA" class="headerlink" title="Pure ALOHA"></a>Pure ALOHA</h5><p>Time is <strong><em>continuous</em></strong>. And if a station plan to send a frame,it will be <strong><em>No Carrier Sense</em></strong> </p>
+<p>If the frame is destroyed, the sender must wait a random amount of time and sends it again.</p>
+<p>We have made the frames all the same length so that the throughput(吞吐量) if ALOHA system is maximized</p>
+<p>The <strong><em>efficiency</em></strong> of an ALOHA channel:</p>
+<p>The throughput <strong>S</strong> = load <strong>G</strong> * probability of a transmission succeeding <strong>P<del>0</del></strong>,  </p>
+<p>During a frame time , the probability that <strong>k</strong> frames are generated is :<strong>P[K]=G^K^e^-G^/k!</strong></p>
+<p>So: during a given frame time, G frames are expected ,and P(k=0)=e^-G^                </p>
+<p>during two frame times, the average number of generated frames is 2G and P(k=0)=e^-2G^</p>
+<p>because of <strong>S=G<em>P<del>0</del>, S=G</em>e^-2G^</strong></p>
+<p>The maximum throughput occurs when G=0.5，S=0.5e=0.184</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a><img src="C:\Users\14372\Desktop\1.png" alt="1"></h5><p>每终端每秒钟发送长度(信息到达率)λ：256/60</p>
+<p>最多终端个数：*<strong>N=C<em>S/λ</em></strong>           S<del>max</del>=0.184</p>
+<p>∴N<del>max</del>=2400*0.184/(256/60)=103.5</p>
+<h5 id="Slotted-ALOHA"><a href="#Slotted-ALOHA" class="headerlink" title="Slotted ALOHA"></a>Slotted ALOHA</h5><p>A station is not permitted to send whenever the user types a line. Instead, it is required to wait  for the beginning of</p>
+<p>the next slot.</p>
+<p>The vulnerable period(冲突危险周期) becomes half of before. </p>
+<p>During a frame time , the probability that <strong>k</strong> frames are generated is <strong><em>P[K]=G^K^e^-G^/k!</em></strong></p>
+<p>and P(k=0)=e^-G^</p>
+<p>∴throughput S=Ge^-G^ </p>
+<p>The maximum throughput occurs when G=1, S=1/e.  The best we can hope for using slotted ALOHA is 37% of the slot empty, 37% success , 26% collisions. </p>
+<p>TEST: the probability of avoiding a collision P(k=0)=e^-G^</p>
+<p>​            the probability of collision is 1-P(k=0)=1-e^-G^</p>
+<p>​            the probability of a transmission requires <strong>n</strong> attempts is <strong><em>P<del>n</del>=e^-G^（1-e^-G^）^k-1^</em></strong> </p>
+<p>​            sum all above, the expected times of transmission <strong>E=e^G^</strong></p>
+<h4 id="Carrier-Sense-Multiple-Access-Protocols-CSMA"><a href="#Carrier-Sense-Multiple-Access-Protocols-CSMA" class="headerlink" title="Carrier Sense Multiple  Access Protocols (CSMA)"></a>Carrier Sense Multiple  Access Protocols (CSMA)</h4><p>Station listens for a carrier before  Sending</p>
+<p>If a collision occurs, waits for a random amount  of time and start all over again.</p>
+<p><strong>1-persistent CSMA</strong></p>
+<p>If the channel is busy, waits until it becomes  idle, then transmits frame immediately.</p>
+<p>depends on 1、the number of frames that fit on the channel</p>
+<p>​                    2、the bandwidth_delay product of the channel</p>
+<p>Low delay when low load </p>
+<p>Low throughput when high load</p>
+<p><strong>Nonpersistent CSMA</strong></p>
+<p>if the channel is busy, waits for a random amount  of time and sense channel again</p>
+<p>longer delay than 1-persistent CSMA</p>
+<p><strong>p-persistent CSMA</strong></p>
+<p>applies to slotted channels</p>
+<p>If the channel is busy, waits to the next slot </p>
+<p>If idle, transmits frame with probability of p, with  a probability of q=1-p it defers to the next slot </p>
+<p>Repeated until either the frame has been  transmitted or another station has begun  transmitting </p>
+<p>If there had been a collision, waits a random time and starts again</p>
+<p><strong>CSMA with Collision Detection    (CSMA/CD)</strong></p>
+<p>The stations quickly detect the collision and abruptly stop transmitting as soon as it  detects a collision.</p>
+<p>CSMA/CD with a single channel is  inherently <strong>a half-duplex system</strong>(半双工系统)</p>
+<img src="C:\Users\14372\Desktop\2.png" alt="2" style="zoom:60%;" />
+
+<p>If the time for a signal between two stations is t, a station cannot be sure that it has seized the channel until it has transmitted for 2t without hearing a collision,</p>
+<p>So that this CSMA/CD can be seen as a slotted ALOHA with a slot width of 2t</p>
+<h5 id="Collision-Free-Protocol"><a href="#Collision-Free-Protocol" class="headerlink" title="Collision-Free Protocol"></a>Collision-Free Protocol</h5><h6 id="A-Bit-Map-Protocol"><a href="#A-Bit-Map-Protocol" class="headerlink" title="A Bit_Map Protocol"></a>A Bit_Map Protocol</h6><p>Each contention period consists of N slots (bits),  with each station use one slot</p>
+<p>If station have frames to send, it reserve it by fill  ‘1’ in its slot, after all N slots have passed by and been recognized, they begin transmitting frames in order </p>
+<img src="C:\Users\14372\Desktop\3.png" alt="3" style="zoom:60%;"/>
+
+
+
+<p>reservation protocols: reserve channel ownership in advance and prevent collisions</p>
+<p>N station, contention time is <em>N</em> </p>
+<p>One data frame is d bits, so time is <em>d</em></p>
+<p>Low load: Efficiency=d/(d+N)</p>
+<p>High load: Efficiency=d/(d+1)</p>
+<h6 id="Binary-Countdown-二进制倒计数"><a href="#Binary-Countdown-二进制倒计数" class="headerlink" title="Binary Countdown(二进制倒计数)"></a>Binary Countdown(二进制倒计数)</h6><p>如果一个站想要使用信道，他就用二进制位串的形式广播自己的地址</p>
+<p>仲裁规则：从最左边开始，一个站只要看到自己地址位中的0被改为1，就必须放弃竞争。n个站想要一同发送数据时，从最左边开始一位一位的进行or操作，知道只剩一个站的地址。</p>
+<p>得到结果：高序站的优先级高</p>
+<p>这种方法信道利用率(channel efficiency)=<em>d/(d+log<del>2</del>N)</em></p>
+<h4 id="无线局域网协议"><a href="#无线局域网协议" class="headerlink" title="无线局域网协议"></a>无线局域网协议</h4><p>隐藏终端问题(hidden station problem):由于竞争者离得太远而导致站无法检测到潜在的竞争者</p>
+<p>暴露终端问题(exposed station problem):开始传输之前，站不能知道接收方附近的无线电活动是否有影响。</p>
+<h5 id="MACA-冲突避免多路访问"><a href="#MACA-冲突避免多路访问" class="headerlink" title="MACA(冲突避免多路访问)"></a>MACA(冲突避免多路访问)</h5><p>C——A—–&gt;B——D</p>
+<p>A 首先给 B 发送一个 RTS(Request To Send)帧，B 用一个 CTS(Clear to Send)作为应答。A 在收到了 CTS 帧之后便开始传输，C收到A的RTS，收不到B的CTS，所以C自由活动除了对A。D收到B的CTS但没收到RTS，D就安静直到CTS要求的时间结束。</p>
+<h3 id="4-3-Ethernet-以太网"><a href="#4-3-Ethernet-以太网" class="headerlink" title="4.3-Ethernet(以太网)"></a>4.3-Ethernet(以太网)</h3><p>中继器(repeater)：能接收，放大并在两个方向上重发信号</p>
+<h4 id="经典以太网MAC子层协议-Classic-Ethernet-MAC-sub-protocol"><a href="#经典以太网MAC子层协议-Classic-Ethernet-MAC-sub-protocol" class="headerlink" title="经典以太网MAC子层协议(Classic Ethernet MAC sub protocol)"></a>经典以太网MAC子层协议(Classic Ethernet MAC sub protocol)</h4><p><img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210615214036395.png" alt="image-20210615214036395" style="zoom: 40%;" />(a)以太网  （b) IEEE 802.3</p>
+<p>Preamble:前导码，<strong>8</strong>个字节，前7个字节均为10101010，最后一个：10101011(802.3的帧起始定界符SOF)</p>
+<p>Destination address:目标地址 ，<strong>6</strong>个字节</p>
+<p>目标地址第一位为0：普通地址 </p>
+<p>第一位为1：表示组地址，是一个组播</p>
+<p>目标地址段全为1：广播</p>
+<p>Source address:源地址 ，<strong>6</strong>个字节</p>
+<p>以太网:Type:类型,<strong>2</strong>字节,告诉接收方阵内包含什么数据包.  0x0800==&gt;ipv4</p>
+<p>802.3:Length类型,不定长度</p>
+<p>Data:数据段:最多<strong>1500</strong>字节</p>
+<p>以太网要求从目标地址算到校验和,这个有效帧必须至少<strong>64</strong>字节(即数据段至少为<strong>46</strong>字节),小于64则使用<strong>Pad</strong>(填充)来加入达到最少长度.限制最小帧为了防止过于短的帧还未到达,传送已经结束 .所以所有帧必须至少需要2t(传播时延)时间才能完成传送.</p>
+<p>Checksum:校验和:最少<strong>4</strong>字节,32位.</p>
+<p>数据字段的长度在 46 ~ 1500 字节之间。 有效的 MAC 帧长度为 64 ~ 1518 字节之间</p>
+<p>以太网中使用的成帧方法是 <strong>物理层编码违例法</strong></p>
+<h4 id="二进制指数后退的CSMA-CA-Binary-exponential-backoff"><a href="#二进制指数后退的CSMA-CA-Binary-exponential-backoff" class="headerlink" title="二进制指数后退的CSMA/CA(Binary exponential  backoff)"></a>二进制指数后退的CSMA/CA(Binary exponential  backoff)</h4><p>为达到以太网所允许的最长路径，时槽的长度被设置为 512 位时间，或 51.2 us。在第 i 次冲突后，在 0-2 i -1 之间随机选择一个数， 然后等待这么多个时槽。到达 10 次冲突之后，固定在最大值 1023 上</p>
+<h4 id="以太网信道利用率"><a href="#以太网信道利用率" class="headerlink" title="以太网信道利用率"></a>以太网信道利用率</h4><p>针对每个帧e个竞争时间槽：</p>
+<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617150858434.png" alt="image-20210617150858434" style="zoom:50%;" />
+
+<h4 id="交换机（switch）"><a href="#交换机（switch）" class="headerlink" title="交换机（switch）"></a>交换机（switch）</h4><p>完全避免冲突，一个站使用一个冲突域，比集线器提升性能</p>
+<h4 id="快速以太网：802-3u"><a href="#快速以太网：802-3u" class="headerlink" title="快速以太网：802.3u"></a>快速以太网：802.3u</h4><p>保留原来帧格式，接口和过程规则，只是将比特时间从100ns降低到10ns。技术上照搬经典以太网，只是将电缆最大长度降低到十分之一</p>
+<h4 id="千兆以太网："><a href="#千兆以太网：" class="headerlink" title="千兆以太网："></a>千兆以太网：</h4><p>全双工+半双工</p>
+<p>半双工：载波扩充(carrier extension)</p>
+<p>​            在普通帧后面加填充位到512字节，效率低</p>
+<p>​              帧突发(frame bursting) </p>
+<p>​            将多个待发送帧级联在一起，一次发送出去，不到512字节 再填充</p>
+<p>巨型帧(Jumbo frame)</p>
+<h4 id="万兆以太网："><a href="#万兆以太网：" class="headerlink" title="万兆以太网："></a>万兆以太网：</h4><p>只支持全双工</p>
+<p>中继器：对网段上衰减的信号进行放大整形或再生，用于实现网络物理层的连接。只起扩展网段距离的作用，使用中继器互连的网 络在逻辑上仍属于同一网络，是物理层的设备。在经典以太网中，以太网允许使用 4 个中继器，最大长度从 500 米扩展到 2500 米。如果不同的碰撞域使用不同的数据率，那么就不能用集线器将它们互连起来。  </p>
+<p>网桥：在不同或者相同的局域网之间存储和转发帧，ᨀ供数据链路层上协议转换功能。网桥的功能是通过过滤和转发实现的。常见 的网桥有透明网桥和源路由选择网桥 </p>
+<p>路由器：作用于网络层，在不同的网络间存储和转发分组，供网络层上的协议转换。 </p>
+<p>网关：对传输层和应用层协议进行协议转换的网间连接器，又称为协议转换器。网关一般有两种：传输层网关和应用层网关，分别 工作于传输层和应用层</p>
+<h3 id="4-4-802-11"><a href="#4-4-802-11" class="headerlink" title="4.4-802.11"></a>4.4-802.11</h3><h4 id="带有冲突避免的CSMA：CSMA-CA"><a href="#带有冲突避免的CSMA：CSMA-CA" class="headerlink" title="带有冲突避免的CSMA：CSMA/CA"></a>带有冲突避免的CSMA：CSMA/CA</h4><p>发送前先检测，检测到有冲突 ，在后退时间槽数选择范围内：0~15，选择一个时间槽进行等待，倒数空闲时间槽，有帧发送则暂停倒数，直到倒数为0</p>
+<h3 id="Virtual-LAN-VLAN"><a href="#Virtual-LAN-VLAN" class="headerlink" title="Virtual LAN(VLAN)"></a>Virtual LAN(VLAN)</h3><p>实际使用VLAN字段的是网桥和交换机，为了使用VLAN，网桥必须能感知VLAN,因为存在一些计算机和交换机无法感知VLAN，因此第一个VLAN感知的网桥在帧上添加一个VLAN字段，路径上最后一个网桥再将其删除</p>
+<h2 id="5-Network"><a href="#5-Network" class="headerlink" title="5-Network"></a>5-Network</h2><p>数据链路层的目标是将帧从线的一端传送到另一端。 网络层是处理端到端数据传输的最低层</p>
+<h3 id="5-1-Network-Layer-Design-Issues"><a href="#5-1-Network-Layer-Design-Issues" class="headerlink" title="5.1-Network Layer  Design Issues"></a>5.1-Network Layer  Design Issues</h3><h4 id="存储-转发数据包交换："><a href="#存储-转发数据包交换：" class="headerlink" title="存储-转发数据包交换："></a>存储-转发数据包交换：</h4><p>要发送一个数据包，就将其传输给最近的路由器，路由器的链路层对其进行校验和验证，就先将它存储起来，然后转发给下一个路由器直到主机</p>
+<h4 id="数据包和虚电路"><a href="#数据包和虚电路" class="headerlink" title="数据包和虚电路"></a>数据包和虚电路</h4><p>无连接服务，每个数据包独立路由。这样的数据包常称为<strong>数据报</strong>，对应数据包网络</p>
+<p>面向连接服务，先建立连接 。这个连接称为<strong>虚电路</strong>，对应虚电路网络 </p>
+<p>数据包的路由过程：</p>
+<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617172830374.png" alt="image-20210617172830374" style="zoom:50%;" />
+
+<p>每个表项由两部分组成：<em>目标地址</em> 和通往目标地址所使用的<em>出境线路</em></p>
+<p>虚电路网络路由：</p>
+<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617191032341.png" alt="image-20210617191032341" style="zoom:50%;" />
+
+<p>H1和H3的连接标识符一定为1，是他们唯一的连接。</p>
+<h3 id="5-2-Routing-Algorithms"><a href="#5-2-Routing-Algorithms" class="headerlink" title="5.2-Routing Algorithms"></a>5.2-Routing Algorithms</h3><h4 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h4><p>每有一个数据包到达就对他进行处理，在路由表中查找该数据包对应的出境线路</p>
+<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>负责生成和更新路由表</p>
+<p>数据报：每到一个数据包都要重新选择路径</p>
+<p>虚电路：建立一条新的虚电路需要路由</p>
+<h4 id="最优化原则"><a href="#最优化原则" class="headerlink" title="最优化原则"></a>最优化原则</h4><p>从所有的元到一个指定目标的最优路径的集合构成一棵以<strong>目标节点</strong>为根的树，这棵树称为汇集树(sink tree)</p>
+<p>汇集树不唯一，把所有可能的路径汇聚在一起，树就变成了有向无环图(DAG)</p>
+<h4 id="最短路径算法"><a href="#最短路径算法" class="headerlink" title="最短路径算法"></a>最短路径算法</h4><p>跳数测量</p>
+<p>物理距离测量</p>
+<p>Dijkstra算法</p>
+<h4 id="泛洪算法"><a href="#泛洪算法" class="headerlink" title="泛洪算法"></a>泛洪算法</h4><p>将每一个入境数据包发送到除了该数据到达的那条线以外的所有线。</p>
+<p>发送的信息就是与本路由器相邻的所有路由器的链路状态，但这只是路由器所知道的部分信息。</p>
+<p>“链路状态”就是说明本路由器都和哪些路由器相邻，以及该链路的“度量”(metric)。 </p>
+<p>只有当链路状态发生变化时，路由器才用洪泛法向所有路由器发送此信息。</p>
+<h4 id="距离矢量路由-distance-vector-routing"><a href="#距离矢量路由-distance-vector-routing" class="headerlink" title="距离矢量路由(distance vector routing)"></a>距离矢量路由(distance vector routing)</h4><p>每个路由器都有一个表，列出已知的到每个目标的最佳距离。每个邻居路由器会互相交换表 ，最终每个路由器都明白到每个目的地最优解。所以全网路由器的拓扑数据库是一致的，有错误也是一致的</p>
+<img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\283D9772F65A47D381974C898302EE5C.png" alt="img" style="zoom:40%;" />
+
+<h5 id="收敛-convergence"><a href="#收敛-convergence" class="headerlink" title="收敛(convergence)"></a>收敛(convergence)</h5><p>整个网络最佳路径的寻找过程称为收敛</p>
+<h4 id="链路状态路由-link-state-routing"><a href="#链路状态路由-link-state-routing" class="headerlink" title="链路状态路由(link  state routing)"></a>链路状态路由(link  state routing)</h4><h5 id="发现邻居"><a href="#发现邻居" class="headerlink" title="发现邻居"></a>发现邻居</h5><p>路由器启动，向每条p2p链路上发送hello包 ，链路另一方会向它回复自己的名字；或者向broadcast网络广播hello接受回复.</p>
+<p>简化LAN使用人造节点N代表广播LAN</p>
+<h5 id="设置链路成本"><a href="#设置链路成本" class="headerlink" title="设置链路成本"></a>设置链路成本</h5><p>寻找最短路径，需要每条链路度量的成本或距离；链路延迟也可以当作成本；</p>
+<p>成本与链接的线路带宽成反比，所以带宽越大，成本越低，越容易被选中；</p>
+<h5 id="构造链路状态包"><a href="#构造链路状态包" class="headerlink" title="构造链路状态包"></a>构造链路状态包</h5><p>构建一个包含所有这些信息的数据包 ；</p>
+<p>数据包内容：</p>
+<p>发送方的标识符，序号，年龄，邻居列表，到这个邻居的延迟；</p>
+<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617200142849.png" alt="image-20210617200142849" style="zoom:44%;" />
+
+<p>可以周期性的或者发生事情的时候创建数据表；</p>
+<h5 id="分发链路状态包"><a href="#分发链路状态包" class="headerlink" title="分发链路状态包"></a>分发链路状态包</h5><p>使用的是可靠的扩散法 </p>
+<p>为了控制泛洪，每个分组含一个序号，每次发送新分组时加一；</p>
+<p>路由器记录信息对（源路由器，序号）</p>
+<p>如果序列号回转了，则可能会产生混淆。解决办法：使用 32 位序号； </p>
+<p>若路由器崩溃后，序号重置；或者序号出错； 解决方法：增加年龄（age）域，每秒钟年龄减 1，为零则丢弃；</p>
+<p>链路状态包到达后，延迟一段时间，并与其它已到达的来自同一路由器的链路状态包比较序号，丢弃重复包，保留新包； </p>
+<p>链路状态包需要应答；</p>
+<h5 id="计算新路由"><a href="#计算新路由" class="headerlink" title="计算新路由"></a>计算新路由</h5><p>每个路由器都获得了自己的路由拓扑图 </p>
+<p>根据 Dijkstra 算法计算最短路径; </p>
+<p>生成自己的路由表</p>
+<h4 id="分层路由"><a href="#分层路由" class="headerlink" title="分层路由"></a>分层路由</h4><p>应该分多少层？</p>
+<p>考虑：1个由720个路由器构成的子网：720个路由表项</p>
+<p>​                    24个区域，30个路由器：30个本地路由表项+（24-1）个远程表项=53个路由表项</p>
+<p>​        8个族，9个区域，10个路由器：10个本地路由表项+（9-1）个其他区域表项+（8-1）个远程表项=25个路由表项</p>
+<p>N个路由器，最优：lnN层</p>
+<h3 id="5-3-拥塞控制-Congestion-control"><a href="#5-3-拥塞控制-Congestion-control" class="headerlink" title="5.3-拥塞控制(Congestion control )"></a>5.3-拥塞控制(Congestion control )</h3><p>负载的增加，突发流量与缓冲队列(太长和太短）都会造成拥塞</p>
+<h4 id="流量感知路由"><a href="#流量感知路由" class="headerlink" title="流量感知路由"></a>流量感知路由</h4><h4 id="准入控制"><a href="#准入控制" class="headerlink" title="准入控制"></a>准入控制</h4><p>漏桶和令牌桶</p>
+<h4 id="流量调节"><a href="#流量调节" class="headerlink" title="流量调节"></a>流量调节</h4><h5 id="路由器要确定何时接近拥塞"><a href="#路由器要确定何时接近拥塞" class="headerlink" title="路由器要确定何时接近拥塞"></a>路由器要确定何时接近拥塞</h5><p>EWMA:指数加权移动平均</p>
+<p>路由器内部的排队延迟直接捕获了数据包经历过的任何拥塞</p>
+<p>当有一个突发流量产生挤压时会跳跃。</p>
+<p>为了维持良好的排队延迟估计d，假设顺势队列长度的样值为s，可以定期生成d，并按如下方式更新：</p>
+<p>d<del>new</del>=αd<del>old</del>+(1+α)s</p>
+<p>当d上升到某个阈值，路由器要注意拥塞 </p>
+<h5 id="路由器要及时反馈信息给造成拥塞的发送方"><a href="#路由器要及时反馈信息给造成拥塞的发送方" class="headerlink" title="路由器要及时反馈信息给造成拥塞的发送方"></a>路由器要及时反馈信息给造成拥塞的发送方</h5><h5 id="不同反馈机制-都是已经发生拥塞，缓冲区溢出-："><a href="#不同反馈机制-都是已经发生拥塞，缓冲区溢出-：" class="headerlink" title="不同反馈机制(都是已经发生拥塞，缓冲区溢出)："></a>不同反馈机制(都是已经发生拥塞，缓冲区溢出)：</h5><p>抑制(choke packets)：</p>
+<p>给发送方的抑制包中的目标地址取自某个被拥塞的数据包，告知发送方慢点</p>
+<p>显式拥塞控制(ECN)：隐式地拥塞通知就是丢包 </p>
+<p>路由器在它转发的任何一个数据包打上标记发出拥塞信号，发送应答包的时候告知发送方慢点</p>
+<p>逐条后压：</p>
+<p>让抑制包在每一条都发挥作用</p>
+<h4 id="负载脱落-Load-shedding"><a href="#负载脱落-Load-shedding" class="headerlink" title="负载脱落(Load shedding)"></a>负载脱落(Load shedding)</h4><h5 id="随机早期检测-RED"><a href="#随机早期检测-RED" class="headerlink" title="随机早期检测:RED"></a>随机早期检测:RED</h5><p>当某条链路上的平均队列长度超过阈值，该链路被认为<strong>即将</strong>拥塞，所以随即丢弃一部分数据包，引起发送方注意，是隐式通知。</p>
+<h3 id="5-4-QoS"><a href="#5-4-QoS" class="headerlink" title="5.4-QoS"></a>5.4-QoS</h3><p>四个因素：</p>
+<p>可靠性，延迟，抖动，带宽</p>
+<h4 id="漏桶算法：leaky-bucket-algorihm"><a href="#漏桶算法：leaky-bucket-algorihm" class="headerlink" title="漏桶算法：leaky bucket algorihm"></a>漏桶算法：leaky bucket algorihm</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/12/Computer%20Network/" data-id="ckq2c2d5d0003lsv0gugy77l8" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/13/%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/09/%E9%93%BE%E8%A1%A8%E7%AC%AC%E4%B8%80%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/06/12/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%AE%9E%E9%AA%8C%EF%BC%88%E4%BA%8C%EF%BC%89/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/07/JAVA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/03/%E8%AE%A1%E7%BD%91%E8%AF%BE%E8%AE%BE%E6%96%87%E6%A1%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
