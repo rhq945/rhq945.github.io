@@ -71,6 +71,138 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Spring学习历程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/25/Spring%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-07-25T02:49:31.439Z" itemprop="datePublished">2021-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring学习历程"><a href="#Spring学习历程" class="headerlink" title="Spring学习历程"></a>Spring学习历程</h1><h2 id="1、前期准备"><a href="#1、前期准备" class="headerlink" title="1、前期准备"></a>1、前期准备</h2><h3 id="1-1、常用网址"><a href="#1-1、常用网址" class="headerlink" title="1.1、常用网址"></a>1.1、常用网址</h3><p>官网：<a target="_blank" rel="noopener" href="https://spring.io/projects/spring-framework#overview">https://spring.io/projects/spring-framework#overview</a></p>
+<p>Github下载地址：<a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-framework/releases">https://github.com/spring-projects/spring-framework/releases</a></p>
+<img src="Spring学习历程.assets/image-20210725111105395.png" alt="image-20210725111105395" style="zoom:23%;" />
+
+<h3 id="1-2、maven导包"><a href="#1-2、maven导包" class="headerlink" title="1.2、maven导包"></a>1.2、maven导包</h3><p>导包网址：<a target="_blank" rel="noopener" href="https://mvnrepository.com/search?q=spring">https://mvnrepository.com/search?q=spring</a></p>
+<p>导入Spring Web MVC包</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3、Spring介绍"><a href="#1-3、Spring介绍" class="headerlink" title="1.3、Spring介绍"></a>1.3、Spring介绍</h3><ul>
+<li><p>Spring是一个开源的免费框架</p>
+</li>
+<li><p>Spring是一个轻量级的非入侵式的框架</p>
+</li>
+<li><p>控制反转（IOC）,面向切面编程（AOP)</p>
+</li>
+<li><p>七大模块</p>
+</li>
+<li><p><img src="Spring%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B.assets/1219227-20170930225010356-45057485.gif" alt="img"></p>
+</li>
+<li><p>三大核心思想</p>
+<p>DI(依赖注入), IOC(控制反转) ,AOP(面向切面编程)</p>
+</li>
+</ul>
+<h2 id="2、IOC理论"><a href="#2、IOC理论" class="headerlink" title="2、IOC理论"></a>2、IOC理论</h2><p>IoC是一种通过描述（XML或注解）并通过第三方去生产或获取特定对象的方式。在Spriing中实现控制反转的式IoC容器，其实现方法是依赖注入(Dependency Injection  DI)；</p>
+<p>可使用Set窗口注入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> UserDao userdao;</span><br><span class="line"></span><br><span class="line"><span class="comment">//利用Set进行动态实现值的注入</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserDao</span><span class="params">(UserDao userdao)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.userdao = userdao;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也可以通过配置Bean的定义直接以注解的形式定义在实现类中</p>
+<h2 id="3、HelloSpring"><a href="#3、HelloSpring" class="headerlink" title="3、HelloSpring"></a>3、HelloSpring</h2><h3 id="3-1、基于xml的配置元数据的基本结构"><a href="#3-1、基于xml的配置元数据的基本结构" class="headerlink" title="3.1、基于xml的配置元数据的基本结构"></a>3.1、基于xml的配置元数据的基本结构</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;...&quot;</span> <span class="attr">class</span>=<span class="string">&quot;...&quot;</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span> = <span class="string">&quot;&quot;</span> <span class="attr">value</span> = <span class="string">&quot;&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2、理论知识理解"><a href="#3-2、理论知识理解" class="headerlink" title="3.2、理论知识理解"></a>3.2、理论知识理解</h3><ol>
+<li><p>常规的Java源代码需要new对象，格式为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">类 变量名 = <span class="keyword">new</span> 类();</span><br><span class="line"></span><br><span class="line">Hello hello = <span class="keyword">new</span> Hello();</span><br></pre></td></tr></table></figure></li>
+<li><p>使用spring时，bean是一个容器，功能可以定义对象</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;变量名==hello&quot;</span> <span class="attr">class</span>=<span class="string">&quot;new的类==Hello在src.main.java下的相对路径&quot;</span>&gt;</span> </span><br></pre></td></tr></table></figure></li>
+<li><p>property相当于给对象中的属性设定一个值</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span> = <span class="string">&quot;&quot;</span> <span class="attr">value</span>/<span class="attr">ref</span> = <span class="string">&quot;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>name决定Person类中的那个参数对象，也就是通过set方法传入的参数对象名</p>
+</li>
+<li><p>value和ref</p>
+<ol>
+<li><p>共同点</p>
+<p>都是表示这个参数对象的实际值，这也就是用户通过修改xml文件达到不同目的的关键所在，用户想要啥就把这个改成啥</p>
+</li>
+<li><p>区别</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>ref</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>引用spring中已有的bean对象</td>
+<td>赋一些简单类型的值和对象的具体值</td>
+</tr>
+<tr>
+<td>使用ref的时候，spring容器会在引用后进行验证，验证当前的xml是否存在引用的bean</td>
+<td>使用value的时候，spring会在容器启动，实例化bean的时候进行验证</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+<li><p>控制反转</p>
+<ol>
+<li><p>控制</p>
+<p>传统应用对象是程序本身控制创建</p>
+<p>Spring的对象是由Spring创建</p>
+</li>
+<li><p>反转</p>
+<p>程序本身不创建对象，成为被动的接受对象</p>
+</li>
+</ol>
+</li>
+<li><p>依赖注入</p>
+<p>依赖set方法注入</p>
+</li>
+<li><p>IoC是一种编程思想：由主动创建转变为被动接受，交给Spring</p>
+</li>
+<li><p>Spring实现托管之后，我们不需要再去程序中改动代码，只需在xml配置文件中进行修改</p>
+</li>
+</ol>
+<h3 id="3-3、初次Spring项目问题及解决方案"><a href="#3-3、初次Spring项目问题及解决方案" class="headerlink" title="3.3、初次Spring项目问题及解决方案"></a>3.3、初次Spring项目问题及解决方案</h3><ol>
+<li><p>Lombok插件下载好后导入依赖项失败；</p>
+<ul>
+<li><p>解决：idea右侧点击maven-&gt;双击clean</p>
+<p>​          然后，右击pom.xml的空白处。单击maven下的二级目录中的reimport</p>
+<p>​          将版本号由1.16.xx改为1.18.12</p>
+</li>
+</ul>
+</li>
+<li><p>为了获取Spring的上下文对象，从官网粘贴如下代码但是缺少相关的jar包；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;beans.xml&quot;</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决：在<code>pom.xml</code>文件中导入<code>maven</code>依赖项，并将<code>setting</code>中<code>MAVEN_HONE</code>的地址改为本地地址</li>
+</ul>
+</li>
+<li><p>类被Spring托管之后，类的旁边没有出现叶子符号</p>
+<ul>
+<li>解决：<code>File-&gt;Project Structure-&gt;Modules</code>，界面中共有三列，中间一列中找到带有绿色叶子符号的<code>Spring</code>并选中，点击右侧出现的<code>+</code>,勾选里面的<code>xml</code>文件，并将其apply</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/25/Spring%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/" data-id="ckrjb4vjv0001hkv0dzh30rft" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-自动机总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/13/%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%80%BB%E7%BB%93/" class="article-date">
@@ -266,7 +398,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="The-Summarize-of-Computer-Network"><a href="#The-Summarize-of-Computer-Network" class="headerlink" title="The Summarize of Computer Network"></a>The Summarize of Computer Network</h1><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1-Introduction"></a>1-Introduction</h2><h3 id="1-The-differences-between-Computer-Networks-and-Distributed-System"><a href="#1-The-differences-between-Computer-Networks-and-Distributed-System" class="headerlink" title="1.The differences between Computer Networks and Distributed System"></a><em>1.The differences between Computer Networks and Distributed System</em></h3><p>(1)Computer Network is a collection of autonomous computers interconnected by a single technology, but Distributed system is a collection of independent computers appears to its users as a single coherent system.</p>
+        <h1 id="The-Summarize-of-Computer-Network"><a href="#The-Summarize-of-Computer-Network" class="headerlink" title="The Summarize of Computer Network"></a>The Summarize of Computer Network</h1><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1-Introduction"></a>1-Introduction</h2><h3 id="1-The-differences-between-Computer-Networks-and-Distributed-System"><a href="#1-The-differences-between-Computer-Networks-and-Distributed-System" class="headerlink" title="1.The differences between Computer Networks and Distributed System"></a><em>1.The differences between Computer Networks and Distributed System</em></h3><p>(1)Computer Network is a collection of autonomous computers interconnected by a single technology, but Distributed system is a collection of independent computers appears to its users as a single coherent(连贯的) system.</p>
 <p>(2) A distributed system is a software system built on top of a network,gives it a high degree of cohesiveness and transparency. The difference of CN and DS lies with the software(especially the operating system)</p>
 <p>(3)Distributed system example : the World Wide Web</p>
 <h3 id="2-Transmission-technology"><a href="#2-Transmission-technology" class="headerlink" title="2.Transmission technology"></a><em>2.Transmission technology</em></h3><h3 id="1-Broadcast-networks"><a href="#1-Broadcast-networks" class="headerlink" title="(1)Broadcast networks:"></a>(1)Broadcast networks:</h3><p>the communication channel is shared by all the machines on the network,an address field within each packet specifies the <u>intend recipient.</u>(目的接收方)</p>
@@ -465,11 +597,17 @@
 <p>发送的信息就是与本路由器相邻的所有路由器的链路状态，但这只是路由器所知道的部分信息。</p>
 <p>“链路状态”就是说明本路由器都和哪些路由器相邻，以及该链路的“度量”(metric)。 </p>
 <p>只有当链路状态发生变化时，路由器才用洪泛法向所有路由器发送此信息。</p>
-<h4 id="距离矢量路由-distance-vector-routing"><a href="#距离矢量路由-distance-vector-routing" class="headerlink" title="距离矢量路由(distance vector routing)"></a>距离矢量路由(distance vector routing)</h4><p>每个路由器都有一个表，列出已知的到每个目标的最佳距离。每个邻居路由器会互相交换表 ，最终每个路由器都明白到每个目的地最优解。所以全网路由器的拓扑数据库是一致的，有错误也是一致的</p>
+<h4 id="距离矢量路由-distance-vector-routing"><a href="#距离矢量路由-distance-vector-routing" class="headerlink" title="距离矢量路由(distance vector routing)"></a>距离矢量路由(distance vector routing)</h4><p>不需要知道拓扑</p>
+<p>每个路由器都有一个表，列出已知的到每个目标的最佳距离。每个邻居路由器会互相交换表 ，最终每个路由器都明白到每个目的地最优解。所以全网路由器的拓扑数据库是一致的，有错误也是一致的</p>
 <img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\283D9772F65A47D381974C898302EE5C.png" alt="img" style="zoom:40%;" />
 
 <h5 id="收敛-convergence"><a href="#收敛-convergence" class="headerlink" title="收敛(convergence)"></a>收敛(convergence)</h5><p>整个网络最佳路径的寻找过程称为收敛</p>
-<h4 id="链路状态路由-link-state-routing"><a href="#链路状态路由-link-state-routing" class="headerlink" title="链路状态路由(link  state routing)"></a>链路状态路由(link  state routing)</h4><h5 id="发现邻居"><a href="#发现邻居" class="headerlink" title="发现邻居"></a>发现邻居</h5><p>路由器启动，向每条p2p链路上发送hello包 ，链路另一方会向它回复自己的名字；或者向broadcast网络广播hello接受回复.</p>
+<h5 id="距离矢量路由特点："><a href="#距离矢量路由特点：" class="headerlink" title="距离矢量路由特点："></a>距离矢量路由特点：</h5><p> 1.分布的 每个节点接收来自与其直接邻接节点的路由信息，并执行路由计算，将计算结果回传给直接邻接的节点</p>
+<p>  2.迭代的 计算过程循环进行，直到相邻节点没有可交换的路由信息为止</p>
+<p>  3.异步的 并不要求所有节点相互锁步操作</p>
+<p>4.会产生2个问题，无限计数和路由环路问题。</p>
+<h4 id="链路状态路由-link-state-routing"><a href="#链路状态路由-link-state-routing" class="headerlink" title="链路状态路由(link  state routing)"></a>链路状态路由(link  state routing)</h4><p>需要知道拓扑</p>
+<h5 id="发现邻居"><a href="#发现邻居" class="headerlink" title="发现邻居"></a>发现邻居</h5><p>路由器启动，向每条p2p链路上发送hello包 ，链路另一方会向它回复自己的名字；或者向broadcast网络广播hello接受回复.</p>
 <p>简化LAN使用人造节点N代表广播LAN</p>
 <h5 id="设置链路成本"><a href="#设置链路成本" class="headerlink" title="设置链路成本"></a>设置链路成本</h5><p>寻找最短路径，需要每条链路度量的成本或距离；链路延迟也可以当作成本；</p>
 <p>成本与链接的线路带宽成反比，所以带宽越大，成本越低，越容易被选中；</p>
@@ -494,6 +632,15 @@
 <p>​                    24个区域，30个路由器：30个本地路由表项+（24-1）个远程表项=53个路由表项</p>
 <p>​        8个族，9个区域，10个路由器：10个本地路由表项+（9-1）个其他区域表项+（8-1）个远程表项=25个路由表项</p>
 <p>N个路由器，最优：lnN层</p>
+<h5 id="链路状态算法特点："><a href="#链路状态算法特点：" class="headerlink" title="链路状态算法特点："></a>链路状态算法特点：</h5><p>每个节点都有完整地网络拓扑图，也就是完整的链路信息（距离矢量法只知道和相邻路由的）</p>
+<h4 id="距离矢量和链路状态的区别："><a href="#距离矢量和链路状态的区别：" class="headerlink" title="距离矢量和链路状态的区别："></a>距离矢量和链路状态的区别：</h4><h5 id="距离矢量"><a href="#距离矢量" class="headerlink" title="距离矢量:"></a>距离矢量:</h5><p>运行距离矢量路由协议的路由器,会将所有它知道的路由信息与邻居共享,但是只与直连邻居共享！</p>
+<p> 由于每台路由器都必须在将从邻居学到的路由转发给其它路由器之前，运行路由算法，所以网络的规模越大，其收敛速度越慢。</p>
+<p>距离矢量路由协议，更新的是“路由条目”！一条重要的链路如果发生变化，意味着需通告多条涉及到的路由条目！</p>
+<p>发送周期性更新、完整路由表更新。</p>
+<h5 id="链路状态"><a href="#链路状态" class="headerlink" title="链路状态:"></a>链路状态:</h5><p>运行链路状态路由协议的路由器,只将它所直连的链路状态与邻居共享,这个邻居是指一个域内(domain),或一个区域内(area)的所有路由器！</p>
+<p>路由器在转发链路状态包时（描述链路状态、拓扑变化的包），没必要首先进行路由运算，再给邻居进行发送，从而加快了网络的收敛速度。</p>
+<p> 链路状态路由协议，更新的是“拓扑”！每台路由器上都有完全相同的拓扑，一条重要链路的变化，不必再发送所有被波及的路由条目，只需发送一条链路通告，告知其它路由器本链路发生故障即可。</p>
+<p>更新是非周期性的，部分的。</p>
 <h3 id="5-3-拥塞控制-Congestion-control"><a href="#5-3-拥塞控制-Congestion-control" class="headerlink" title="5.3-拥塞控制(Congestion control )"></a>5.3-拥塞控制(Congestion control )</h3><p>负载的增加，突发流量与缓冲队列(太长和太短）都会造成拥塞</p>
 <h4 id="流量感知路由"><a href="#流量感知路由" class="headerlink" title="流量感知路由"></a>流量感知路由</h4><h4 id="准入控制"><a href="#准入控制" class="headerlink" title="准入控制"></a>准入控制</h4><p>漏桶和令牌桶</p>
 <h4 id="流量调节"><a href="#流量调节" class="headerlink" title="流量调节"></a>流量调节</h4><h5 id="路由器要确定何时接近拥塞"><a href="#路由器要确定何时接近拥塞" class="headerlink" title="路由器要确定何时接近拥塞"></a>路由器要确定何时接近拥塞</h5><p>EWMA:指数加权移动平均</p>
@@ -511,64 +658,164 @@
 <h4 id="负载脱落-Load-shedding"><a href="#负载脱落-Load-shedding" class="headerlink" title="负载脱落(Load shedding)"></a>负载脱落(Load shedding)</h4><h5 id="随机早期检测-RED"><a href="#随机早期检测-RED" class="headerlink" title="随机早期检测:RED"></a>随机早期检测:RED</h5><p>当某条链路上的平均队列长度超过阈值，该链路被认为<strong>即将</strong>拥塞，所以随即丢弃一部分数据包，引起发送方注意，是隐式通知。</p>
 <h3 id="5-4-QoS"><a href="#5-4-QoS" class="headerlink" title="5.4-QoS"></a>5.4-QoS</h3><p>四个因素：</p>
 <p>可靠性，延迟，抖动，带宽</p>
-<h4 id="漏桶算法：leaky-bucket-algorihm"><a href="#漏桶算法：leaky-bucket-algorihm" class="headerlink" title="漏桶算法：leaky bucket algorihm"></a>漏桶算法：leaky bucket algorihm</h4>
+<h4 id="漏桶算法：leaky-bucket-algorithm"><a href="#漏桶算法：leaky-bucket-algorithm" class="headerlink" title="漏桶算法：leaky bucket algorithm"></a>漏桶算法：leaky bucket algorithm</h4><p>限制了一个流的长期速率，但允许其短期突发某个最高调节长度。大量的突发数据将被一个漏桶流量整形器进行平滑处理。</p>
+<h5 id="计算最大突发长度-Length-of-Maximum-Rate-Burst-："><a href="#计算最大突发长度-Length-of-Maximum-Rate-Burst-：" class="headerlink" title="计算最大突发长度(Length of Maximum Rate Burst)："></a>计算最大突发长度(Length of Maximum Rate Burst)：</h5><p>突发长度是一个时间长度，以秒为单位来计算 </p>
+<p>burst length S ：突发长度</p>
+<p>sec token bucket capacity B ：令牌桶容量</p>
+<p>bytes token arrival rate R bytes/sec ：令牌到达率</p>
+<p>maximum output rate M bytes/sec ：最大输出率</p>
+<p>B + RS = MS </p>
+<p>S = B/(M - R ) </p>
+<p>时间=数量/实际输出速率=容量/(最大输出率-令牌到达率)</p>
+<h4 id="数据包调度算法-packet-scheduling-algorithms"><a href="#数据包调度算法-packet-scheduling-algorithms" class="headerlink" title="数据包调度算法(packet scheduling algorithms)"></a>数据包调度算法(packet scheduling algorithms)</h4><p>FIFO=FCFS</p>
+<p>先入先出，队列算法</p>
+<p><strong>尾丢包</strong>：在队列满时丢弃新到的数据包</p>
+<p>RED:队列快满时随即丢数据包</p>
+<h5 id="公平队列（fair-queueing）"><a href="#公平队列（fair-queueing）" class="headerlink" title="公平队列（fair queueing）"></a>公平队列（fair queueing）</h5><p>主要问题：每次取一个数据包，对于小数据包的主机提供的带宽更少</p>
+<h5 id="加权公平队列"><a href="#加权公平队列" class="headerlink" title="加权公平队列"></a>加权公平队列</h5><p>设每一轮的字节数是一个流的权重W</p>
+<p>F<del>i</del>=max(A<del>i</del>,F<del>i-1</del>)+L<del>i</del>/W：A<del>i</del>是第i个包到达时间，F<del>i-1</del>是上一个包完成的时间，L<del>i</del>是数据包i的长度</p>
+<p>max(A<del>i</del>,F<del>i-1</del>):指的是就算一个数据包早到了，也要等上一个传完才开始传这个</p>
+<h3 id="5-5-Internet-working⭐⭐"><a href="#5-5-Internet-working⭐⭐" class="headerlink" title="5.5-Internet working⭐⭐"></a>5.5-Internet working⭐⭐</h3><h5 id="路由器和交换机-网桥的本质区别："><a href="#路由器和交换机-网桥的本质区别：" class="headerlink" title="路由器和交换机/网桥的本质区别："></a>路由器和交换机/网桥的本质区别：</h5><p>在路由器上，数据包被从帧中提取出来，数据包中的网络地址被用来决定把它转发到哪里。而在交换机上，整个帧都是根据它的MAC地址发送的，不会提出数据包。</p>
+<h5 id="隧道（tunneling）"><a href="#隧道（tunneling）" class="headerlink" title="隧道（tunneling）"></a>隧道（tunneling）</h5><p>当源主机和目标主机所在网络的类型完全相同时，如IPv6-IPv4-IPv6，路由器将IPv6放在一个IPv4的数据包内，包裹着这个数据包到另一头。</p>
+<h4 id="将分段组成原始数据包（Fragmentation）"><a href="#将分段组成原始数据包（Fragmentation）" class="headerlink" title="将分段组成原始数据包（Fragmentation）"></a>将分段组成原始数据包（Fragmentation）</h4><h5 id="透明的"><a href="#透明的" class="headerlink" title="透明的"></a>透明的</h5><p>某个路由器进行分段那么下一个路由就马上进行重组。所以后续的网络不会感到有分段</p>
+<h5 id="非透明的"><a href="#非透明的" class="headerlink" title="非透明的"></a>非透明的</h5><p>一旦被分组，每个分组被当成原始数据包传送，直到目标主机才重组</p>
+<p>那么分段必须有各自的数据包头。</p>
+<p>数据包头包括：<strong>数据包序号</strong>（每个数据包都携带）、一个数据包内的<strong>绝对字节偏移量</strong>、一个指明此分段能否到达分段前数据包末尾的<strong>标志位</strong>。</p>
+<p>这样除了增加开销，每一段的丢失都会造成整个数据包丢失</p>
+<h4 id="路径MTU发现"><a href="#路径MTU发现" class="headerlink" title="路径MTU发现"></a>路径MTU发现</h4><p>先不分段，发送，到一个路由器时，数据包太大发不过去，就给源端一个报错数据包，并丢弃这个包。远端收到就把这个数据包分段重发。不断重复</p>
+<h3 id="5-6-The-Network-Layer-in-the-Internet"><a href="#5-6-The-Network-Layer-in-the-Internet" class="headerlink" title="5.6-The Network Layer  in the Internet"></a>5.6-The Network Layer  in the Internet</h3><h4 id="IPv4协议"><a href="#IPv4协议" class="headerlink" title="IPv4协议"></a>IPv4协议</h4><p>每个IP数据报包括：头，正文（有效净负荷）</p>
+<img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\F2C8001DA2BDC550BB908C22DE14D173.png" alt="img" style="zoom:50%;" />
+
+<h5 id="IPv4的分类编址："><a href="#IPv4的分类编址：" class="headerlink" title="IPv4的分类编址："></a>IPv4的分类编址：</h5><p>A：0打头，8位网络号+24位主机号       </p>
+<p>最大网络号127为回环地址，不可指派</p>
+<p>地址范围：0-127，可指派范围：2^8-1^-2=126</p>
+<p>每个网络号中可分配的IP地址数量：2^24^-2</p>
+<p>B：10打头，16位网络号+16位主机号</p>
+<p>地址范围：128.0-191.255，可指派范围：2^16-2^=16384</p>
+<p>每个网络号中可分配的IP地址数量：2^16^-2</p>
+<p>C：110打头，24位网络号+8位主机号</p>
+<p>地址范围：192.0.0-223.255，可指派范围：2^24-3^</p>
+<p>每个网络号中可分配的IP地址数量：2^8^-2</p>
+<p>源IP地址和目的IP地址：</p>
+<p>以127开头且后面不是全0和全1得IP地址可以做源地址和目的地址</p>
+<p>主机号全1的广播地址：只能做目的地址 </p>
+<p>网络号全0：只能做源地址</p>
+<h5 id="划分子网的IPv4地址"><a href="#划分子网的IPv4地址" class="headerlink" title="划分子网的IPv4地址"></a>划分子网的IPv4地址</h5><p>假设有m位主机号</p>
+<p>借用了n位主机号就有2^n^个子网数量</p>
+<p>每个子网可分配的地址数量=2^m-n^-2个</p>
+<p>主机IP地址可以在某个子网中。只需要查看借走n位那n位以后全部取0得到的IP地址就是该主机所在子网的网络地址</p>
+<p>n位以后全部取1得到的IP地址就是该主机所在子网的广播地址</p>
+<h5 id="无分类编址的IPv4地址：CIDR"><a href="#无分类编址的IPv4地址：CIDR" class="headerlink" title="无分类编址的IPv4地址：CIDR"></a>无分类编址的IPv4地址：CIDR</h5><p>消除了ABC类地址以及划分子网的概念</p>
+<p>引进了 网络前缀</p>
+<p>128.14.24.7/21</p>
+<p>这个斜线后面的数字就是网络前缀所占的比特数量</p>
+<p>32-21=11就是主机号的比特数</p>
+<p>注意可接收地址、可分配 的主机个数不等于主机号的数量</p>
+<p>若知道CIDR中某个地址就可以知道：地址块最小地址，地址块最大地址，地址块地址数量，地址块聚合某类地址的数量，地址掩码=子网掩码</p>
+<img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\3694006375C37C812197A3428958AC7D.png" alt="img" style="zoom:40%;" />
+
+<h5 id="路由聚合"><a href="#路由聚合" class="headerlink" title="路由聚合"></a>路由聚合</h5><p>寻找目的网络地址的共同前缀，假设有n个比特，则网络前缀就是多少，剩余的比特全部取0，整个32位写成十进制放在网络前缀前面，就形成了<strong>聚合地址块</strong>。</p>
+<p>网络前缀越长，地址块越小，路由越具体 。</p>
+<p>路由器转发分组会选择路由中网络前缀最长的部分。–最长前缀匹配</p>
+<h5 id="IPv4的应用规划"><a href="#IPv4的应用规划" class="headerlink" title="IPv4的应用规划"></a>IPv4的应用规划</h5><h6 id="定长的子网掩码：FLSM"><a href="#定长的子网掩码：FLSM" class="headerlink" title="定长的子网掩码：FLSM"></a>定长的子网掩码：FLSM</h6><p>每个子网分配的IP地址相同，造成了浪费</p>
+<h6 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\D3D739B517310B6D6A84C1BFCB13F384.png" alt="img" style="zoom:40%;" /></h6><p>要分配给5个子网，所以要分配2^3^=8个子网，得借3个主机号</p>
+<p>218是c类，所以剩下8-3位=5位主机号，表示32个地址，也够。</p>
+<p>然后这8个子网随便分配就行</p>
+<h6 id="变长的子网掩码：VLSM"><a href="#变长的子网掩码：VLSM" class="headerlink" title="变长的子网掩码：VLSM"></a>变长的子网掩码：VLSM</h6><h4 id="img-file-D-Tencent-Softwares-QQ-Files-1437290395-Image-C2C-46DA136BE397783D1F503D081E9D1299-png"><a href="#img-file-D-Tencent-Softwares-QQ-Files-1437290395-Image-C2C-46DA136BE397783D1F503D081E9D1299-png" class="headerlink" title="![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\46DA136BE397783D1F503D081E9D1299.png)"></a>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\46DA136BE397783D1F503D081E9D1299.png)</h4><h4 id="网络地址转换：NAT"><a href="#网络地址转换：NAT" class="headerlink" title="网络地址转换：NAT"></a>网络地址转换：NAT</h4><p>NAT的思想：ISP为每一个家庭或公司分配一个IP地址，这个地址来传输Internet流量。客户网络内部，每台计算机有唯一的IP地址，该地址主要用来路由内部流量，但是想要向其他ISP发送数据时，就得地址转换。</p>
+<p>每个NAT都有自己负责的区域，有自己的全局IP地址，一个区域的流量控制只通过一个NAT，那么一个路由器坏掉以后就会造成影响。有备用的也不行</p>
+<h4 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h4><p>地址写法：</p>
+<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210619172033091.png" alt="image-20210619172033091" style="zoom:33%;" />
+
+<p>IPv6省掉了什么：</p>
+<p>IHL：因为IPv6有固定长度</p>
+<p>协议字段：因为下一个头字段指明了最后的IP头后面跟着什么</p>
+<p>所有和分段有关的字段：因为 IPv6采用另一种方法分段</p>
+<p>校验和：计算校验和降低性能</p>
+<h4 id="Internet控制协议"><a href="#Internet控制协议" class="headerlink" title="Internet控制协议"></a>Internet控制协议</h4><h5 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h5><p>路由器监视Internet的操作，如果路由器处理包时发生意外，就通过ICMP向源端报告</p>
+<p>报文的前4个字节是统一的格式，共有三个字段：即类型、代码和检验和。接着的4个字节的内 容与ICMP的类型有关</p>
+<h5 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h5><p>是一个地址转换协议，每种协议的地址都要转换成对应的数据链路层的 MAC地址。</p>
+<h5 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h5><h2 id="6-Transmission"><a href="#6-Transmission" class="headerlink" title="6-Transmission"></a>6-Transmission</h2><h3 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h3><p>使用端口号来表示应用层的不同进程</p>
+<p>端口号由16比特，0~65535</p>
+<p>端口号只具有本地意义，因特网不同计算机中的相同端口号无联系 </p>
+<h3 id="TCP和UDP的区别："><a href="#TCP和UDP的区别：" class="headerlink" title="TCP和UDP的区别："></a>TCP和UDP的区别：</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>UDP</th>
+<th>TCP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP数据包中协议字段的值</td>
+<td>17</td>
+<td>6</td>
+</tr>
+<tr>
+<td>通信双方</td>
+<td>随时发送数据</td>
+<td>三报文握手，四报文挥手</td>
+</tr>
+<tr>
+<td>面向</td>
+<td>应用报文</td>
+<td>字节流</td>
+</tr>
+<tr>
+<td>支持通信</td>
+<td>可以单播多播广播</td>
+<td>只能单播</td>
+</tr>
+<tr>
+<td>对发送方数据的操作</td>
+<td>对应用层报文既不合并也不拆分，直接给应用层报文添加UDP首部，使成为UDP用户数据报</td>
+<td>把数据块看成字节流，将一定数目的字节构建TCP报文段并发送，不保证数据块对应大小一致，但是要保证顺序，所以要检查</td>
+</tr>
+<tr>
+<td></td>
+<td>无连接不可靠</td>
+<td>面向连接可靠</td>
+</tr>
+<tr>
+<td>首部大小</td>
+<td>8个字节</td>
+<td>20-60字节</td>
+</tr>
+</tbody></table>
+<h3 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h3><p>通过滑动窗口实现</p>
+<p>ACK和ack</p>
+<p>ACK是TCP报文首段的标志位，取值为1表示这是确认报文段</p>
+<p>ack是确认号字段，取值为n标识n之前的全部数据正确接收，是累计确认</p>
+<p>TCP为每一个连接设置一个持续计时器：收到零窗口通知时使用，时间到了就发送探测报文段（携带重传计时器）</p>
+<p>TCP发送方发送窗口=min[发送方拥塞窗口，接收方接收窗口]</p>
+<h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><h4 id="t吞吐量"><a href="#t吞吐量" class="headerlink" title="t吞吐量"></a>t吞吐量</h4><p>理想：吞吐量饱和之前，吞吐量=输入负载</p>
+<p>实际情况：若出现拥塞而不控制，吞吐量随输入负载增大而下降</p>
+<h4 id="慢开始"><a href="#慢开始" class="headerlink" title="慢开始"></a>慢开始</h4><p>指一开始注入的报文段少，不是增长慢</p>
+<p>拥塞窗口cwnd是动态变化的</p>
+<p>拥塞窗口按指数规律增长</p>
+<p>发送方将拥塞窗口当作发送窗口</p>
+<p>慢开始门限：ssthresh</p>
+<p>拥塞窗口小于慢开始门限时，使用慢开始</p>
+<p>拥塞窗口大于慢开始门限时，使用拥塞避免</p>
+<h4 id="拥塞避免"><a href="#拥塞避免" class="headerlink" title="拥塞避免"></a>拥塞避免</h4><p>拥塞窗口按线性规律增长，每次加1</p>
+<p><strong>重传计时器到时，收到超时重传</strong></p>
+<p>慢开始门限值改为原来一半</p>
+<p>拥塞窗口值改为1</p>
+<h4 id="快重传"><a href="#快重传" class="headerlink" title="快重传"></a>快重传</h4><p><strong>发送方收到三个连续的重复确认</strong>，相应报文段立即重传，不等计时器。</p>
+<p>也就是说发送方会收到四次某个报文段的确认。</p>
+<h4 id="快恢复"><a href="#快恢复" class="headerlink" title="快恢复"></a>快恢复</h4><p>将慢开始门限值和拥塞窗口值都调整为当前窗口值以一半，直接执行拥塞避免算法</p>
+<p>也可以把拥塞窗口值回复到当前窗口一半后再加3，因为减少了三个报文段</p>
+<h4 id="题目易错"><a href="#题目易错" class="headerlink" title="题目易错"></a>题目易错</h4><p>发生超时以后第一个RTT，拥塞窗口从1-2。</p>
+<h3 id="TCP超时重传时间"><a href="#TCP超时重传时间" class="headerlink" title="TCP超时重传时间"></a>TCP超时重传时间</h3><p>RTO：TCP超时重传时间</p>
+<p>RTT：报文段往返时间</p>
+<p>RTT<del>S</del>：加权平均往返时间</p>
+<p>RTT<del>D</del>：RTT偏差的加权平均</p>
+<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210621163456901.png" alt="image-20210621163456901" style="zoom:50%;" />
+
+<h3 id="TCP运输连接管理"><a href="#TCP运输连接管理" class="headerlink" title="TCP运输连接管理"></a>TCP运输连接管理</h3><h4 id="TCP建立过程：三报文握手"><a href="#TCP建立过程：三报文握手" class="headerlink" title="TCP建立过程：三报文握手"></a>TCP建立过程：三报文握手</h4>
       
     </div>
     <footer class="article-footer">
       <a data-url="http://example.com/2021/04/12/Computer%20Network/" data-id="ckq2c2d5d0003lsv0gugy77l8" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-链表第一题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/09/%E9%93%BE%E8%A1%A8%E7%AC%AC%E4%B8%80%E9%A2%98/" class="article-date">
-  <time class="dt-published" datetime="2021-03-09T05:00:02.964Z" itemprop="datePublished">2021-03-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="关于链表的leetcode习题"><a href="#关于链表的leetcode习题" class="headerlink" title="关于链表的leetcode习题"></a>关于链表的leetcode习题</h3><h1 id="1-链表反转-Num-206"><a href="#1-链表反转-Num-206" class="headerlink" title="1.链表反转(Num.206)"></a>1.链表反转(Num.206)</h1><h3 id="题目描述：反转一个单链表"><a href="#题目描述：反转一个单链表" class="headerlink" title="题目描述：反转一个单链表"></a>题目描述：反转一个单链表</h3><pre><code>输入：1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;null
-输出：5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;null
-
-/**
- * Definition for singly-linked list.
- * struct ListNode &#123;
- *     int val;
- *     struct ListNode *next;
- * &#125;;
- */</code></pre>
-<h2 id="解法一：双指针法（迭代算法）"><a href="#解法一：双指针法（迭代算法）" class="headerlink" title="解法一：双指针法（迭代算法）"></a>解法一：双指针法（迭代算法）</h2><pre><code>struct ListNode* reverseList(struct ListNode* head)&#123;
-    struct ListNode *pre,*cur,*flag;
-    cur=head;
-    pre=NULL;
-    while(cur)
-       &#123;
-        flag=cur-&gt;next;
-        cur-&gt;next=pre;
-        pre=cur;
-        cur=flag;
-    &#125;
-    return pre;
-&#125;</code></pre>
-<h3 id="解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的"><a href="#解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的" class="headerlink" title="解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的"></a>解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的</h3><pre><code>cur-&gt;next=pre;
-pre=cur;</code></pre>
-<h3 id="两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-gt-next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-gt-next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。"><a href="#两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-gt-next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-gt-next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。" class="headerlink" title="两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-&gt;next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-&gt;next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。"></a>两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-&gt;next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-&gt;next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。</h3><h3 id="cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。"><a href="#cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。" class="headerlink" title="cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。"></a>cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。</h3><h3 id="最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。"><a href="#最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。" class="headerlink" title="最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。"></a>最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。</h3><h2 id="解法二：递归法"><a href="#解法二：递归法" class="headerlink" title="解法二：递归法"></a>解法二：递归法</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/09/%E9%93%BE%E8%A1%A8%E7%AC%AC%E4%B8%80%E9%A2%98/" data-id="ckq2c2d5c0002lsv0ej5f26yi" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -788,7 +1035,7 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
   </div>
 
@@ -801,15 +1048,15 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
       <ul>
         
           <li>
+            <a href="/2021/07/25/Spring%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/13/%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%80%BB%E7%BB%93/">(no title)</a>
           </li>
         
           <li>
             <a href="/2021/04/12/Computer%20Network/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/09/%E9%93%BE%E8%A1%A8%E7%AC%AC%E4%B8%80%E9%A2%98/">(no title)</a>
           </li>
         
           <li>
