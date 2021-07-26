@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
   <meta name="description" content="关于链表的leetcode习题1.链表反转(Num.206)题目描述：反转一个单链表输入：1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;null 输出：5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;null  &#x2F;**  * Definition for singly-linked list.  * struct ListNode &amp;#123;  *     int va">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
@@ -17,75 +31,145 @@
 <meta property="article:modified_time" content="2021-03-09T05:00:03.432Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<link rel="canonical" href="http://example.com/Working/%E9%93%BE%E8%A1%A8%E7%AC%AC%E4%B8%80%E9%A2%98">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-  
-<meta name="generator" content="Hexo 5.3.0"></head>
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+  <title> | Hexo
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
 </header>
 
-      <div class="outer">
-        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/Working/%E9%93%BE%E8%A1%A8%E7%AC%AC%E4%B8%80%E9%A2%98.html" class="article-date">
-  <time class="dt-published" datetime="2021-07-25T14:38:40.778Z" itemprop="datePublished">2021-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="关于链表的leetcode习题"><a href="#关于链表的leetcode习题" class="headerlink" title="关于链表的leetcode习题"></a>关于链表的leetcode习题</h3><h1 id="1-链表反转-Num-206"><a href="#1-链表反转-Num-206" class="headerlink" title="1.链表反转(Num.206)"></a>1.链表反转(Num.206)</h1><h3 id="题目描述：反转一个单链表"><a href="#题目描述：反转一个单链表" class="headerlink" title="题目描述：反转一个单链表"></a>题目描述：反转一个单链表</h3><pre><code>输入：1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;null
+      
+      
+      <div class="post-body">
+          <h3 id="关于链表的leetcode习题"><a href="#关于链表的leetcode习题" class="headerlink" title="关于链表的leetcode习题"></a>关于链表的leetcode习题</h3><h1 id="1-链表反转-Num-206"><a href="#1-链表反转-Num-206" class="headerlink" title="1.链表反转(Num.206)"></a>1.链表反转(Num.206)</h1><h3 id="题目描述：反转一个单链表"><a href="#题目描述：反转一个单链表" class="headerlink" title="题目描述：反转一个单链表"></a>题目描述：反转一个单链表</h3><pre><code>输入：1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;null
 输出：5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;null
 
 /**
@@ -111,115 +195,167 @@
 </code></pre><h3 id="解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的"><a href="#解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的" class="headerlink" title="解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的"></a>解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的</h3><pre><code>cur-&gt;next=pre;
 pre=cur;
 </code></pre><h3 id="两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-gt-next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-gt-next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。"><a href="#两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-gt-next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-gt-next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。" class="headerlink" title="两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-&gt;next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-&gt;next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。"></a>两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-&gt;next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-&gt;next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。</h3><h3 id="cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。"><a href="#cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。" class="headerlink" title="cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。"></a>cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。</h3><h3 id="最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。"><a href="#最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。" class="headerlink" title="最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。"></a>最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。</h3><h2 id="解法二：递归法"><a href="#解法二：递归法" class="headerlink" title="解法二：递归法"></a>解法二：递归法</h2>
+      </div>
+      
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/Working/%E9%93%BE%E8%A1%A8%E7%AC%AC%E4%B8%80%E9%A2%98.html" data-id="ckrk05mt50000ewv00dbkb7gu" data-title="" class="article-share-link">Share</a>
-      
-      
-      
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E9%93%BE%E8%A1%A8%E7%9A%84leetcode%E4%B9%A0%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">关于链表的leetcode习题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC-Num-206"><span class="nav-number"></span> <span class="nav-text">1.链表反转(Num.206)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%EF%BC%9A%E5%8F%8D%E8%BD%AC%E4%B8%80%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">题目描述：反转一个单链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9A%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95%EF%BC%88%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">解法一：双指针法（迭代算法）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%EF%BC%9A%E6%95%B4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E5%8F%8D%E8%BD%AC%E5%85%B6%E5%AE%9E%E5%B0%B1%E6%98%AF%E5%B0%86%E6%95%B4%E4%B8%AA%E9%93%BE%E8%A1%A8%E5%90%84%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84next%E6%8C%87%E9%92%88%E9%83%BD%E6%8C%87%E5%90%91%E5%89%8D%E4%B8%80%E4%B8%AA%E4%B9%9F%E5%B0%B1%E6%98%AFnext%E6%8C%87%E9%92%88%E7%9A%84%E5%8F%8D%E8%BD%AC%EF%BC%8C%E9%82%A3%E4%B9%88%E5%B0%B1%E6%B6%89%E5%8F%8A%E4%B8%A4%E4%B8%AA%E6%8C%87%E9%92%88%EF%BC%8C%E8%BF%99%E9%87%8C%E7%94%A8%E7%9A%84%E6%98%AFpre%E6%8C%87%E9%92%88%E5%92%8Ccur%E6%8C%87%E9%92%88%E6%9D%A5%E8%BF%9B%E8%A1%8C%E6%A0%87%E8%AF%86%E3%80%82%E9%82%A3%E4%B9%88%E5%BE%88%E8%87%AA%E7%84%B6%E7%9A%84%E5%B0%B1%E6%9C%89%E6%AF%8F%E6%AC%A1%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">解题思路：整个链表的反转其实就是将整个链表各个节点的next指针都指向前一个也就是next指针的反转，那么就涉及两个指针，这里用的是pre指针和cur指针来进行标识。那么很自然的就有每次循环中的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%87%BA%E7%8E%B0%E3%80%82%E6%8E%A5%E4%B8%8B%E6%9D%A5%E4%B8%80%E4%B8%AA%E4%B8%AA%E7%9A%84%E6%95%B0%E5%AD%97%E5%90%91%E5%90%8E%E7%BB%A7%E7%BB%AD%E7%9B%B4%E5%88%B0%E6%8C%87%E5%90%91%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9D%9F%E5%8D%B3%E5%8F%AF%EF%BC%8C%E4%BD%86%E6%98%AF%E8%BF%99%E9%87%8C%E5%87%BA%E7%8E%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%BD%93%E4%B8%80%E4%B8%AAcur-gt-next%E6%8C%87%E9%92%88%E6%8C%87%E5%90%91%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E5%AE%83%E7%9A%84%E5%89%8D%E9%A9%B1%E8%8A%82%E7%82%B9%EF%BC%8C%E8%BF%99%E6%A0%B7%E5%B0%B1%E6%B2%A1%E5%8A%9E%E6%B3%95%E5%90%91%E5%90%8E%E7%BB%A7%E7%BB%AD%E4%BA%86%EF%BC%8C%E6%89%80%E4%BB%A5%E5%9C%A8cur-gt-next%E6%94%B9%E5%8F%98%E6%8C%87%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E5%89%8D%E5%85%88%E5%B0%86%E5%85%B6%E4%BF%9D%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%8F%A6%E5%A4%96%E7%9A%84%E6%8C%87%E9%92%88%E4%B8%AD%EF%BC%8C%E8%BF%99%E6%A0%B7%E4%B8%80%E6%AC%A1%E5%8F%8D%E8%BD%AC%E7%BB%93%E6%9D%9F%E4%BB%A5%E5%90%8E%E5%B0%B1%E8%83%BD%E7%BB%A7%E7%BB%AD%E8%BF%9B%E8%A1%8C%E4%B8%8B%E4%B8%80%E8%8A%82%E7%82%B9%E7%9A%84%E5%8F%8D%E8%BD%AC%E3%80%82%E8%BF%99%E9%87%8C%E6%88%91%E4%BB%AC%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AFflag%E6%8C%87%E9%92%88%E6%9D%A5%E5%81%9A%E4%BF%9D%E5%AD%98%E3%80%82%E8%BF%99%E6%A0%B7%E5%B0%B1%E6%98%AF%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">两行代码出现。接下来一个个的数字向后继续直到指向链表结束即可，但是这里出现了一个问题，就是当一个cur-&gt;next指针指向的数字是它的前驱节点，这样就没办法向后继续了，所以在cur-&gt;next改变指向对象之前先将其保存在一个另外的指针中，这样一次反转结束以后就能继续进行下一节点的反转。这里我们使用的是flag指针来做保存。这样就是循环中的算法思路。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cur%E6%8C%87%E9%92%88%E8%A6%81%E5%AF%B9%E9%93%BE%E8%A1%A8%E5%81%9A%E9%81%8D%E5%8E%86%EF%BC%8C%E6%89%80%E4%BB%A5%E5%88%9A%E5%BC%80%E5%A7%8B%E6%8C%87%E5%90%91%E7%9A%84%E6%98%AFhead%E6%8C%87%E9%92%88%EF%BC%8C%E8%80%8C%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%88%A4%E5%AE%9A%E6%9D%A1%E4%BB%B6%E5%B0%B1%E6%98%AF%E9%93%BE%E8%A1%A8%E9%81%8D%E5%8E%86%E5%AE%8C%E6%88%90%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%AA%E8%87%B3%E6%9D%A1%E4%BB%B6%E4%B8%BAcur%E6%8C%87%E9%92%88%E4%B8%8D%E4%B8%BA%E7%A9%BA%E3%80%82%E8%80%8C%E5%9C%A8%E5%88%9A%E5%BC%80%E5%A7%8B%EF%BC%8Chead%E6%8C%87%E5%90%91%E7%9A%84%E8%8A%82%E7%82%B9%E6%98%AF%E6%B2%A1%E6%9C%89%E5%89%8D%E9%A9%B1%E8%8A%82%E7%82%B9%E7%9A%84%EF%BC%8C%E6%89%80%E4%BB%A5pre%E6%8C%87%E9%92%88%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">cur指针要对链表做遍历，所以刚开始指向的是head指针，而循环的判定条件就是链表遍历完成，所以截至条件为cur指针不为空。而在刚开始，head指向的节点是没有前驱节点的，所以pre指针为空。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E8%A6%81%E8%BF%94%E5%9B%9E%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%E6%8C%87%E9%92%88%E5%91%A2%EF%BC%8C%E6%98%AFhead%E6%8C%87%E9%92%88%E5%90%97%EF%BC%8C%E6%88%91%E4%BB%AC%E8%A6%81%E7%9C%8B%E8%A1%A8%E5%A4%B4%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%8C%E5%BE%88%E6%98%8E%E6%98%BE%EF%BC%8C%E5%AF%B9%E4%BA%8E%E6%9C%80%E5%90%8E%E8%BE%93%E5%87%BA%E7%9A%8454321%EF%BC%8C%E8%A1%A8%E5%A4%B4%E6%98%AF%E6%8C%87%E5%90%915%E7%9A%84%EF%BC%8C%E8%80%8C%E6%9C%80%E5%90%8Ecur%E6%8C%87%E5%90%91%E7%A9%BA%E8%8A%82%E7%82%B9%EF%BC%8Cpre%E6%8C%87%E5%90%915%EF%BC%8C%E6%89%80%E4%BB%A5%E5%AF%B9%E5%BA%94%E7%9A%84%E6%98%AFpre%E6%8C%87%E9%92%88%EF%BC%8C%E5%B0%86%E5%85%B6%E8%BF%94%E5%9B%9E%E5%8D%B3%E5%8F%AF%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">最后要返回的是什么指针呢，是head指针吗，我们要看表头在哪里，很明显，对于最后输出的54321，表头是指向5的，而最后cur指向空节点，pre指向5，所以对应的是pre指针，将其返回即可。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%EF%BC%9A%E9%80%92%E5%BD%92%E6%B3%95"><span class="nav-number"></span> <span class="nav-text">解法二：递归法</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
     </footer>
   </div>
-  
-    
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
   
-    
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
-    </div>
-  </div>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/07/26/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E8%87%AA%E5%8A%A8%E6%9C%BA/">形式语言自动机</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/26/The-Summarize-of-Computer-Network/">The Summarize of Computer Network</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/26/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A01/">Spring框架学习1</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/20/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8B%EF%BC%89/">指针的部分总结（下）</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/12/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/">指针的部分总结（上）</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+<script src="/js/schemes/muse.js"></script>
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/js/next-boot.js"></script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>
