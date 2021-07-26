@@ -94,7 +94,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1.绪论"></a>1.绪论</h2><h3 id="形式语言定义"><a href="#形式语言定义" class="headerlink" title="形式语言定义"></a>形式语言定义</h3><p>自动机：具有离散输入输出的数学模型</p>
-<h3 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h3><p>非限定性语言        ———-        图灵机 </p>
+<h3 id="⭐对应关系"><a href="#⭐对应关系" class="headerlink" title="⭐对应关系"></a>⭐对应关系</h3><p>非限定性语言        ———-        图灵机 </p>
 <p>上下文有关语言    ———-        线性有界自动机 </p>
 <p>上下文无关语言    ———-        下推式自动机</p>
 <p>正则语言               ———-        有限自动机 </p>
@@ -134,7 +134,11 @@
 <img src="https://img-blog.csdnimg.cn/20210425104536664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom: 50%;" />
 
 
-<h4 id="设计有限自动机："><a href="#设计有限自动机：" class="headerlink" title="设计有限自动机："></a>设计有限自动机：</h4><h5 id="多个例子"><a href="#多个例子" class="headerlink" title="多个例子"></a>多个例子</h5><p><img src="https://img-blog.csdnimg.cn/2021042510455461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210425104602388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210425104605844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="设计有限自动机："><a href="#设计有限自动机：" class="headerlink" title="设计有限自动机："></a>设计有限自动机：</h4><h5 id="多个例子"><a href="#多个例子" class="headerlink" title="多个例子"></a>多个例子</h5><img src="https://img-blog.csdnimg.cn/2021042510455461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" />
+<img src="https://img-blog.csdnimg.cn/20210425104602388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" />
+<img src="https://img-blog.csdnimg.cn/20210425104605844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" />
+
+
 <h3 id="3-2-不确定有限自动机：NFA"><a href="#3-2-不确定有限自动机：NFA" class="headerlink" title="3.2 不确定有限自动机：NFA"></a>3.2 不确定有限自动机：NFA</h3><h4 id="五元组：NFA-M-Q-T-δ-q0-F"><a href="#五元组：NFA-M-Q-T-δ-q0-F" class="headerlink" title="五元组：NFA M = ( Q , T , δ , q0 , F )"></a>五元组：NFA M = ( Q , T , δ , q<del>0</del> , F )</h4><p>其中δ = Q x T –&gt;2^Q^</p>
 <p>DFA是特殊的NFA ，NFA转化DFA：</p>
 <h4 id="子集构造法"><a href="#子集构造法" class="headerlink" title="子集构造法"></a>子集构造法</h4><p>列表法进行，注意以下几点：</p>
@@ -148,12 +152,21 @@
 <p>定义P = δ ( I , a ):P是从I中的所有状态经过一条标a的边可以到达的状态集合</p>
 <p>计算δ’ ( q<del>0</del> , a ):</p>
 <p>δ’ ( q<del>0</del> , a ) = ε-CLOSURE{ δ [ δ’ ( q<del>0</del> , ε ) , a ] }</p>
-<pre><code>             = ε-CLOSURE&#123; δ [ ε-CLOSURE(q~0~) , a ] &#125; //先求一个q~0~的ε-闭包，再将其闭包后的结果全部经过一个a形成的集                                                                                      合，再将其集合中的元素全部进行ε-闭包得到集合即为最终答案。</code></pre>
-<h4 id="构造ε-NFA自动机"><a href="#构造ε-NFA自动机" class="headerlink" title="构造ε-NFA自动机"></a>构造ε-NFA自动机</h4><p><img src="https://img-blog.csdnimg.cn/20210425104952819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h5 id="ε-NFA自动机格局"><a href="#ε-NFA自动机格局" class="headerlink" title="ε-NFA自动机格局"></a>ε-NFA自动机格局</h5><p><img src="https://img-blog.csdnimg.cn/20210425104646931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h4 id="ε-NFA转化NFA"><a href="#ε-NFA转化NFA" class="headerlink" title="ε-NFA转化NFA"></a>ε-NFA转化NFA</h4><h5 id="ε闭包法："><a href="#ε闭包法：" class="headerlink" title="ε闭包法："></a>ε闭包法：</h5><p><img src="https://img-blog.csdnimg.cn/20210425104701441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>​                 = ε-CLOSURE{ δ [ ε-CLOSURE(q<del>0</del>) , a ] } </p>
+<p>//先求一个q<del>0</del>的ε-闭包，再将其闭包后的结果全部经过一个a形成的集合，再将其集合中的元素全部进行ε-闭包得到集合即为最终答案。</p>
+<h4 id="构造ε-NFA自动机"><a href="#构造ε-NFA自动机" class="headerlink" title="构造ε-NFA自动机"></a>构造ε-NFA自动机</h4><img src="https://img-blog.csdnimg.cn/20210425104952819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
+<h5 id="ε-NFA自动机格局"><a href="#ε-NFA自动机格局" class="headerlink" title="ε-NFA自动机格局"></a>ε-NFA自动机格局</h5><img src="https://img-blog.csdnimg.cn/20210425104646931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
+<h4 id="ε-NFA转化NFA"><a href="#ε-NFA转化NFA" class="headerlink" title="ε-NFA转化NFA"></a>ε-NFA转化NFA</h4><h5 id="ε闭包法："><a href="#ε闭包法：" class="headerlink" title="ε闭包法："></a>ε闭包法：</h5><img src="https://img-blog.csdnimg.cn/20210425104701441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
 <p>一个一个找，从起始状态开始将ε路径跳过(空跳)，比如从X跳到A，那么A接受1到B，就可以看成X接受1到B，既然X可以空跳经过G，那么讨论完X之后就不再讨论G。</p>
-<p><img src="https://img-blog.csdnimg.cn/20210425104713172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<img src="https://img-blog.csdnimg.cn/20210425104713172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
 <h3 id="3-4-正则集和正则式"><a href="#3-4-正则集和正则式" class="headerlink" title="3.4 正则集和正则式"></a>3.4 正则集和正则式</h3><h4 id="正则集"><a href="#正则集" class="headerlink" title="正则集"></a>正则集</h4><p>字母表上一些特殊形式的字符串集合</p>
 <p>{ε} , Φ , {a}都是正则集</p>
 <h4 id="正则式"><a href="#正则式" class="headerlink" title="正则式"></a>正则式</h4><p>用类似代数表达式的方法表示正则语言</p>
@@ -191,18 +204,30 @@
 <p>C–&gt;aC|bC|ε</p>
 <h3 id="3-7-正则表达式与有限自动机的关系"><a href="#3-7-正则表达式与有限自动机的关系" class="headerlink" title="3.7 正则表达式与有限自动机的关系"></a>3.7 正则表达式与有限自动机的关系</h3><h4 id="从DFA构造正则表达式"><a href="#从DFA构造正则表达式" class="headerlink" title="从DFA构造正则表达式"></a>从DFA构造正则表达式</h4><h5 id="状态消去法"><a href="#状态消去法" class="headerlink" title="状态消去法"></a>状态消去法</h5><p>消去的是中间状态，即除了起始和终止都要消去</p>
 <p>最终得到的正则表达式为每一终态对应的正则表达式之和</p>
-<h5 id="消去规则"><a href="#消去规则" class="headerlink" title="消去规则"></a>消去规则</h5><p><img src="https://img-blog.csdnimg.cn/2021042510473746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h5 id="消去规则"><a href="#消去规则" class="headerlink" title="消去规则"></a>消去规则</h5><img src="https://img-blog.csdnimg.cn/2021042510473746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
 <p>例1</p>
-<p><img src="https://img-blog.csdnimg.cn/2021042510474488.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<img src="https://img-blog.csdnimg.cn/2021042510474488.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
 <p>例2</p>
-<p><img src="https://img-blog.csdnimg.cn/20210425104750574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<img src="https://img-blog.csdnimg.cn/20210425104750574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
 <h4 id="从正则式构造等价ε-NFA"><a href="#从正则式构造等价ε-NFA" class="headerlink" title="从正则式构造等价ε-NFA"></a>从正则式构造等价ε-NFA</h4><h5 id="归纳构造过程"><a href="#归纳构造过程" class="headerlink" title="归纳构造过程"></a>归纳构造过程</h5><p>对于R+S:</p>
-<p><img src="https://img-blog.csdnimg.cn/20210425104802981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<img src="https://img-blog.csdnimg.cn/20210425104802981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
 <p>对于RS</p>
-<p><img src="https://img-blog.csdnimg.cn/20210425104813882.png" alt="在这里插入图片描述"></p>
+<img src="https://img-blog.csdnimg.cn/20210425104813882.png" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
 <p>对于R*</p>
-<p><img src="https://img-blog.csdnimg.cn/20210425104819942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><p><img src="https://img-blog.csdnimg.cn/20210425104829142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<img src="https://img-blog.csdnimg.cn/20210425104819942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><img src="https://img-blog.csdnimg.cn/20210425104829142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
 <h3 id="3-8-右线性语言与有限自动机"><a href="#3-8-右线性语言与有限自动机" class="headerlink" title="3.8 右线性语言与有限自动机"></a>3.8 右线性语言与有限自动机</h3><p>由右线性文法G定义的语言必然能被一个NFA M所接受。即L(G) = L(M)</p>
 <h4 id="构造与右线性文法等价的有限自动机"><a href="#构造与右线性文法等价的有限自动机" class="headerlink" title="构造与右线性文法等价的有限自动机"></a>构造与右线性文法等价的有限自动机</h4><h5 id="例1-1"><a href="#例1-1" class="headerlink" title="例1"></a>例1</h5><p>设有右线性文法G=({S, B} , {a, b} , P , S),其中 P:S–&gt;aB     B–&gt;aB|bS|a， 试着构造与G等价的有限自动机M</p>
 <h5 id="答题步骤"><a href="#答题步骤" class="headerlink" title="答题步骤"></a>答题步骤</h5><h6 id="构造NFA-M"><a href="#构造NFA-M" class="headerlink" title="构造NFA M"></a>构造NFA M</h6><p> M = ( Q , T , δ , q<del>0</del> , F ) ,</p>
@@ -219,7 +244,9 @@
 <h5 id="最小化算法–填表法"><a href="#最小化算法–填表法" class="headerlink" title="最小化算法–填表法"></a>最小化算法–填表法</h5><h6 id="确定不可达状态"><a href="#确定不可达状态" class="headerlink" title="确定不可达状态"></a>确定不可达状态</h6><p>将不可达状态删除</p>
 <h6 id="区别终态"><a href="#区别终态" class="headerlink" title="区别终态"></a>区别终态</h6><p>终态与非终态不可能为等价状态</p>
 <h6 id="合并等价态"><a href="#合并等价态" class="headerlink" title="合并等价态"></a>合并等价态</h6><p>划分结果时，互为等价态的状态集是用打大括号括起来，最后得出新的状态集合时，每个等价态只用一个状态表示，最后的状态集合每个状态都用中括号括起来</p>
-<h5 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="https://img-blog.csdnimg.cn/20210425104849914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></h5><p><img src="https://img-blog.csdnimg.cn/20210425104854244.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h5 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="https://img-blog.csdnimg.cn/20210425104849914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></h5><img src="https://img-blog.csdnimg.cn/20210425104854244.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
+
+
 <h4 id="泵浦定理"><a href="#泵浦定理" class="headerlink" title="泵浦定理"></a>泵浦定理</h4><p>设L是正则集，存在常数K，对字符串w∈L且 | w | &gt;= n，则 w 可以写成 w<del>1</del>w<del>0</del>w<del>2</del> ，其中 | w<del>1</del>w<del>0</del> | &lt;= n，| w<del>0</del> | &gt; 0，对于所有的 i &gt;= 0 ，有 w<del>1</del>w<del>0</del>^i^w<del>2</del>∈L。//所以 w<del>0</del> 一定是在字符串的前n个字符中找。</p>
 <h5 id="例1-2"><a href="#例1-2" class="headerlink" title="例1"></a>例1</h5><p>求证L={a^k^| k &gt;= 1}不是正则集</p>
 <h5 id="回答规范"><a href="#回答规范" class="headerlink" title="回答规范"></a>回答规范</h5><p>假设L是正则集，取足够大的整数n，w = a^n^。有| w |=| w<del>1</del>w<del>0</del>w<del>2</del> | = n平方 &gt;= n。</p>
@@ -235,12 +262,29 @@
 <p>σ(q,a<del>m+1</del>)=(p,L)//L说明右移   格局描述：a<del>1</del> a<del>2</del>  … a<del>m</del> q a<del>m+1</del>… |- a<del>1</del> a<del>2</del>  …  a<del>m-1</del> q a<del>m</del> …</p>
 <p>2DFA 接受的字符串集合：{w | q<del>0</del>w |-* wq , q∈F }</p>
 <h6 id="确定的双向有限自动机"><a href="#确定的双向有限自动机" class="headerlink" title="确定的双向有限自动机"></a>确定的双向有限自动机</h6><p>不能不动</p>
-<h5 id="有输出的有限自动机"><a href="#有输出的有限自动机" class="headerlink" title="有输出的有限自动机"></a>有输出的有限自动机</h5><h6 id="米兰机-摩尔机"><a href="#米兰机-摩尔机" class="headerlink" title="米兰机                                                                                                            摩尔机"></a>米兰机                                                                                                            摩尔机</h6><p>定义：                   输出字符与输入字符及状态有关                                                                     输出字符仅与状态有关</p>
-<p>形式定义：                                                                                       （Q , T , R , σ , g , q0)</p>
-<pre><code>                    T 有限输入字母表   R 有限输出字母表     σ 转换函数 Q×T--&gt;Q     q0 初始状态
+<h5 id="有输出的有限自动机"><a href="#有输出的有限自动机" class="headerlink" title="有输出的有限自动机"></a>有输出的有限自动机</h5><p>形式定义  （Q , T , R , σ , g , q0)</p>
+<p>T：有限输入字母表   R：有限输出字母表     σ：转换函数 Q×T–&gt;Q     q0：初始状态</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>米兰机</th>
+<th>摩尔机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>定义</td>
+<td>输出字符与输入字符及状态有关</td>
+<td>输出字符仅与状态有关</td>
+</tr>
+<tr>
+<td>g 输出函数</td>
+<td>Q×T–&gt;R</td>
+<td>Q–&gt;R</td>
+</tr>
+</tbody></table>
+<img src="https://img-blog.csdnimg.cn/20210425104907658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
 
-                    g 输出函数   Q×T--&gt;R                                                                g 输出函数   Q--&gt;R</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210425104907658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="4-上下文无关文法与下推自动机"><a href="#4-上下文无关文法与下推自动机" class="headerlink" title="4.上下文无关文法与下推自动机"></a>4.上下文无关文法与下推自动机</h2><h3 id="4-1推导树和二义性"><a href="#4-1推导树和二义性" class="headerlink" title="4.1推导树和二义性"></a>4.1推导树和二义性</h3><h5 id="归约与推导"><a href="#归约与推导" class="headerlink" title="归约与推导"></a>归约与推导</h5><p>G=(N,T,P,S)=( { <em>E,O</em> } , { *<em>,+,v,d,(,)</em> } , P , E ),已知字符串v*(v+d)</p>
 <p>归约：字符串v*(v+d)推导回E</p>
 <p>推导：E推导到字符串v*(v+d)</p>
@@ -248,7 +292,7 @@
 <h6 id="最右推导"><a href="#最右推导" class="headerlink" title="最右推导"></a>最右推导</h6><p>推导过程的每一步总是替换出现在<u><strong>最右边</strong></u>的<u><strong>非终结符</strong></u></p>
 <h6 id="推导树"><a href="#推导树" class="headerlink" title="推导树"></a>推导树</h6><p>根据最左推导或最右推导得出</p>
 <h5 id="二义性"><a href="#二义性" class="headerlink" title="二义性"></a>二义性</h5><p>要证明某个文法是二义的，需要使用这个文法自己创造一个句子(字符串)，再使用两种最左推导或者最右推导得出这个句子就说明此文法二义。</p>
-<h5 id="-1"><a href="#-1" class="headerlink" title=""></a></h5>
+
       
     </div>
     <footer class="article-footer">
