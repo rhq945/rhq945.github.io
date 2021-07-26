@@ -103,9 +103,9 @@ float income;
 
 struct guy fellow[2];/*这是一个结构数组*/
 struct guy * him/*声明一个指向结构的指针*/
-him=fellow[0]/*告诉指针它指向的地址*/</code></pre>
-<h3 id="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。"><a href="#声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。" class="headerlink" title="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。"></a>声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。</h3><h3 id="同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。"><a href="#同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。" class="headerlink" title="同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。"></a>同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。</h3><h3 id="3-使用指针来访问结构体的成员时有两种方法："><a href="#3-使用指针来访问结构体的成员时有两种方法：" class="headerlink" title="(3)使用指针来访问结构体的成员时有两种方法："></a>(3)使用指针来访问结构体的成员时有两种方法：</h3><h3 id="①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即"><a href="#①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即" class="headerlink" title="①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:"></a>①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:</h3><pre><code>him-&gt;job is fellow[0].j0b if him == fellow[0]</code></pre>
-<h3 id="②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有-him-fellow-0"><a href="#②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有-him-fellow-0" class="headerlink" title="②利用&amp;和* 的互逆性,因为him=&amp;fellow[0],则有*him=fellow[0]"></a>②利用&amp;和* 的互逆性,因为him=&amp;fellow[0],则有*him=fellow[0]</h3><h3 id="4-使用指针传递结构成员"><a href="#4-使用指针传递结构成员" class="headerlink" title="(4)使用指针传递结构成员"></a>(4)使用指针传递结构成员</h3><pre><code>#include &lt;stdio.h&gt;
+him=fellow[0]/*告诉指针它指向的地址*/
+</code></pre><h3 id="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。"><a href="#声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。" class="headerlink" title="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。"></a>声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。</h3><h3 id="同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。"><a href="#同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。" class="headerlink" title="同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。"></a>同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。</h3><h3 id="3-使用指针来访问结构体的成员时有两种方法："><a href="#3-使用指针来访问结构体的成员时有两种方法：" class="headerlink" title="(3)使用指针来访问结构体的成员时有两种方法："></a>(3)使用指针来访问结构体的成员时有两种方法：</h3><h3 id="①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即"><a href="#①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即" class="headerlink" title="①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:"></a>①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:</h3><pre><code>him-&gt;job is fellow[0].j0b if him == fellow[0]
+</code></pre><h3 id="②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有him-fellow-0"><a href="#②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有him-fellow-0" class="headerlink" title="②利用&amp;和 的互逆性,因为him=&amp;fellow[0],则有him=fellow[0]"></a>②利用&amp;和<em> 的互逆性,因为him=&amp;fellow[0],则有</em>him=fellow[0]</h3><h3 id="4-使用指针传递结构成员"><a href="#4-使用指针传递结构成员" class="headerlink" title="(4)使用指针传递结构成员"></a>(4)使用指针传递结构成员</h3><pre><code>#include &lt;stdio.h&gt;
 
 double people(const struct guy *)//people函数使用了指针作为参数
 
@@ -118,18 +118,18 @@ int main()
 double people(const struct guy * anyone)//确定指针为anyone
 &#123;
     return anyone-&gt;job;
-&#125;</code></pre>
-<h3 id="需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符"><a href="#需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符" class="headerlink" title="需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符"></a>需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符</h3><h3 id="5-结构指针与malloc"><a href="#5-结构指针与malloc" class="headerlink" title="(5)结构指针与malloc"></a>(5)结构指针与malloc</h3><h3 id="当我们在结构中使用指针来存储字符串时，例如："><a href="#当我们在结构中使用指针来存储字符串时，例如：" class="headerlink" title="当我们在结构中使用指针来存储字符串时，例如："></a>当我们在结构中使用指针来存储字符串时，例如：</h3><pre><code>struct pnames &#123;
+&#125;
+</code></pre><h3 id="需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符"><a href="#需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符" class="headerlink" title="需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符"></a>需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符</h3><h3 id="5-结构指针与malloc"><a href="#5-结构指针与malloc" class="headerlink" title="(5)结构指针与malloc"></a>(5)结构指针与malloc</h3><h3 id="当我们在结构中使用指针来存储字符串时，例如："><a href="#当我们在结构中使用指针来存储字符串时，例如：" class="headerlink" title="当我们在结构中使用指针来存储字符串时，例如："></a>当我们在结构中使用指针来存储字符串时，例如：</h3><pre><code>struct pnames &#123;
     char * first;
     char * last;
-&#125;</code></pre>
-<h3 id="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"><a href="#与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。" class="headerlink" title="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"></a>与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。</h3><h3 id="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。"><a href="#但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。" class="headerlink" title="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。"></a>但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。</h3><pre><code>pnames-&gt;first=(char*)malloc(sizeof(char))//成员指针被分配内存
-free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
-
+&#125;
+</code></pre><h3 id="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"><a href="#与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。" class="headerlink" title="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"></a>与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。</h3><h3 id="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。"><a href="#但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。" class="headerlink" title="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。"></a>但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。</h3><pre><code>pnames-&gt;first=(char*)malloc(sizeof(char))//成员指针被分配内存
+free(pnames-&gt;first)//不要忘记free掉不用的内存
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/02/20/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8B%EF%BC%89/" data-id="ckrjyw85m0004bkv0fcugfsdt" data-title="指针的部分总结（下）" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/02/20/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8B%EF%BC%89/" data-id="ckrk05mtj0004ewv08g400fjs" data-title="指针的部分总结（下）" class="article-share-link">Share</a>
       
       
       

@@ -6,17 +6,17 @@
   
   <title>Spring框架学习1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="1、前期准备1.1、常用网址官网：https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-framework#overview Github下载地址：https:&#x2F;&#x2F;github.com&#x2F;spring-projects&#x2F;spring-framework&#x2F;releases   1.2、maven导包导包网址：https:&#x2F;&#x2F;mvnrepository.com&#x2F;search?q&#x3D;sprin">
+  <meta name="description" content="1、前期准备1.1、常用网址官网：https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-framework#overview Github下载地址：https:&#x2F;&#x2F;github.com&#x2F;spring-projects&#x2F;spring-framework&#x2F;releases  1.2、maven导包导包网址：https:&#x2F;&#x2F;mvnrepository.com&#x2F;search?q&#x3D;spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring框架学习1">
 <meta property="og:url" content="http://example.com/2021/07/26/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A01/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、前期准备1.1、常用网址官网：https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-framework#overview Github下载地址：https:&#x2F;&#x2F;github.com&#x2F;spring-projects&#x2F;spring-framework&#x2F;releases   1.2、maven导包导包网址：https:&#x2F;&#x2F;mvnrepository.com&#x2F;search?q&#x3D;sprin">
+<meta property="og:description" content="1、前期准备1.1、常用网址官网：https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-framework#overview Github下载地址：https:&#x2F;&#x2F;github.com&#x2F;spring-projects&#x2F;spring-framework&#x2F;releases  1.2、maven导包导包网址：https:&#x2F;&#x2F;mvnrepository.com&#x2F;search?q&#x3D;spring">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/07/25/pSx5Gih6kawqe17.png">
 <meta property="og:image" content="https://i.loli.net/2021/07/25/gDfdUYXApjzmRax.gif">
 <meta property="article:published_time" content="2021-07-26T01:42:53.000Z">
-<meta property="article:modified_time" content="2021-07-26T01:48:27.489Z">
+<meta property="article:modified_time" content="2021-07-26T01:54:09.424Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/07/25/pSx5Gih6kawqe17.png">
@@ -100,8 +100,7 @@
       
         <h2 id="1、前期准备"><a href="#1、前期准备" class="headerlink" title="1、前期准备"></a>1、前期准备</h2><h3 id="1-1、常用网址"><a href="#1-1、常用网址" class="headerlink" title="1.1、常用网址"></a>1.1、常用网址</h3><p>官网：<a target="_blank" rel="noopener" href="https://spring.io/projects/spring-framework#overview">https://spring.io/projects/spring-framework#overview</a></p>
 <p>Github下载地址：<a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-framework/releases">https://github.com/spring-projects/spring-framework/releases</a></p>
-<img src="https://i.loli.net/2021/07/25/pSx5Gih6kawqe17.png" alt="Github源码包.png" style="zoom:33%;" />
-
+<p><img src="https://i.loli.net/2021/07/25/pSx5Gih6kawqe17.png" alt="Github源码包.png" style="zoom:33%;" /></p>
 <h3 id="1-2、maven导包"><a href="#1-2、maven导包" class="headerlink" title="1.2、maven导包"></a>1.2、maven导包</h3><p>导包网址：<a target="_blank" rel="noopener" href="https://mvnrepository.com/search?q=spring">https://mvnrepository.com/search?q=spring</a></p>
 <p>导入Spring Web MVC包</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -144,22 +143,7 @@
 <li><p>区别</p>
 </li>
 </ol>
-<table>
-<thead>
-<tr>
-<th>ref</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>引用spring中已有的bean对象</td>
-<td>赋一些简单类型的值和对象的具体值</td>
-</tr>
-<tr>
-<td>使用ref的时候，spring容器会在引用后进行验证，验证当前的xml是否存在引用的bean</td>
-<td>使用value的时候，spring会在容器启动，实例化bean的时候进行验证</td>
-</tr>
-</tbody></table>
+<p>| ref                                                          | value                                                        |<br>| —————————————————————————————— | —————————————————————————————— |<br>| 引用spring中已有的bean对象                                   | 赋一些简单类型的值和对象的具体值                             |<br>| 使用ref的时候，spring容器会在引用后进行验证，验证当前的xml是否存在引用的bean | 使用value的时候，spring会在容器启动，实例化bean的时候进行验证 |</p>
 </li>
 </ol>
 </li>
@@ -207,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/26/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A01/" data-id="ckrjyw85h0001bkv071w43sti" data-title="Spring框架学习1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/26/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A01/" data-id="ckrk05mt70001ewv0dze7dnb3" data-title="Spring框架学习1" class="article-share-link">Share</a>
       
       
       

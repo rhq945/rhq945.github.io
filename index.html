@@ -94,18 +94,18 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1.绪论"></a>1.绪论</h2><h3 id="形式语言定义"><a href="#形式语言定义" class="headerlink" title="形式语言定义"></a>形式语言定义</h3><p>自动机：具有离散输入输出的数学模型</p>
-<h3 id="⭐对应关系"><a href="#⭐对应关系" class="headerlink" title="⭐对应关系"></a>⭐对应关系</h3><p>非限定性语言        ———-        图灵机 </p>
-<p>上下文有关语言    ———-        线性有界自动机 </p>
-<p>上下文无关语言    ———-        下推式自动机</p>
-<p>正则语言               ———-        有限自动机 </p>
+<h3 id="⭐对应关系"><a href="#⭐对应关系" class="headerlink" title="⭐对应关系"></a>⭐对应关系</h3><p>非限定性语言        —————        图灵机 </p>
+<p>上下文有关语言    —————        线性有界自动机 </p>
+<p>上下文无关语言    —————        下推式自动机</p>
+<p>正则语言               —————        有限自动机 </p>
 <h2 id="2-语言及文法"><a href="#2-语言及文法" class="headerlink" title="2.语言及文法"></a>2.语言及文法</h2><h3 id="字符串运算"><a href="#字符串运算" class="headerlink" title="字符串运算"></a>字符串运算</h3><p>字符串：简称为‘字’或者‘串’，是由字母表T中字符构成的有限序列</p>
 <p>连接</p>
 <p>取头字符,取尾部,子串匹配</p>
-<p>逆:字符串倒置：w<del>1</del>=a<del>1</del>a<del>2</del>a<del>3</del>–&gt;w<del>1</del>上有一横=a<del>3</del>a<del>2</del>a<del>1</del></p>
+<p>逆:字符串倒置：w~1~=a~1~a~2~a~3~—&gt;w~1~上有一横=a~3~a~2~a~1~</p>
 <p>幂运算:自身连接 ，T^0^={ε}</p>
-<p>闭包(*,+):*闭包包括{ε}，+闭包不包括</p>
-<h3 id="语言："><a href="#语言：" class="headerlink" title="语言："></a>语言：</h3><p><u>注意：L<del>1</del>={ε}和L2={}=Φ不一样，前者是只有一个空句子的语言，后者是空语言</u></p>
-<h4 id="语言的积"><a href="#语言的积" class="headerlink" title="语言的积"></a>语言的积</h4><p>L<del>1</del>={ ab , ba },L<del>2</del>={  aa , bb };则L<del>1</del>L<del>2</del>={abaa,abbb,baaa,babb};L<del>1</del>L<del>2</del> ≠ L<del>2</del>L<del>1</del>.</p>
+<p>闭包(<em>,+):</em>闭包包括{ε}，+闭包不包括</p>
+<h3 id="语言："><a href="#语言：" class="headerlink" title="语言："></a>语言：</h3><p><u>注意：L~1~={ε}和L2={}=Φ不一样，前者是只有一个空句子的语言，后者是空语言</u></p>
+<h4 id="语言的积"><a href="#语言的积" class="headerlink" title="语言的积"></a>语言的积</h4><p>L~1~={ ab , ba },L~2~={  aa , bb };则L~1~L~2~={abaa,abbb,baaa,babb};L~1~L~2~ ≠ L~2~L~1~.</p>
 <h4 id="语言的幂"><a href="#语言的幂" class="headerlink" title="语言的幂"></a>语言的幂</h4><p>自身连接</p>
 <h3 id="文法定义"><a href="#文法定义" class="headerlink" title="文法定义"></a>文法定义</h3><h4 id="四元组G-N-T-P-S"><a href="#四元组G-N-T-P-S" class="headerlink" title="四元组G={N,T,P,S}"></a>四元组G={<em>N,T,P,S</em>}</h4><p>L(G)是文法生成的句子</p>
 <p><em>N</em>:非终结符的有限集合</p>
@@ -113,9 +113,9 @@
 <p><em>P</em>: 生成式的有限集合</p>
 <p><em>S</em>: 起始符，<em>S</em>∈<em>N</em></p>
 <h3 id="文法分类："><a href="#文法分类：" class="headerlink" title="文法分类："></a>文法分类：</h3><h4 id="0型文法"><a href="#0型文法" class="headerlink" title="0型文法"></a>0型文法</h4><p>无限制</p>
-<h4 id="1型文法"><a href="#1型文法" class="headerlink" title="1型文法"></a>1型文法</h4><pre><code>α--&gt;β,其中|α|&lt;|β|, β∈(N∪T)^+^,α∈(N∪T)^*^N^+^(N∪T)^*^，即意味着左边必须至少有一个起始符，右边可以起始也可以不起始，但右边长度必须不小于左边长度。对应语言：上下文有关语言</code></pre>
-<h4 id="2型文法"><a href="#2型文法" class="headerlink" title="2型文法"></a>2型文法</h4><pre><code>A--&gt;α，A∈N，α∈(N∪T)^*^，即意味着左边必须是一个起始符，右边无限制，但长度不小于1（满足1型文法）。对应语言：上下文无关语言</code></pre>
-<h4 id="3型文法-正则文法"><a href="#3型文法-正则文法" class="headerlink" title="3型文法/正则文法"></a>3型文法/正则文法</h4><pre><code>右线性文法：
+<h4 id="1型文法"><a href="#1型文法" class="headerlink" title="1型文法"></a>1型文法</h4><pre><code>α--&gt;β,其中|α|&lt;|β|, β∈(N∪T)^+^,α∈(N∪T)^*^N^+^(N∪T)^*^，即意味着左边必须至少有一个起始符，右边可以起始也可以不起始，但右边长度必须不小于左边长度。对应语言：上下文有关语言
+</code></pre><h4 id="2型文法"><a href="#2型文法" class="headerlink" title="2型文法"></a>2型文法</h4><pre><code>A--&gt;α，A∈N，α∈(N∪T)^*^，即意味着左边必须是一个起始符，右边无限制，但长度不小于1（满足1型文法）。对应语言：上下文无关语言
+</code></pre><h4 id="3型文法-正则文法"><a href="#3型文法-正则文法" class="headerlink" title="3型文法/正则文法"></a>3型文法/正则文法</h4><pre><code>右线性文法：
 
     A--&gt;wB 或 A--&gt;w   A,B∈N，w∈T^*^.
 
@@ -123,50 +123,36 @@
 
     A--&gt;Bw 或 A--&gt;w   A,B∈N，w∈T^*^.
 
-对应语言：正则语言</code></pre>
-<h2 id="3-有限自动机和右线性文法"><a href="#3-有限自动机和右线性文法" class="headerlink" title="3.有限自动机和右线性文法"></a>3.有限自动机和右线性文法</h2><h3 id="3-1确定的有限自动机DFA"><a href="#3-1确定的有限自动机DFA" class="headerlink" title="3.1确定的有限自动机DFA"></a>3.1确定的有限自动机DFA</h3><p>五元组 = ( Q , T , δ , q<del>0</del> , F )</p>
-<p>Q x T –&gt; Q.</p>
+对应语言：正则语言
+</code></pre><h2 id="3-有限自动机和右线性文法"><a href="#3-有限自动机和右线性文法" class="headerlink" title="3.有限自动机和右线性文法"></a>3.有限自动机和右线性文法</h2><h3 id="3-1确定的有限自动机DFA"><a href="#3-1确定的有限自动机DFA" class="headerlink" title="3.1确定的有限自动机DFA"></a>3.1确定的有限自动机DFA</h3><p>五元组 = ( Q , T , δ , q~0~ , F )</p>
+<p>Q x T —&gt; Q.</p>
 <p>切记：不管是转移图还是转移表表示DFA时，<u>都要注意初始状态和终止状态</u>。初始状态前有箭头，终止状态               有双圈。</p>
 <p>被DFA接受的字符串必须在输入结束后能够使DFA状态达到终止</p>
 <h4 id="格局"><a href="#格局" class="headerlink" title="格局"></a>格局</h4><p>包括信息：当前状态q，待输入字符串w. 两者构成的瞬时描述 ( q , w )</p>
-<p>初始格局：( q<del>0</del> , w )</p>
+<p>初始格局：( q~0~ , w )</p>
 <p>终止格局： ( q , ε ), q∈F</p>
-<img src="https://img-blog.csdnimg.cn/20210425104536664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom: 50%;" />
-
-
-<h4 id="设计有限自动机："><a href="#设计有限自动机：" class="headerlink" title="设计有限自动机："></a>设计有限自动机：</h4><h5 id="多个例子"><a href="#多个例子" class="headerlink" title="多个例子"></a>多个例子</h5><img src="https://img-blog.csdnimg.cn/2021042510455461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" />
-<img src="https://img-blog.csdnimg.cn/20210425104602388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" />
-<img src="https://img-blog.csdnimg.cn/20210425104605844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" />
-
-
-<h3 id="3-2-不确定有限自动机：NFA"><a href="#3-2-不确定有限自动机：NFA" class="headerlink" title="3.2 不确定有限自动机：NFA"></a>3.2 不确定有限自动机：NFA</h3><h4 id="五元组：NFA-M-Q-T-δ-q0-F"><a href="#五元组：NFA-M-Q-T-δ-q0-F" class="headerlink" title="五元组：NFA M = ( Q , T , δ , q0 , F )"></a>五元组：NFA M = ( Q , T , δ , q<del>0</del> , F )</h4><p>其中δ = Q x T –&gt;2^Q^</p>
+<p><img src="https://img-blog.csdnimg.cn/20210425104536664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom: 50%;" /></p>
+<h4 id="设计有限自动机："><a href="#设计有限自动机：" class="headerlink" title="设计有限自动机："></a>设计有限自动机：</h4><h5 id="多个例子"><a href="#多个例子" class="headerlink" title="多个例子"></a>多个例子</h5><p><img src="https://img-blog.csdnimg.cn/2021042510455461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" /><br><img src="https://img-blog.csdnimg.cn/20210425104602388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" /><br><img src="https://img-blog.csdnimg.cn/20210425104605844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:50%;" /></p>
+<h3 id="3-2-不确定有限自动机：NFA"><a href="#3-2-不确定有限自动机：NFA" class="headerlink" title="3.2 不确定有限自动机：NFA"></a>3.2 不确定有限自动机：NFA</h3><h4 id="五元组：NFA-M-Q-T-δ-q-0-F"><a href="#五元组：NFA-M-Q-T-δ-q-0-F" class="headerlink" title="五元组：NFA M = ( Q , T , δ , q~0~ , F )"></a>五元组：NFA M = ( Q , T , δ , q~0~ , F )</h4><p>其中δ = Q x T —&gt;2^Q^</p>
 <p>DFA是特殊的NFA ，NFA转化DFA：</p>
 <h4 id="子集构造法"><a href="#子集构造法" class="headerlink" title="子集构造法"></a>子集构造法</h4><p>列表法进行，注意以下几点：</p>
 <p>表中的状态集合要在中括号中。例：[ p ]，[ q , r ];</p>
 <p>表中的起始状态要加箭头，终止状态要加星号*</p>
 <p>最后的图中状态集合要在大括号中。例：{ q }, { q , r },同时外加圆圈，终止状态双重圆圈</p>
-<h3 id="3-3-ε-NFA"><a href="#3-3-ε-NFA" class="headerlink" title="3.3 ε-NFA"></a>3.3 ε-NFA</h3><h4 id="五元组：NFA-M-Q-T-δ-q0-F-1"><a href="#五元组：NFA-M-Q-T-δ-q0-F-1" class="headerlink" title="五元组：NFA M = ( Q , T , δ , q0 , F )"></a>五元组：NFA M = ( Q , T , δ , q<del>0</del> , F )</h4><p>其中δ = Q x( T ∪{ ε }) –&gt; 2^Q^</p>
+<h3 id="3-3-ε-NFA"><a href="#3-3-ε-NFA" class="headerlink" title="3.3 ε-NFA"></a>3.3 ε-NFA</h3><h4 id="五元组：NFA-M-Q-T-δ-q-0-F-1"><a href="#五元组：NFA-M-Q-T-δ-q-0-F-1" class="headerlink" title="五元组：NFA M = ( Q , T , δ , q~0~ , F )"></a>五元组：NFA M = ( Q , T , δ , q~0~ , F )</h4><p>其中δ = Q x( T ∪{ ε }) —&gt; 2^Q^</p>
 <h4 id="ε闭包"><a href="#ε闭包" class="headerlink" title="ε闭包"></a>ε闭包</h4><p>ε-CLOSURE或ECLOSE，定义为从q经过所有的ε路径可到达状态，包括q自身</p>
 <p>状态子集的ε-闭包：ε-CLOSURE( I ) = ∪ε-CLOSURE( q ),q∈I</p>
 <p>Ia定义：对于状态子集 I ⊆ Q,任意 a ∈ T，Ia = ε-CLOSURE( δ ( I , a ) ) .</p>
 <p>定义P = δ ( I , a ):P是从I中的所有状态经过一条标a的边可以到达的状态集合</p>
-<p>计算δ’ ( q<del>0</del> , a ):</p>
-<p>δ’ ( q<del>0</del> , a ) = ε-CLOSURE{ δ [ δ’ ( q<del>0</del> , ε ) , a ] }</p>
-<p>​                 = ε-CLOSURE{ δ [ ε-CLOSURE(q<del>0</del>) , a ] } </p>
-<p>//先求一个q<del>0</del>的ε-闭包，再将其闭包后的结果全部经过一个a形成的集合，再将其集合中的元素全部进行ε-闭包得到集合即为最终答案。</p>
-<h4 id="构造ε-NFA自动机"><a href="#构造ε-NFA自动机" class="headerlink" title="构造ε-NFA自动机"></a>构造ε-NFA自动机</h4><img src="https://img-blog.csdnimg.cn/20210425104952819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
-<h5 id="ε-NFA自动机格局"><a href="#ε-NFA自动机格局" class="headerlink" title="ε-NFA自动机格局"></a>ε-NFA自动机格局</h5><img src="https://img-blog.csdnimg.cn/20210425104646931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
-<h4 id="ε-NFA转化NFA"><a href="#ε-NFA转化NFA" class="headerlink" title="ε-NFA转化NFA"></a>ε-NFA转化NFA</h4><h5 id="ε闭包法："><a href="#ε闭包法：" class="headerlink" title="ε闭包法："></a>ε闭包法：</h5><img src="https://img-blog.csdnimg.cn/20210425104701441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
+<p>计算δ’ ( q~0~ , a ):</p>
+<p>δ’ ( q~0~ , a ) = ε-CLOSURE{ δ [ δ’ ( q~0~ , ε ) , a ] }</p>
+<p>​                 = ε-CLOSURE{ δ [ ε-CLOSURE(q~0~) , a ] } </p>
+<p>//先求一个q~0~的ε-闭包，再将其闭包后的结果全部经过一个a形成的集合，再将其集合中的元素全部进行ε-闭包得到集合即为最终答案。</p>
+<h4 id="构造ε-NFA自动机"><a href="#构造ε-NFA自动机" class="headerlink" title="构造ε-NFA自动机"></a>构造ε-NFA自动机</h4><p><img src="https://img-blog.csdnimg.cn/20210425104952819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
+<h5 id="ε-NFA自动机格局"><a href="#ε-NFA自动机格局" class="headerlink" title="ε-NFA自动机格局"></a>ε-NFA自动机格局</h5><p><img src="https://img-blog.csdnimg.cn/20210425104646931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
+<h4 id="ε-NFA转化NFA"><a href="#ε-NFA转化NFA" class="headerlink" title="ε-NFA转化NFA"></a>ε-NFA转化NFA</h4><h5 id="ε闭包法："><a href="#ε闭包法：" class="headerlink" title="ε闭包法："></a>ε闭包法：</h5><p><img src="https://img-blog.csdnimg.cn/20210425104701441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
 <p>一个一个找，从起始状态开始将ε路径跳过(空跳)，比如从X跳到A，那么A接受1到B，就可以看成X接受1到B，既然X可以空跳经过G，那么讨论完X之后就不再讨论G。</p>
-<img src="https://img-blog.csdnimg.cn/20210425104713172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
+<p><img src="https://img-blog.csdnimg.cn/20210425104713172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
 <h3 id="3-4-正则集和正则式"><a href="#3-4-正则集和正则式" class="headerlink" title="3.4 正则集和正则式"></a>3.4 正则集和正则式</h3><h4 id="正则集"><a href="#正则集" class="headerlink" title="正则集"></a>正则集</h4><p>字母表上一些特殊形式的字符串集合</p>
 <p>{ε} , Φ , {a}都是正则集</p>
 <h4 id="正则式"><a href="#正则式" class="headerlink" title="正则式"></a>正则式</h4><p>用类似代数表达式的方法表示正则语言</p>
@@ -174,12 +160,12 @@
 <h4 id="运算：作用于语言上的代数运算"><a href="#运算：作用于语言上的代数运算" class="headerlink" title="运算：作用于语言上的代数运算"></a>运算：作用于语言上的代数运算</h4><p>若A,B为正则式，L{ A } , L{ B }为正则集</p>
 <p>联合：A+B   或者   L { A } ∪ L { B } 或者的关系，若之后没有*闭包运算，则A,B不能共存，每次只出现一个</p>
 <p>连接：AB   或者   L{ A } · L{ B }  顺序的关系</p>
-<p>星闭包：A*  或者 L(A)* </p>
+<p>星闭包：A<em>  或者 L(A)</em> </p>
 <p>算数符优先级：* 大于 · 大于 +</p>
 <h4 id="正则式的性质"><a href="#正则式的性质" class="headerlink" title="正则式的性质"></a>正则式的性质</h4><p>L^+^一定不包含ε吗？不一定，如果L中包含ε，那么L^+^也可以包含ε.</p>
 <h5 id="与闭包有关的定律"><a href="#与闭包有关的定律" class="headerlink" title="与闭包有关的定律"></a>与闭包有关的定律</h5><p>(a^<em>^)^</em>^=a^<em>^,  a^</em>^=a+a^<em>^, L^+^=LL^</em>^=L^<em>^L, L^</em>^=L^+^∪{ε}</p>
 <h4 id="右线性文法与正则式"><a href="#右线性文法与正则式" class="headerlink" title="右线性文法与正则式"></a>右线性文法与正则式</h4><p>两者等效</p>
-<p>文法 S –&gt; aS,  S –&gt; a</p>
+<p>文法 S —&gt; aS,  S —&gt; a</p>
 <p>对应正则式 a^+^ = a*a</p>
 <h5 id="从右线性文法导出正则式："><a href="#从右线性文法导出正则式：" class="headerlink" title="从右线性文法导出正则式："></a>从右线性文法导出正则式：</h5><h6 id="求解规则"><a href="#求解规则" class="headerlink" title="求解规则"></a>求解规则</h6><p>设x=αx+β，α∈T^<em>^，β∈(N∪T)^</em>^,x∈N，则x的解为x=α^*^β</p>
 <h6 id="求解方法"><a href="#求解方法" class="headerlink" title="求解方法"></a>求解方法</h6><p>将右线性文法的生成式写成联立方程，将所有的大写字母当作未知数求解</p>
@@ -188,82 +174,69 @@
 <p>确定其余部分：(a+b)^*^</p>
 <p>得出正则式：(a+b)^<em>^aa(a+b)^</em>^bb(a+b)^<em>^ + (a+b)^</em>^bb(a+b)^<em>^aa(a+b)^</em>^</p>
 <h5 id="根据正则式得出右线性文法"><a href="#根据正则式得出右线性文法" class="headerlink" title="根据正则式得出右线性文法"></a>根据正则式得出右线性文法</h5><h6 id="分解规则"><a href="#分解规则" class="headerlink" title="分解规则"></a>分解规则</h6><p>需要从左侧开始分解</p>
-<p>对于aX的形式，可以转化为S–&gt;aX</p>
-<p>对于(a+b)X的形式，可以转化为S–&gt;aX|bX</p>
-<p>对于a*的形式，可以转化为S–&gt;aS</p>
-<h6 id="逐步分解"><a href="#逐步分解" class="headerlink" title="逐步分解"></a>逐步分解</h6><p>首先，对(a+b)^*^（相当于提公因式），有S–&gt;aS|bS</p>
-<p>然后，对于剩下的aa(a+b)^<em>^bb(a+b)^</em>^和bb(a+b)^<em>^aa(a+b)^</em>^，因为是两部分相加得到，所以有S–&gt;aaA|bbB</p>
+<p>对于aX的形式，可以转化为S—&gt;aX</p>
+<p>对于(a+b)X的形式，可以转化为S—&gt;aX|bX</p>
+<p>对于a*的形式，可以转化为S—&gt;aS</p>
+<h6 id="逐步分解"><a href="#逐步分解" class="headerlink" title="逐步分解"></a>逐步分解</h6><p>首先，对(a+b)^*^（相当于提公因式），有S—&gt;aS|bS</p>
+<p>然后，对于剩下的aa(a+b)^<em>^bb(a+b)^</em>^和bb(a+b)^<em>^aa(a+b)^</em>^，因为是两部分相加得到，所以有S—&gt;aaA|bbB</p>
 <p>其中，A = (a+b)^<em>^bb(a+b)^</em>^，B = (a+b)^<em>^aa(a+b)^</em>^</p>
-<p>先研究A，对于(a+b)^*^，有A–&gt;aA|bA</p>
-<p>剩下bb(a+b)^<em>^，有A–&gt;bbC,其中C=(a+b)^</em>^</p>
-<p>所以C–&gt;aC|bC|ε</p>
-<p>同理，B–&gt;aB|bB|aaC</p>
-<h6 id="得出答案"><a href="#得出答案" class="headerlink" title="得出答案"></a>得出答案</h6><p>S–&gt;aS|bS|aaA|bbB</p>
-<p>A–&gt;aA|bA|bbC</p>
-<p>B–&gt;aB|bB|aaC</p>
-<p>C–&gt;aC|bC|ε</p>
+<p>先研究A，对于(a+b)^*^，有A—&gt;aA|bA</p>
+<p>剩下bb(a+b)^<em>^，有A—&gt;bbC,其中C=(a+b)^</em>^</p>
+<p>所以C—&gt;aC|bC|ε</p>
+<p>同理，B—&gt;aB|bB|aaC</p>
+<h6 id="得出答案"><a href="#得出答案" class="headerlink" title="得出答案"></a>得出答案</h6><p>S—&gt;aS|bS|aaA|bbB</p>
+<p>A—&gt;aA|bA|bbC</p>
+<p>B—&gt;aB|bB|aaC</p>
+<p>C—&gt;aC|bC|ε</p>
 <h3 id="3-7-正则表达式与有限自动机的关系"><a href="#3-7-正则表达式与有限自动机的关系" class="headerlink" title="3.7 正则表达式与有限自动机的关系"></a>3.7 正则表达式与有限自动机的关系</h3><h4 id="从DFA构造正则表达式"><a href="#从DFA构造正则表达式" class="headerlink" title="从DFA构造正则表达式"></a>从DFA构造正则表达式</h4><h5 id="状态消去法"><a href="#状态消去法" class="headerlink" title="状态消去法"></a>状态消去法</h5><p>消去的是中间状态，即除了起始和终止都要消去</p>
 <p>最终得到的正则表达式为每一终态对应的正则表达式之和</p>
-<h5 id="消去规则"><a href="#消去规则" class="headerlink" title="消去规则"></a>消去规则</h5><img src="https://img-blog.csdnimg.cn/2021042510473746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
+<h5 id="消去规则"><a href="#消去规则" class="headerlink" title="消去规则"></a>消去规则</h5><p><img src="https://img-blog.csdnimg.cn/2021042510473746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
 <p>例1</p>
-<img src="https://img-blog.csdnimg.cn/2021042510474488.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
+<p><img src="https://img-blog.csdnimg.cn/2021042510474488.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
 <p>例2</p>
-<img src="https://img-blog.csdnimg.cn/20210425104750574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
+<p><img src="https://img-blog.csdnimg.cn/20210425104750574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
 <h4 id="从正则式构造等价ε-NFA"><a href="#从正则式构造等价ε-NFA" class="headerlink" title="从正则式构造等价ε-NFA"></a>从正则式构造等价ε-NFA</h4><h5 id="归纳构造过程"><a href="#归纳构造过程" class="headerlink" title="归纳构造过程"></a>归纳构造过程</h5><p>对于R+S:</p>
-<img src="https://img-blog.csdnimg.cn/20210425104802981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
+<p><img src="https://img-blog.csdnimg.cn/20210425104802981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
 <p>对于RS</p>
-<img src="https://img-blog.csdnimg.cn/20210425104813882.png" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
+<p><img src="https://img-blog.csdnimg.cn/20210425104813882.png" alt="在这里插入图片描述" style="zoom:33%;" /></p>
 <p>对于R*</p>
-<img src="https://img-blog.csdnimg.cn/20210425104819942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><img src="https://img-blog.csdnimg.cn/20210425104829142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
+<p><img src="https://img-blog.csdnimg.cn/20210425104819942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><p><img src="https://img-blog.csdnimg.cn/20210425104829142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
 <h3 id="3-8-右线性语言与有限自动机"><a href="#3-8-右线性语言与有限自动机" class="headerlink" title="3.8 右线性语言与有限自动机"></a>3.8 右线性语言与有限自动机</h3><p>由右线性文法G定义的语言必然能被一个NFA M所接受。即L(G) = L(M)</p>
-<h4 id="构造与右线性文法等价的有限自动机"><a href="#构造与右线性文法等价的有限自动机" class="headerlink" title="构造与右线性文法等价的有限自动机"></a>构造与右线性文法等价的有限自动机</h4><h5 id="例1-1"><a href="#例1-1" class="headerlink" title="例1"></a>例1</h5><p>设有右线性文法G=({S, B} , {a, b} , P , S),其中 P:S–&gt;aB     B–&gt;aB|bS|a， 试着构造与G等价的有限自动机M</p>
-<h5 id="答题步骤"><a href="#答题步骤" class="headerlink" title="答题步骤"></a>答题步骤</h5><h6 id="构造NFA-M"><a href="#构造NFA-M" class="headerlink" title="构造NFA M"></a>构造NFA M</h6><p> M = ( Q , T , δ , q<del>0</del> , F ) ,</p>
-<h6 id="将Q-T-q0-F-全部表明清楚"><a href="#将Q-T-q0-F-全部表明清楚" class="headerlink" title="将Q , T , q0 , F 全部表明清楚"></a>将Q , T , q<del>0</del> , F 全部表明清楚</h6><p>注意Q中要多一个H作为终止状态:  Q = { S, B, H }，T = { a, b },  q<del>0</del> = S, F = { H }</p>
+<h4 id="构造与右线性文法等价的有限自动机"><a href="#构造与右线性文法等价的有限自动机" class="headerlink" title="构造与右线性文法等价的有限自动机"></a>构造与右线性文法等价的有限自动机</h4><h5 id="例1-1"><a href="#例1-1" class="headerlink" title="例1"></a>例1</h5><p>设有右线性文法G=({S, B} , {a, b} , P , S),其中 P:S—&gt;aB     B—&gt;aB|bS|a， 试着构造与G等价的有限自动机M</p>
+<h5 id="答题步骤"><a href="#答题步骤" class="headerlink" title="答题步骤"></a>答题步骤</h5><h6 id="构造NFA-M"><a href="#构造NFA-M" class="headerlink" title="构造NFA M"></a>构造NFA M</h6><p> M = ( Q , T , δ , q~0~ , F ) ,</p>
+<h6 id="将Q-T-q-0-F-全部表明清楚"><a href="#将Q-T-q-0-F-全部表明清楚" class="headerlink" title="将Q , T , q~0~ , F 全部表明清楚"></a>将Q , T , q~0~ , F 全部表明清楚</h6><p>注意Q中要多一个H作为终止状态:  Q = { S, B, H }，T = { a, b },  q~0~ = S, F = { H }</p>
 <h6 id="构造转换函数δ"><a href="#构造转换函数δ" class="headerlink" title="构造转换函数δ"></a>构造转换函数δ</h6><p>每个产生式都对应一个δ</p>
-<p>对 S–&gt;aB，有 δ(S,a) = {B}</p>
-<p>对 B–&gt;aB，有 δ(B,a) = {B}</p>
-<p>对 B–&gt;bS，有 δ(B,b) = {S}</p>
-<p>对 B–&gt;a，  有 δ(B,a) = {H}</p>
-<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>构造δ时，只有在形如S–&gt;aB时能使用，即右边不能超过两个字母表中字母。如果出现S–&gt;abB，则必须新构造一个状态，使得S–&gt;aC, C–&gt;bB. </p>
-<h3 id="3-9-3-10右线性语言的性质"><a href="#3-9-3-10右线性语言的性质" class="headerlink" title="3.9-3.10右线性语言的性质"></a>3.9-3.10右线性语言的性质</h3><h4 id="DFA极小化"><a href="#DFA极小化" class="headerlink" title="DFA极小化"></a>DFA极小化</h4><h5 id="等价状态"><a href="#等价状态" class="headerlink" title="等价状态"></a>等价状态</h5><p>DFA M = ( Q , T , δ , q<del>0</del> , F ) , 对于任意两个状态q<del>1</del>q<del>2</del>∈Q和每个w∈T^<em>^，若有：(q<del>1</del> , w)|-^</em>^(q,ε)&lt;==&gt;(q<del>1</del> , w)|-^*^(q,ε)且q∈F，则称q<del>1</del>与q<del>2</del>等价，记作q<del>1</del>≡q<del>2</del></p>
-<h5 id="不可达状态"><a href="#不可达状态" class="headerlink" title="不可达状态"></a>不可达状态</h5><p>不存在任何w∈T^<em>^，能够使(q<del>0</del> , w)|-^</em>^(q,ε)，则称 q∈Q 为不可达状态</p>
+<p>对 S—&gt;aB，有 δ(S,a) = {B}</p>
+<p>对 B—&gt;aB，有 δ(B,a) = {B}</p>
+<p>对 B—&gt;bS，有 δ(B,b) = {S}</p>
+<p>对 B—&gt;a，  有 δ(B,a) = {H}</p>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>构造δ时，只有在形如S—&gt;aB时能使用，即右边不能超过两个字母表中字母。如果出现S—&gt;abB，则必须新构造一个状态，使得S—&gt;aC, C—&gt;bB. </p>
+<h3 id="3-9-3-10右线性语言的性质"><a href="#3-9-3-10右线性语言的性质" class="headerlink" title="3.9-3.10右线性语言的性质"></a>3.9-3.10右线性语言的性质</h3><h4 id="DFA极小化"><a href="#DFA极小化" class="headerlink" title="DFA极小化"></a>DFA极小化</h4><h5 id="等价状态"><a href="#等价状态" class="headerlink" title="等价状态"></a>等价状态</h5><p>DFA M = ( Q , T , δ , q~0~ , F ) , 对于任意两个状态q~1~q~2~∈Q和每个w∈T^<em>^，若有：(q~1~ , w)|-^</em>^(q,ε)&lt;==&gt;(q~1~ , w)|-^*^(q,ε)且q∈F，则称q~1~与q~2~等价，记作q~1~≡q~2~</p>
+<h5 id="不可达状态"><a href="#不可达状态" class="headerlink" title="不可达状态"></a>不可达状态</h5><p>不存在任何w∈T^<em>^，能够使(q~0~ , w)|-^</em>^(q,ε)，则称 q∈Q 为不可达状态</p>
 <h4 id="最小化"><a href="#最小化" class="headerlink" title="最小化"></a>最小化</h4><p>若DFA M不存在互为等价状态和不可达状态，则称 DFA M 为最小化的</p>
-<h5 id="最小化算法–填表法"><a href="#最小化算法–填表法" class="headerlink" title="最小化算法–填表法"></a>最小化算法–填表法</h5><h6 id="确定不可达状态"><a href="#确定不可达状态" class="headerlink" title="确定不可达状态"></a>确定不可达状态</h6><p>将不可达状态删除</p>
+<h5 id="最小化算法—填表法"><a href="#最小化算法—填表法" class="headerlink" title="最小化算法—填表法"></a>最小化算法—填表法</h5><h6 id="确定不可达状态"><a href="#确定不可达状态" class="headerlink" title="确定不可达状态"></a>确定不可达状态</h6><p>将不可达状态删除</p>
 <h6 id="区别终态"><a href="#区别终态" class="headerlink" title="区别终态"></a>区别终态</h6><p>终态与非终态不可能为等价状态</p>
 <h6 id="合并等价态"><a href="#合并等价态" class="headerlink" title="合并等价态"></a>合并等价态</h6><p>划分结果时，互为等价态的状态集是用打大括号括起来，最后得出新的状态集合时，每个等价态只用一个状态表示，最后的状态集合每个状态都用中括号括起来</p>
-<h5 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="https://img-blog.csdnimg.cn/20210425104849914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></h5><img src="https://img-blog.csdnimg.cn/20210425104854244.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-
-<h4 id="泵浦定理"><a href="#泵浦定理" class="headerlink" title="泵浦定理"></a>泵浦定理</h4><p>设L是正则集，存在常数K，对字符串w∈L且 | w | &gt;= n，则 w 可以写成 w<del>1</del>w<del>0</del>w<del>2</del> ，其中 | w<del>1</del>w<del>0</del> | &lt;= n，| w<del>0</del> | &gt; 0，对于所有的 i &gt;= 0 ，有 w<del>1</del>w<del>0</del>^i^w<del>2</del>∈L。//所以 w<del>0</del> 一定是在字符串的前n个字符中找。</p>
+<h5 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="https://img-blog.csdnimg.cn/20210425104849914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></h5><p><img src="https://img-blog.csdnimg.cn/20210425104854244.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
+<h4 id="泵浦定理"><a href="#泵浦定理" class="headerlink" title="泵浦定理"></a>泵浦定理</h4><p>设L是正则集，存在常数K，对字符串w∈L且 | w | &gt;= n，则 w 可以写成 w~1~w~0~w~2~ ，其中 | w~1~w~0~ | &lt;= n，| w~0~ | &gt; 0，对于所有的 i &gt;= 0 ，有 w~1~w~0~^i^w~2~∈L。//所以 w~0~ 一定是在字符串的前n个字符中找。</p>
 <h5 id="例1-2"><a href="#例1-2" class="headerlink" title="例1"></a>例1</h5><p>求证L={a^k^| k &gt;= 1}不是正则集</p>
-<h5 id="回答规范"><a href="#回答规范" class="headerlink" title="回答规范"></a>回答规范</h5><p>假设L是正则集，取足够大的整数n，w = a^n^。有| w |=| w<del>1</del>w<del>0</del>w<del>2</del> | = n平方 &gt;= n。</p>
-<p>因为 | w<del>1</del>w<del>2</del> | &lt;= n，| w<del>0</del> | &gt; 0，若取 i = 2，则 的情况为| w<del>1</del>w<del>0</del>w<del>0</del>w<del>2</del> |=| w |+| w<del>0</del> |, | w | = n平方,   0 &lt; | w<del>0</del> | &lt;= n, 所以        n平方 &lt; | w | + | w<del>0</del> | &lt;= n平方+n &lt; (n+1)平方,所以不满足w = a的n^2^次方（串长不是整数平方），所以与假设冲突。</p>
+<h5 id="回答规范"><a href="#回答规范" class="headerlink" title="回答规范"></a>回答规范</h5><p>假设L是正则集，取足够大的整数n，w = a^n^。有| w |=| w~1~w~0~w~2~ | = n平方 &gt;= n。</p>
+<p>因为 | w~1~w~2~ | &lt;= n，| w~0~ | &gt; 0，若取 i = 2，则 的情况为| w~1~w~0~w~0~w~2~ |=| w |+| w~0~ |, | w | = n平方,   0 &lt; | w~0~ | &lt;= n, 所以        n平方 &lt; | w | + | w~0~ | &lt;= n平方+n &lt; (n+1)平方,所以不满足w = a的n^2^次方（串长不是整数平方），所以与假设冲突。</p>
 <p>像这个例子是使用了类似于逻辑归纳法的方式来进行反证的。看下一个例子</p>
 <h5 id="例2"><a href="#例2" class="headerlink" title="例2"></a>例2</h5><p>L={ w | w中0和1的个数相等 }不是正则集</p>
 <p>在证明这个L时，我们选取了 0^n^1^n^这样一个特殊条件来进行判断，在判断不是正则集后即可将L全部否定。</p>
-<h4 id="右线性语言的封闭性"><a href="#右线性语言的封闭性" class="headerlink" title="右线性语言的封闭性"></a>右线性语言的封闭性</h4><p>L<del>1</del>和L<del>2</del>是右线性语言，则L<del>I</del>∪L<del>2</del>，L<del>1</del>L<del>2</del>，L<del>1</del>*，L<del>1</del>的补集(就是在L<del>1</del>上面画横杠)L<del>1</del>∩L<del>2</del>都是右线性语言。</p>
+<h4 id="右线性语言的封闭性"><a href="#右线性语言的封闭性" class="headerlink" title="右线性语言的封闭性"></a>右线性语言的封闭性</h4><p>L~1~和L~2~是右线性语言，则L~I~∪L~2~，L~1~L~2~，L~1~*，L~1~的补集(就是在L~1~上面画横杠)L~1~∩L~2~都是右线性语言。</p>
 <h5 id="双向有限自动机"><a href="#双向有限自动机" class="headerlink" title="双向有限自动机"></a>双向有限自动机</h5><p>读入一个字符以后，读头可以：左移右移不动</p>
-<p>形式定义：2DFA M = ( Q , T , σ , q<del>0</del> , F )</p>
-<p>设有w<del>1</del>qw<del>2</del>   w<del>1</del>– 已输入串   q–当前状态    w<del>2</del>–待输入串 </p>
-<p>σ(q,a<del>m+1</del>)=(p,R)//R说明右移   格局描述：a<del>1</del> a<del>2</del>  … a<del>m</del> q a<del>m+1</del>… |- a<del>1</del> a<del>2</del>  … a<del>m</del> a<del>m+1</del> q a<del>m+2</del> …</p>
-<p>σ(q,a<del>m+1</del>)=(p,L)//L说明右移   格局描述：a<del>1</del> a<del>2</del>  … a<del>m</del> q a<del>m+1</del>… |- a<del>1</del> a<del>2</del>  …  a<del>m-1</del> q a<del>m</del> …</p>
-<p>2DFA 接受的字符串集合：{w | q<del>0</del>w |-* wq , q∈F }</p>
+<p>形式定义：2DFA M = ( Q , T , σ , q~0~ , F )</p>
+<p>设有w~1~qw~2~ ， w~1~为已输入串   q为当前状态    w~2~为待输入串 </p>
+<p>σ(q,a~m+1~)=(p,R)(R说明右移)   格局描述：a~1~ a~2~  … a~m~ q a~m+1~… |- a~1~ a~2~  … a~m~ a~m+1~ q a~m+2~ …</p>
+<p>σ(q,a~m+1~)=(p,L)(L说明左移)   格局描述：a~1~ a~2~  … a~m~ q a~m+1~… |- a~1~ a~2~  …  a~m-1~ q a~m~ …</p>
+<p>2DFA 接受的字符串集合：{w | q~0~w |-* wq , q∈F }</p>
 <h6 id="确定的双向有限自动机"><a href="#确定的双向有限自动机" class="headerlink" title="确定的双向有限自动机"></a>确定的双向有限自动机</h6><p>不能不动</p>
-<h5 id="有输出的有限自动机"><a href="#有输出的有限自动机" class="headerlink" title="有输出的有限自动机"></a>有输出的有限自动机</h5><p>形式定义  （Q , T , R , σ , g , q0)</p>
-<p>T：有限输入字母表   R：有限输出字母表     σ：转换函数 Q×T–&gt;Q     q0：初始状态</p>
+<h5 id="有输出的有限自动机"><a href="#有输出的有限自动机" class="headerlink" title="有输出的有限自动机"></a>有输出的有限自动机</h5><p>形式定义  （Q , T , R , σ , g , q~0~)</p>
+<p>T：有限输入字母表 ；  R：有限输出字母表 ；   σ：转换函数 Q×T—&gt;Q   ；  q~0~：初始状态</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -272,20 +245,22 @@
 <th>摩尔机</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>定义</td>
 <td>输出字符与输入字符及状态有关</td>
 <td>输出字符仅与状态有关</td>
 </tr>
 <tr>
 <td>g 输出函数</td>
-<td>Q×T–&gt;R</td>
-<td>Q–&gt;R</td>
+<td>Q×T—&gt;R</td>
+<td>Q—&gt;R</td>
 </tr>
-</tbody></table>
-<img src="https://img-blog.csdnimg.cn/20210425104907658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" />
-
-<h2 id="4-上下文无关文法与下推自动机"><a href="#4-上下文无关文法与下推自动机" class="headerlink" title="4.上下文无关文法与下推自动机"></a>4.上下文无关文法与下推自动机</h2><h3 id="4-1推导树和二义性"><a href="#4-1推导树和二义性" class="headerlink" title="4.1推导树和二义性"></a>4.1推导树和二义性</h3><h5 id="归约与推导"><a href="#归约与推导" class="headerlink" title="归约与推导"></a>归约与推导</h5><p>G=(N,T,P,S)=( { <em>E,O</em> } , { *<em>,+,v,d,(,)</em> } , P , E ),已知字符串v*(v+d)</p>
+</tbody>
+</table>
+</div>
+<p><img src="https://img-blog.csdnimg.cn/20210425104907658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTc5ODMxMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:33%;" /></p>
+<h2 id="4-上下文无关文法与下推自动机"><a href="#4-上下文无关文法与下推自动机" class="headerlink" title="4.上下文无关文法与下推自动机"></a>4.上下文无关文法与下推自动机</h2><h3 id="4-1推导树和二义性"><a href="#4-1推导树和二义性" class="headerlink" title="4.1推导树和二义性"></a>4.1推导树和二义性</h3><h5 id="归约与推导"><a href="#归约与推导" class="headerlink" title="归约与推导"></a>归约与推导</h5><p>G=(N,T,P,S)=( { <em>E,O</em> } , { <em>*,+,v,d,(,)</em> } , P , E ),已知字符串v*(v+d)</p>
 <p>归约：字符串v*(v+d)推导回E</p>
 <p>推导：E推导到字符串v*(v+d)</p>
 <h6 id="最左推导"><a href="#最左推导" class="headerlink" title="最左推导"></a>最左推导</h6><p>推导过程的每一步总是替换出现在<u><strong>最左边</strong></u>的<u><strong>非终结符</strong></u></p>
@@ -296,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/26/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E8%87%AA%E5%8A%A8%E6%9C%BA/" data-id="ckrjza3n60000u4v05j30ed94" data-title="形式语言自动机" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/26/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E8%87%AA%E5%8A%A8%E6%9C%BA/" data-id="ckrk05mtk0005ewv0g1bi2yfs" data-title="形式语言自动机" class="article-share-link">Share</a>
       
       
       
@@ -344,14 +319,14 @@
 <h4 id="（2）WAN"><a href="#（2）WAN" class="headerlink" title="（2）WAN"></a>（2）WAN</h4><p>Providing connections from a LAN to the Internet</p>
 <p>Including Routing algorithm(路由算法)</p>
 <h3 id="4-Protocol-Hierarchies"><a href="#4-Protocol-Hierarchies" class="headerlink" title="4. Protocol Hierarchies"></a>4. Protocol Hierarchies</h3><h4 id="definition"><a href="#definition" class="headerlink" title="definition"></a>definition</h4><p> Networks are organized as a stack of layers.</p>
-<h4 id="Layer-5-Peers"><a href="#Layer-5-Peers" class="headerlink" title="Layer 5 Peers"></a>Layer 5 Peers</h4><p>![](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\BC23C70BA0110A797A28C99B7D3B1096.png)</p>
+<h4 id="Layer-5-Peers"><a href="#Layer-5-Peers" class="headerlink" title="Layer 5 Peers"></a>Layer 5 Peers</h4><p><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\BC23C70BA0110A797A28C99B7D3B1096.png" alt=""></p>
 <h3 id="5-QoS-Quality-of-service"><a href="#5-QoS-Quality-of-service" class="headerlink" title="5.QoS(Quality  of  service)"></a>5.QoS(Quality  of  service)</h3><p>Such as carrying live video,QoS is more about <u>timeliness of delivery</u>  </p>
 <p>There are also other QoS such as <u>high throughput</u>,</p>
 <h3 id="6-Connection-Oriented-and-Connectionless-Services"><a href="#6-Connection-Oriented-and-Connectionless-Services" class="headerlink" title="6. Connection-Oriented and Connectionless Services"></a>6. Connection-Oriented and Connectionless Services</h3><h4 id="1-Differences-between-Connection-Oriented-and-Connectionless-Services"><a href="#1-Differences-between-Connection-Oriented-and-Connectionless-Services" class="headerlink" title="(1) Differences between Connection-Oriented and Connectionless Services:"></a>(1) Differences between Connection-Oriented and Connectionless Services:</h4><p>(a) Connection-Oriented need to establish a connection at first.</p>
 <p>(b) Using Connection-Oriented service, the bits will arrive in the order they were sent.</p>
 <p>(c) For Connectionless Services, each message carries the full destination address.</p>
 <h4 id="2-Connection-Oriented"><a href="#2-Connection-Oriented" class="headerlink" title="(2)Connection-Oriented"></a>(2)Connection-Oriented</h4><p>Most typical example: telephone system.</p>
-<p>establish a connection–&gt;uses the connection–&gt;releases the connection, the bits will arrive in the order they were sent.</p>
+<p>establish a connection—&gt;uses the connection—&gt;releases the connection, the bits will arrive in the order they were sent.</p>
 <h4 id="3-Connectionless-Services"><a href="#3-Connectionless-Services" class="headerlink" title="(3)Connectionless Services"></a>(3)Connectionless Services</h4><p>(a)Each message carries the full destination address,and  is routed through the intermediate nodes inside the system independent of all the subsequent messages.</p>
 <p>(b)Store-and-Forward switching. </p>
 <p>The intermediate nodes receive a message in full before sending it on to the next node </p>
@@ -373,21 +348,21 @@
 <h4 id="2-Acknowledged-connectionless-service"><a href="#2-Acknowledged-connectionless-service" class="headerlink" title="(2)Acknowledged connectionless service"></a>(2)Acknowledged connectionless service</h4><p> this can be used over unreliable channels ,such as <u>wireless systems</u></p>
 <h4 id="3-Acknowledged-connection-oriented-service"><a href="#3-Acknowledged-connection-oriented-service" class="headerlink" title="(3)Acknowledged connection-oriented service"></a>(3)Acknowledged connection-oriented service</h4><h3 id="3-2-Framing"><a href="#3-2-Framing" class="headerlink" title="3.2- Framing"></a>3.2- Framing</h3><h4 id="1-Character-Count"><a href="#1-Character-Count" class="headerlink" title="(1)Character Count"></a>(1)Character Count</h4><p>Use a field in the header to specify the number of characters in the frame.</p>
 <p>disadvantage: if this field occur an error when transferring , this type of framing while be destroyed</p>
-<p>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\08A5AB1B36DE8EF87614A1AE4E1C30C6.png)</p>
+<p><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\08A5AB1B36DE8EF87614A1AE4E1C30C6.png" alt="img"></p>
 <h4 id="2-Byte-Stuffing"><a href="#2-Byte-Stuffing" class="headerlink" title="(2)Byte Stuffing"></a>(2)Byte Stuffing</h4><p>By using a flag byte stuffing,make special bytes at both start and end of each frame.</p>
 <p>The end of the last frame is the start of the new frame.</p>
 <p>Also ,if this flag byte is also used in the data frame,we need a ESC to make a difference. We also need a ESC when an ESC is used in the frame.</p>
-<p>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\2F445852B410600B02C826AAE96750AE.png)  </p>
+<p><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\2F445852B410600B02C826AAE96750AE.png" alt="img">  </p>
 <h4 id="3-Bit-Stuffing"><a href="#3-Bit-Stuffing" class="headerlink" title="(3)Bit Stuffing"></a>(3)Bit Stuffing</h4><p>Can be understood like : byte stuffing’s byte is token place by a special bit: 01111110=0x7E</p>
-<p>If this bit is used in data frame, we need to put in a ‘0’ after 5 coiled ‘1’,for example: 01111110—&gt;011111010,so that detector won’t treat it as a flag bit.</p>
+<p>If this bit is used in data frame, we need to put in a ‘0’ after 5 coiled ‘1’,for example: 01111110—-&gt;011111010,so that detector won’t treat it as a flag bit.</p>
 <p><strong>A disadvantage of Byte Stuffing and Bit Stuffing is that the length of a frame depends on the contents of the data it carries. If the data consists solely of flag bytes,as for Byte Stuffing, the length of frame has to become  200% of the data frame length ,as for Bit  Stuffing, the length of frame has to become  125% (1+1/8) of the data frame length.</strong></p>
 <h4 id="4-Physical-Layer-Coding-Violations"><a href="#4-Physical-Layer-Coding-Violations" class="headerlink" title="(4)Physical Layer Coding Violations"></a>(4)Physical Layer Coding Violations</h4><p>Just use the redundant coding to represent different status.</p>
 <h3 id="3-3-Error-Control"><a href="#3-3-Error-Control" class="headerlink" title="3.3- Error Control"></a>3.3- Error Control</h3><h4 id="1-Classifications-Lost-frames-and-Damaged-frames"><a href="#1-Classifications-Lost-frames-and-Damaged-frames" class="headerlink" title="(1)Classifications :Lost frames and Damaged frames"></a>(1)Classifications :Lost frames and Damaged frames</h4><h3 id="2-Single-bit-amp-Burst-Error"><a href="#2-Single-bit-amp-Burst-Error" class="headerlink" title="(2)Single-bit &amp; Burst Error"></a>(2)Single-bit &amp; Burst Error</h3><p>Need to notice: the length of burst error is the length from then first error to the last error</p>
-<h3 id="3-Error-Detecting"><a href="#3-Error-Detecting" class="headerlink" title="(3)Error Detecting"></a>(3)Error Detecting</h3><h4 id="a-Parity"><a href="#a-Parity" class="headerlink" title="(a)Parity"></a>(a)Parity</h4><h4 id="b-Checksum"><a href="#b-Checksum" class="headerlink" title="(b)Checksum"></a>(b)Checksum</h4><h4 id="c-CRC-循环冗余检验码"><a href="#c-CRC-循环冗余检验码" class="headerlink" title="(c)CRC(循环冗余检验码)"></a>(c)CRC(循环冗余检验码)</h4><p>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\E2E67B457FEF429E80D1CB541105FCA5.png)</p>
+<h3 id="3-Error-Detecting"><a href="#3-Error-Detecting" class="headerlink" title="(3)Error Detecting"></a>(3)Error Detecting</h3><h4 id="a-Parity"><a href="#a-Parity" class="headerlink" title="(a)Parity"></a>(a)Parity</h4><h4 id="b-Checksum"><a href="#b-Checksum" class="headerlink" title="(b)Checksum"></a>(b)Checksum</h4><h4 id="c-CRC-循环冗余检验码"><a href="#c-CRC-循环冗余检验码" class="headerlink" title="(c)CRC(循环冗余检验码)"></a>(c)CRC(循环冗余检验码)</h4><p><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\E2E67B457FEF429E80D1CB541105FCA5.png" alt="img"></p>
 <h4 id="CRC-can-detect-all-the-odd-number-error-all"><a href="#CRC-can-detect-all-the-odd-number-error-all" class="headerlink" title="CRC can detect all the odd number error,all"></a>CRC can detect all the odd number error,all</h4><h3 id="4-Error-Correcting"><a href="#4-Error-Correcting" class="headerlink" title="(4)Error Correcting"></a>(4)Error Correcting</h3><h4 id="a-Hamming-code"><a href="#a-Hamming-code" class="headerlink" title="(a)Hamming code"></a>(a)<strong>Hamming code</strong></h4><h4 id="Hamming-Distance-The-number-of-bit-positions-in-which-2-codewords-differ-Hamming-distance-of-a-valid-encoding-set-is-the-shortest-Hamming-distance-in-this-set"><a href="#Hamming-Distance-The-number-of-bit-positions-in-which-2-codewords-differ-Hamming-distance-of-a-valid-encoding-set-is-the-shortest-Hamming-distance-in-this-set" class="headerlink" title="Hamming Distance : The number of bit positions in which 2 codewords differ .Hamming distance of a valid encoding set is the shortest Hamming distance in this set."></a>Hamming Distance : The number of bit positions in which 2 codewords differ .Hamming distance of a valid encoding set is the shortest Hamming distance in this set.</h4><p>To detect d-bit errors, a code must have a minimum Hamming distance of at least d+1.</p>
 <p>To correct d-bit errors, a code must have a minimum Hamming distance of at least 2d+1.</p>
 <p>Hamming code can only correct single error.</p>
-<p>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\93CE0FBB27B28E91E1A87F9695D06484.png)</p>
+<p><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\93CE0FBB27B28E91E1A87F9695D06484.png" alt="img"></p>
 <h4 id="b-Binary-convolutional-codes"><a href="#b-Binary-convolutional-codes" class="headerlink" title="(b)Binary convolutional codes"></a>(b)Binary convolutional codes</h4><h4 id="c-Reed-Solomon-codes"><a href="#c-Reed-Solomon-codes" class="headerlink" title="(c)Reed-Solomon codes"></a>(c)Reed-Solomon codes</h4><h4 id="d-Low-Density-Parity-Check-codes"><a href="#d-Low-Density-Parity-Check-codes" class="headerlink" title="(d)Low-Density Parity Check codes"></a>(d)Low-Density Parity Check codes</h4><h3 id="Flow-Control-Regulating-data-flow-so-that-slow-receivers-won’t-be-swamped-by-fast-senders"><a href="#Flow-Control-Regulating-data-flow-so-that-slow-receivers-won’t-be-swamped-by-fast-senders" class="headerlink" title="Flow Control       //    Regulating data flow,so that slow receivers won’t be swamped by fast senders"></a>Flow Control       //    Regulating data flow,so that slow receivers won’t be swamped by fast senders</h3><h3 id="3-4-Elementary-Data-Link-Protocols"><a href="#3-4-Elementary-Data-Link-Protocols" class="headerlink" title="3.4- Elementary  Data  Link  Protocols"></a>3.4- Elementary  Data  Link  Protocols</h3><h3 id="3-5-Sliding-Windows-Protocols"><a href="#3-5-Sliding-Windows-Protocols" class="headerlink" title="3.5- Sliding  Windows  Protocols"></a>3.5- Sliding  Windows  Protocols</h3><h3 id="3-6-Example-Data-Link-Protocols"><a href="#3-6-Example-Data-Link-Protocols" class="headerlink" title="3.6-  Example Data  Link  Protocols"></a>3.6-  Example Data  Link  Protocols</h3><h2 id="4-The-MAC-Medium-Access-Control-Sublayer"><a href="#4-The-MAC-Medium-Access-Control-Sublayer" class="headerlink" title="4-The MAC(Medium Access Control) Sublayer"></a>4-The MAC(Medium Access Control) Sublayer</h2><p>Study field: broadcast channels,which also called multiaccess channels or random access channels</p>
 <p>The protocols used to determine who goes next on a multiaccess channel belong to a subplayer of the data link layer called the <strong>MAC</strong> </p>
 <h3 id="4-1-The-channel-allocation-problem"><a href="#4-1-The-channel-allocation-problem" class="headerlink" title="4.1-  The channel allocation problem"></a>4.1-  The channel allocation problem</h3><p><strong>Theme: How to allocate a single broadcast channel among competing users</strong></p>
@@ -407,15 +382,15 @@
 <p>If the frame is destroyed, the sender must wait a random amount of time and sends it again.</p>
 <p>We have made the frames all the same length so that the throughput(吞吐量) if ALOHA system is maximized</p>
 <p>The <strong><em>efficiency</em></strong> of an ALOHA channel:</p>
-<p>The throughput <strong>S</strong> = load <strong>G</strong> * probability of a transmission succeeding <strong>P<del>0</del></strong>,  </p>
+<p>The throughput <strong>S</strong> = load <strong>G</strong> <em> probability of a transmission succeeding <em>*P~0~</em></em>,  </p>
 <p>During a frame time , the probability that <strong>k</strong> frames are generated is :<strong>P[K]=G^K^e^-G^/k!</strong></p>
 <p>So: during a given frame time, G frames are expected ,and P(k=0)=e^-G^                </p>
 <p>during two frame times, the average number of generated frames is 2G and P(k=0)=e^-2G^</p>
-<p>because of <strong>S=G<em>P<del>0</del>, S=G</em>e^-2G^</strong></p>
+<p>because of <strong>S=G<em>P~0~, S=G</em>e^-2G^</strong></p>
 <p>The maximum throughput occurs when G=0.5，S=0.5e=0.184</p>
 <h5 id=""><a href="#" class="headerlink" title=""></a><img src="C:\Users\14372\Desktop\1.png" alt="1"></h5><p>每终端每秒钟发送长度(信息到达率)λ：256/60</p>
-<p>最多终端个数：*<strong>N=C<em>S/λ</em></strong>           S<del>max</del>=0.184</p>
-<p>∴N<del>max</del>=2400*0.184/(256/60)=103.5</p>
+<p>最多终端个数：<strong><em>N=C</em>S/λ*</strong>           S~max~=0.184</p>
+<p>∴N~max~=2400*0.184/(256/60)=103.5</p>
 <h5 id="Slotted-ALOHA"><a href="#Slotted-ALOHA" class="headerlink" title="Slotted ALOHA"></a>Slotted ALOHA</h5><p>A station is not permitted to send whenever the user types a line. Instead, it is required to wait  for the beginning of</p>
 <p>the next slot.</p>
 <p>The vulnerable period(冲突危险周期) becomes half of before. </p>
@@ -425,7 +400,7 @@
 <p>The maximum throughput occurs when G=1, S=1/e.  The best we can hope for using slotted ALOHA is 37% of the slot empty, 37% success , 26% collisions. </p>
 <p>TEST: the probability of avoiding a collision P(k=0)=e^-G^</p>
 <p>​            the probability of collision is 1-P(k=0)=1-e^-G^</p>
-<p>​            the probability of a transmission requires <strong>n</strong> attempts is <strong><em>P<del>n</del>=e^-G^（1-e^-G^）^k-1^</em></strong> </p>
+<p>​            the probability of a transmission requires <strong>n</strong> attempts is <strong><em>P~n~=e^-G^（1-e^-G^）^k-1^</em></strong> </p>
 <p>​            sum all above, the expected times of transmission <strong>E=e^G^</strong></p>
 <h4 id="Carrier-Sense-Multiple-Access-Protocols-CSMA"><a href="#Carrier-Sense-Multiple-Access-Protocols-CSMA" class="headerlink" title="Carrier Sense Multiple  Access Protocols (CSMA)"></a>Carrier Sense Multiple  Access Protocols (CSMA)</h4><p>Station listens for a carrier before  Sending</p>
 <p>If a collision occurs, waits for a random amount  of time and start all over again.</p>
@@ -447,16 +422,12 @@
 <p><strong>CSMA with Collision Detection    (CSMA/CD)</strong></p>
 <p>The stations quickly detect the collision and abruptly stop transmitting as soon as it  detects a collision.</p>
 <p>CSMA/CD with a single channel is  inherently <strong>a half-duplex system</strong>(半双工系统)</p>
-<img src="C:\Users\14372\Desktop\2.png" alt="2" style="zoom:60%;" />
-
+<p><img src="C:\Users\14372\Desktop\2.png" alt="2" style="zoom:60%;" /></p>
 <p>If the time for a signal between two stations is t, a station cannot be sure that it has seized the channel until it has transmitted for 2t without hearing a collision,</p>
 <p>So that this CSMA/CD can be seen as a slotted ALOHA with a slot width of 2t</p>
 <h5 id="Collision-Free-Protocol"><a href="#Collision-Free-Protocol" class="headerlink" title="Collision-Free Protocol"></a>Collision-Free Protocol</h5><h6 id="A-Bit-Map-Protocol"><a href="#A-Bit-Map-Protocol" class="headerlink" title="A Bit_Map Protocol"></a>A Bit_Map Protocol</h6><p>Each contention period consists of N slots (bits),  with each station use one slot</p>
 <p>If station have frames to send, it reserve it by fill  ‘1’ in its slot, after all N slots have passed by and been recognized, they begin transmitting frames in order </p>
-<img src="C:\Users\14372\Desktop\3.png" alt="3" style="zoom:60%;"/>
-
-
-
+<p><img src="C:\Users\14372\Desktop\3.png" alt="3" style="zoom:60%;"/></p>
 <p>reservation protocols: reserve channel ownership in advance and prevent collisions</p>
 <p>N station, contention time is <em>N</em> </p>
 <p>One data frame is d bits, so time is <em>d</em></p>
@@ -465,10 +436,10 @@
 <h6 id="Binary-Countdown-二进制倒计数"><a href="#Binary-Countdown-二进制倒计数" class="headerlink" title="Binary Countdown(二进制倒计数)"></a>Binary Countdown(二进制倒计数)</h6><p>如果一个站想要使用信道，他就用二进制位串的形式广播自己的地址</p>
 <p>仲裁规则：从最左边开始，一个站只要看到自己地址位中的0被改为1，就必须放弃竞争。n个站想要一同发送数据时，从最左边开始一位一位的进行or操作，知道只剩一个站的地址。</p>
 <p>得到结果：高序站的优先级高</p>
-<p>这种方法信道利用率(channel efficiency)=<em>d/(d+log<del>2</del>N)</em></p>
+<p>这种方法信道利用率(channel efficiency)=<em>d/(d+log~2~N)</em></p>
 <h4 id="无线局域网协议"><a href="#无线局域网协议" class="headerlink" title="无线局域网协议"></a>无线局域网协议</h4><p>隐藏终端问题(hidden station problem):由于竞争者离得太远而导致站无法检测到潜在的竞争者</p>
 <p>暴露终端问题(exposed station problem):开始传输之前，站不能知道接收方附近的无线电活动是否有影响。</p>
-<h5 id="MACA-冲突避免多路访问"><a href="#MACA-冲突避免多路访问" class="headerlink" title="MACA(冲突避免多路访问)"></a>MACA(冲突避免多路访问)</h5><p>C——A—–&gt;B——D</p>
+<h5 id="MACA-冲突避免多路访问"><a href="#MACA-冲突避免多路访问" class="headerlink" title="MACA(冲突避免多路访问)"></a>MACA(冲突避免多路访问)</h5><p>C———A——-&gt;B———D</p>
 <p>A 首先给 B 发送一个 RTS(Request To Send)帧，B 用一个 CTS(Clear to Send)作为应答。A 在收到了 CTS 帧之后便开始传输，C收到A的RTS，收不到B的CTS，所以C自由活动除了对A。D收到B的CTS但没收到RTS，D就安静直到CTS要求的时间结束。</p>
 <h3 id="4-3-Ethernet-以太网"><a href="#4-3-Ethernet-以太网" class="headerlink" title="4.3-Ethernet(以太网)"></a>4.3-Ethernet(以太网)</h3><p>中继器(repeater)：能接收，放大并在两个方向上重发信号</p>
 <h4 id="经典以太网MAC子层协议-Classic-Ethernet-MAC-sub-protocol"><a href="#经典以太网MAC子层协议-Classic-Ethernet-MAC-sub-protocol" class="headerlink" title="经典以太网MAC子层协议(Classic Ethernet MAC sub protocol)"></a>经典以太网MAC子层协议(Classic Ethernet MAC sub protocol)</h4><p><img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210615214036395.png" alt="image-20210615214036395" style="zoom: 40%;" />(a)以太网  （b) IEEE 802.3</p>
@@ -487,8 +458,7 @@
 <p>以太网中使用的成帧方法是 <strong>物理层编码违例法</strong></p>
 <h4 id="二进制指数后退的CSMA-CA-Binary-exponential-backoff"><a href="#二进制指数后退的CSMA-CA-Binary-exponential-backoff" class="headerlink" title="二进制指数后退的CSMA/CA(Binary exponential  backoff)"></a>二进制指数后退的CSMA/CA(Binary exponential  backoff)</h4><p>为达到以太网所允许的最长路径，时槽的长度被设置为 512 位时间，或 51.2 us。在第 i 次冲突后，在 0-2 i -1 之间随机选择一个数， 然后等待这么多个时槽。到达 10 次冲突之后，固定在最大值 1023 上</p>
 <h4 id="以太网信道利用率"><a href="#以太网信道利用率" class="headerlink" title="以太网信道利用率"></a>以太网信道利用率</h4><p>针对每个帧e个竞争时间槽：</p>
-<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617150858434.png" alt="image-20210617150858434" style="zoom:50%;" />
-
+<p><img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617150858434.png" alt="image-20210617150858434" style="zoom:50%;" /></p>
 <h4 id="交换机（switch）"><a href="#交换机（switch）" class="headerlink" title="交换机（switch）"></a>交换机（switch）</h4><p>完全避免冲突，一个站使用一个冲突域，比集线器提升性能</p>
 <h4 id="快速以太网：802-3u"><a href="#快速以太网：802-3u" class="headerlink" title="快速以太网：802.3u"></a>快速以太网：802.3u</h4><p>保留原来帧格式，接口和过程规则，只是将比特时间从100ns降低到10ns。技术上照搬经典以太网，只是将电缆最大长度降低到十分之一</p>
 <h4 id="千兆以太网："><a href="#千兆以太网：" class="headerlink" title="千兆以太网："></a>千兆以太网：</h4><p>全双工+半双工</p>
@@ -509,12 +479,10 @@
 <h4 id="数据包和虚电路"><a href="#数据包和虚电路" class="headerlink" title="数据包和虚电路"></a>数据包和虚电路</h4><p>无连接服务，每个数据包独立路由。这样的数据包常称为<strong>数据报</strong>，对应数据包网络</p>
 <p>面向连接服务，先建立连接 。这个连接称为<strong>虚电路</strong>，对应虚电路网络 </p>
 <p>数据包的路由过程：</p>
-<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617172830374.png" alt="image-20210617172830374" style="zoom:50%;" />
-
+<p><img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617172830374.png" alt="image-20210617172830374" style="zoom:50%;" /></p>
 <p>每个表项由两部分组成：<em>目标地址</em> 和通往目标地址所使用的<em>出境线路</em></p>
 <p>虚电路网络路由：</p>
-<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617191032341.png" alt="image-20210617191032341" style="zoom:50%;" />
-
+<p><img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617191032341.png" alt="image-20210617191032341" style="zoom:50%;" /></p>
 <p>H1和H3的连接标识符一定为1，是他们唯一的连接。</p>
 <h3 id="5-2-Routing-Algorithms"><a href="#5-2-Routing-Algorithms" class="headerlink" title="5.2-Routing Algorithms"></a>5.2-Routing Algorithms</h3><h4 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h4><p>每有一个数据包到达就对他进行处理，在路由表中查找该数据包对应的出境线路</p>
 <h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>负责生成和更新路由表</p>
@@ -531,8 +499,7 @@
 <p>只有当链路状态发生变化时，路由器才用洪泛法向所有路由器发送此信息。</p>
 <h4 id="距离矢量路由-distance-vector-routing"><a href="#距离矢量路由-distance-vector-routing" class="headerlink" title="距离矢量路由(distance vector routing)"></a>距离矢量路由(distance vector routing)</h4><p>不需要知道拓扑</p>
 <p>每个路由器都有一个表，列出已知的到每个目标的最佳距离。每个邻居路由器会互相交换表 ，最终每个路由器都明白到每个目的地最优解。所以全网路由器的拓扑数据库是一致的，有错误也是一致的</p>
-<img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\283D9772F65A47D381974C898302EE5C.png" alt="img" style="zoom:40%;" />
-
+<p><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\283D9772F65A47D381974C898302EE5C.png" alt="img" style="zoom:40%;" /></p>
 <h5 id="收敛-convergence"><a href="#收敛-convergence" class="headerlink" title="收敛(convergence)"></a>收敛(convergence)</h5><p>整个网络最佳路径的寻找过程称为收敛</p>
 <h5 id="距离矢量路由特点："><a href="#距离矢量路由特点：" class="headerlink" title="距离矢量路由特点："></a>距离矢量路由特点：</h5><p> 1.分布的 每个节点接收来自与其直接邻接节点的路由信息，并执行路由计算，将计算结果回传给直接邻接的节点</p>
 <p>  2.迭代的 计算过程循环进行，直到相邻节点没有可交换的路由信息为止</p>
@@ -546,8 +513,7 @@
 <h5 id="构造链路状态包"><a href="#构造链路状态包" class="headerlink" title="构造链路状态包"></a>构造链路状态包</h5><p>构建一个包含所有这些信息的数据包 ；</p>
 <p>数据包内容：</p>
 <p>发送方的标识符，序号，年龄，邻居列表，到这个邻居的延迟；</p>
-<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617200142849.png" alt="image-20210617200142849" style="zoom:44%;" />
-
+<p><img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210617200142849.png" alt="image-20210617200142849" style="zoom:44%;" /></p>
 <p>可以周期性的或者发生事情的时候创建数据表；</p>
 <h5 id="分发链路状态包"><a href="#分发链路状态包" class="headerlink" title="分发链路状态包"></a>分发链路状态包</h5><p>使用的是可靠的扩散法 </p>
 <p>为了控制泛洪，每个分组含一个序号，每次发送新分组时加一；</p>
@@ -579,7 +545,7 @@
 <p>路由器内部的排队延迟直接捕获了数据包经历过的任何拥塞</p>
 <p>当有一个突发流量产生挤压时会跳跃。</p>
 <p>为了维持良好的排队延迟估计d，假设顺势队列长度的样值为s，可以定期生成d，并按如下方式更新：</p>
-<p>d<del>new</del>=αd<del>old</del>+(1+α)s</p>
+<p>d~new~=αd~old~+(1+α)s</p>
 <p>当d上升到某个阈值，路由器要注意拥塞 </p>
 <h5 id="路由器要及时反馈信息给造成拥塞的发送方"><a href="#路由器要及时反馈信息给造成拥塞的发送方" class="headerlink" title="路由器要及时反馈信息给造成拥塞的发送方"></a>路由器要及时反馈信息给造成拥塞的发送方</h5><h5 id="不同反馈机制-都是已经发生拥塞，缓冲区溢出-："><a href="#不同反馈机制-都是已经发生拥塞，缓冲区溢出-：" class="headerlink" title="不同反馈机制(都是已经发生拥塞，缓冲区溢出)："></a>不同反馈机制(都是已经发生拥塞，缓冲区溢出)：</h5><p>抑制(choke packets)：</p>
 <p>给发送方的抑制包中的目标地址取自某个被拥塞的数据包，告知发送方慢点</p>
@@ -605,8 +571,8 @@
 <p>RED:队列快满时随即丢数据包</p>
 <h5 id="公平队列（fair-queueing）"><a href="#公平队列（fair-queueing）" class="headerlink" title="公平队列（fair queueing）"></a>公平队列（fair queueing）</h5><p>主要问题：每次取一个数据包，对于小数据包的主机提供的带宽更少</p>
 <h5 id="加权公平队列"><a href="#加权公平队列" class="headerlink" title="加权公平队列"></a>加权公平队列</h5><p>设每一轮的字节数是一个流的权重W</p>
-<p>F<del>i</del>=max(A<del>i</del>,F<del>i-1</del>)+L<del>i</del>/W：A<del>i</del>是第i个包到达时间，F<del>i-1</del>是上一个包完成的时间，L<del>i</del>是数据包i的长度</p>
-<p>max(A<del>i</del>,F<del>i-1</del>):指的是就算一个数据包早到了，也要等上一个传完才开始传这个</p>
+<p>F~i~=max(A~i~,F~i-1~)+L~i~/W：A~i~是第i个包到达时间，F~i-1~是上一个包完成的时间，L~i~是数据包i的长度</p>
+<p>max(A~i~,F~i-1~):指的是就算一个数据包早到了，也要等上一个传完才开始传这个</p>
 <h3 id="5-5-Internet-working⭐⭐"><a href="#5-5-Internet-working⭐⭐" class="headerlink" title="5.5-Internet working⭐⭐"></a>5.5-Internet working⭐⭐</h3><h5 id="路由器和交换机-网桥的本质区别："><a href="#路由器和交换机-网桥的本质区别：" class="headerlink" title="路由器和交换机/网桥的本质区别："></a>路由器和交换机/网桥的本质区别：</h5><p>在路由器上，数据包被从帧中提取出来，数据包中的网络地址被用来决定把它转发到哪里。而在交换机上，整个帧都是根据它的MAC地址发送的，不会提出数据包。</p>
 <h5 id="隧道（tunneling）"><a href="#隧道（tunneling）" class="headerlink" title="隧道（tunneling）"></a>隧道（tunneling）</h5><p>当源主机和目标主机所在网络的类型完全相同时，如IPv6-IPv4-IPv6，路由器将IPv6放在一个IPv4的数据包内，包裹着这个数据包到另一头。</p>
 <h4 id="将分段组成原始数据包（Fragmentation）"><a href="#将分段组成原始数据包（Fragmentation）" class="headerlink" title="将分段组成原始数据包（Fragmentation）"></a>将分段组成原始数据包（Fragmentation）</h4><h5 id="透明的"><a href="#透明的" class="headerlink" title="透明的"></a>透明的</h5><p>某个路由器进行分段那么下一个路由就马上进行重组。所以后续的网络不会感到有分段</p>
@@ -616,8 +582,7 @@
 <p>这样除了增加开销，每一段的丢失都会造成整个数据包丢失</p>
 <h4 id="路径MTU发现"><a href="#路径MTU发现" class="headerlink" title="路径MTU发现"></a>路径MTU发现</h4><p>先不分段，发送，到一个路由器时，数据包太大发不过去，就给源端一个报错数据包，并丢弃这个包。远端收到就把这个数据包分段重发。不断重复</p>
 <h3 id="5-6-The-Network-Layer-in-the-Internet"><a href="#5-6-The-Network-Layer-in-the-Internet" class="headerlink" title="5.6-The Network Layer  in the Internet"></a>5.6-The Network Layer  in the Internet</h3><h4 id="IPv4协议"><a href="#IPv4协议" class="headerlink" title="IPv4协议"></a>IPv4协议</h4><p>每个IP数据报包括：头，正文（有效净负荷）</p>
-<img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\F2C8001DA2BDC550BB908C22DE14D173.png" alt="img" style="zoom:50%;" />
-
+<p><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\F2C8001DA2BDC550BB908C22DE14D173.png" alt="img" style="zoom:50%;" /></p>
 <h5 id="IPv4的分类编址："><a href="#IPv4的分类编址：" class="headerlink" title="IPv4的分类编址："></a>IPv4的分类编址：</h5><p>A：0打头，8位网络号+24位主机号       </p>
 <p>最大网络号127为回环地址，不可指派</p>
 <p>地址范围：0-127，可指派范围：2^8-1^-2=126</p>
@@ -644,20 +609,18 @@
 <p>32-21=11就是主机号的比特数</p>
 <p>注意可接收地址、可分配 的主机个数不等于主机号的数量</p>
 <p>若知道CIDR中某个地址就可以知道：地址块最小地址，地址块最大地址，地址块地址数量，地址块聚合某类地址的数量，地址掩码=子网掩码</p>
-<img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\3694006375C37C812197A3428958AC7D.png" alt="img" style="zoom:40%;" />
-
+<p><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\3694006375C37C812197A3428958AC7D.png" alt="img" style="zoom:40%;" /></p>
 <h5 id="路由聚合"><a href="#路由聚合" class="headerlink" title="路由聚合"></a>路由聚合</h5><p>寻找目的网络地址的共同前缀，假设有n个比特，则网络前缀就是多少，剩余的比特全部取0，整个32位写成十进制放在网络前缀前面，就形成了<strong>聚合地址块</strong>。</p>
 <p>网络前缀越长，地址块越小，路由越具体 。</p>
-<p>路由器转发分组会选择路由中网络前缀最长的部分。–最长前缀匹配</p>
+<p>路由器转发分组会选择路由中网络前缀最长的部分。—最长前缀匹配</p>
 <h5 id="IPv4的应用规划"><a href="#IPv4的应用规划" class="headerlink" title="IPv4的应用规划"></a>IPv4的应用规划</h5><h6 id="定长的子网掩码：FLSM"><a href="#定长的子网掩码：FLSM" class="headerlink" title="定长的子网掩码：FLSM"></a>定长的子网掩码：FLSM</h6><p>每个子网分配的IP地址相同，造成了浪费</p>
 <h6 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\D3D739B517310B6D6A84C1BFCB13F384.png" alt="img" style="zoom:40%;" /></h6><p>要分配给5个子网，所以要分配2^3^=8个子网，得借3个主机号</p>
 <p>218是c类，所以剩下8-3位=5位主机号，表示32个地址，也够。</p>
 <p>然后这8个子网随便分配就行</p>
-<h6 id="变长的子网掩码：VLSM"><a href="#变长的子网掩码：VLSM" class="headerlink" title="变长的子网掩码：VLSM"></a>变长的子网掩码：VLSM</h6><h4 id="img-file-D-Tencent-Softwares-QQ-Files-1437290395-Image-C2C-46DA136BE397783D1F503D081E9D1299-png"><a href="#img-file-D-Tencent-Softwares-QQ-Files-1437290395-Image-C2C-46DA136BE397783D1F503D081E9D1299-png" class="headerlink" title="![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\46DA136BE397783D1F503D081E9D1299.png)"></a>![img](file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\46DA136BE397783D1F503D081E9D1299.png)</h4><h4 id="网络地址转换：NAT"><a href="#网络地址转换：NAT" class="headerlink" title="网络地址转换：NAT"></a>网络地址转换：NAT</h4><p>NAT的思想：ISP为每一个家庭或公司分配一个IP地址，这个地址来传输Internet流量。客户网络内部，每台计算机有唯一的IP地址，该地址主要用来路由内部流量，但是想要向其他ISP发送数据时，就得地址转换。</p>
+<h6 id="变长的子网掩码：VLSM"><a href="#变长的子网掩码：VLSM" class="headerlink" title="变长的子网掩码：VLSM"></a>变长的子网掩码：VLSM</h6><h4 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="file:///D:\Tencent Softwares\QQ\Files\1437290395\Image\C2C\46DA136BE397783D1F503D081E9D1299.png" alt="img"></h4><h4 id="网络地址转换：NAT"><a href="#网络地址转换：NAT" class="headerlink" title="网络地址转换：NAT"></a>网络地址转换：NAT</h4><p>NAT的思想：ISP为每一个家庭或公司分配一个IP地址，这个地址来传输Internet流量。客户网络内部，每台计算机有唯一的IP地址，该地址主要用来路由内部流量，但是想要向其他ISP发送数据时，就得地址转换。</p>
 <p>每个NAT都有自己负责的区域，有自己的全局IP地址，一个区域的流量控制只通过一个NAT，那么一个路由器坏掉以后就会造成影响。有备用的也不行</p>
 <h4 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h4><p>地址写法：</p>
-<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210619172033091.png" alt="image-20210619172033091" style="zoom:33%;" />
-
+<p><img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210619172033091.png" alt="image-20210619172033091" style="zoom:33%;" /></p>
 <p>IPv6省掉了什么：</p>
 <p>IHL：因为IPv6有固定长度</p>
 <p>协议字段：因为下一个头字段指明了最后的IP头后面跟着什么</p>
@@ -669,7 +632,8 @@
 <h5 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h5><h2 id="6-Transmission"><a href="#6-Transmission" class="headerlink" title="6-Transmission"></a>6-Transmission</h2><h3 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h3><p>使用端口号来表示应用层的不同进程</p>
 <p>端口号由16比特，0~65535</p>
 <p>端口号只具有本地意义，因特网不同计算机中的相同端口号无联系 </p>
-<h3 id="TCP和UDP的区别："><a href="#TCP和UDP的区别：" class="headerlink" title="TCP和UDP的区别："></a>TCP和UDP的区别：</h3><table>
+<h3 id="TCP和UDP的区别："><a href="#TCP和UDP的区别：" class="headerlink" title="TCP和UDP的区别："></a>TCP和UDP的区别：</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th></th>
@@ -677,7 +641,8 @@
 <th>TCP</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>IP数据包中协议字段的值</td>
 <td>17</td>
 <td>6</td>
@@ -712,7 +677,9 @@
 <td>8个字节</td>
 <td>20-60字节</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h3><p>通过滑动窗口实现</p>
 <p>ACK和ack</p>
 <p>ACK是TCP报文首段的标志位，取值为1表示这是确认报文段</p>
@@ -739,15 +706,14 @@
 <h4 id="题目易错"><a href="#题目易错" class="headerlink" title="题目易错"></a>题目易错</h4><p>发生超时以后第一个RTT，拥塞窗口从1-2。</p>
 <h3 id="TCP超时重传时间"><a href="#TCP超时重传时间" class="headerlink" title="TCP超时重传时间"></a>TCP超时重传时间</h3><p>RTO：TCP超时重传时间</p>
 <p>RTT：报文段往返时间</p>
-<p>RTT<del>S</del>：加权平均往返时间</p>
-<p>RTT<del>D</del>：RTT偏差的加权平均</p>
-<img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210621163456901.png" alt="image-20210621163456901" style="zoom:50%;" />
-
+<p>RTT~S~：加权平均往返时间</p>
+<p>RTT~D~：RTT偏差的加权平均</p>
+<p><img src="C:\Users\14372\AppData\Roaming\Typora\typora-user-images\image-20210621163456901.png" alt="image-20210621163456901" style="zoom:50%;" /></p>
 <h3 id="TCP运输连接管理"><a href="#TCP运输连接管理" class="headerlink" title="TCP运输连接管理"></a>TCP运输连接管理</h3><h4 id="TCP建立过程：三报文握手"><a href="#TCP建立过程：三报文握手" class="headerlink" title="TCP建立过程：三报文握手"></a>TCP建立过程：三报文握手</h4>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/26/The-Summarize-of-Computer-Network/" data-id="ckrjz5eun0000bsv087vqd491" data-title="The Summarize of Computer Network" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/26/The-Summarize-of-Computer-Network/" data-id="ckrk05mtp0006ewv06egrfhz3" data-title="The Summarize of Computer Network" class="article-share-link">Share</a>
       
       
       
@@ -783,8 +749,7 @@
       
         <h2 id="1、前期准备"><a href="#1、前期准备" class="headerlink" title="1、前期准备"></a>1、前期准备</h2><h3 id="1-1、常用网址"><a href="#1-1、常用网址" class="headerlink" title="1.1、常用网址"></a>1.1、常用网址</h3><p>官网：<a target="_blank" rel="noopener" href="https://spring.io/projects/spring-framework#overview">https://spring.io/projects/spring-framework#overview</a></p>
 <p>Github下载地址：<a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-framework/releases">https://github.com/spring-projects/spring-framework/releases</a></p>
-<img src="https://i.loli.net/2021/07/25/pSx5Gih6kawqe17.png" alt="Github源码包.png" style="zoom:33%;" />
-
+<p><img src="https://i.loli.net/2021/07/25/pSx5Gih6kawqe17.png" alt="Github源码包.png" style="zoom:33%;" /></p>
 <h3 id="1-2、maven导包"><a href="#1-2、maven导包" class="headerlink" title="1.2、maven导包"></a>1.2、maven导包</h3><p>导包网址：<a target="_blank" rel="noopener" href="https://mvnrepository.com/search?q=spring">https://mvnrepository.com/search?q=spring</a></p>
 <p>导入Spring Web MVC包</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -827,22 +792,7 @@
 <li><p>区别</p>
 </li>
 </ol>
-<table>
-<thead>
-<tr>
-<th>ref</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>引用spring中已有的bean对象</td>
-<td>赋一些简单类型的值和对象的具体值</td>
-</tr>
-<tr>
-<td>使用ref的时候，spring容器会在引用后进行验证，验证当前的xml是否存在引用的bean</td>
-<td>使用value的时候，spring会在容器启动，实例化bean的时候进行验证</td>
-</tr>
-</tbody></table>
+<p>| ref                                                          | value                                                        |<br>| —————————————————————————————— | —————————————————————————————— |<br>| 引用spring中已有的bean对象                                   | 赋一些简单类型的值和对象的具体值                             |<br>| 使用ref的时候，spring容器会在引用后进行验证，验证当前的xml是否存在引用的bean | 使用value的时候，spring会在容器启动，实例化bean的时候进行验证 |</p>
 </li>
 </ol>
 </li>
@@ -890,7 +840,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/26/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A01/" data-id="ckrjyw85h0001bkv071w43sti" data-title="Spring框架学习1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/26/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A01/" data-id="ckrk05mt70001ewv0dze7dnb3" data-title="Spring框架学习1" class="article-share-link">Share</a>
       
       
       
@@ -932,9 +882,9 @@ float income;
 
 struct guy fellow[2];/*这是一个结构数组*/
 struct guy * him/*声明一个指向结构的指针*/
-him=fellow[0]/*告诉指针它指向的地址*/</code></pre>
-<h3 id="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。"><a href="#声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。" class="headerlink" title="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。"></a>声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。</h3><h3 id="同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。"><a href="#同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。" class="headerlink" title="同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。"></a>同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。</h3><h3 id="3-使用指针来访问结构体的成员时有两种方法："><a href="#3-使用指针来访问结构体的成员时有两种方法：" class="headerlink" title="(3)使用指针来访问结构体的成员时有两种方法："></a>(3)使用指针来访问结构体的成员时有两种方法：</h3><h3 id="①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即"><a href="#①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即" class="headerlink" title="①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:"></a>①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:</h3><pre><code>him-&gt;job is fellow[0].j0b if him == fellow[0]</code></pre>
-<h3 id="②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有-him-fellow-0"><a href="#②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有-him-fellow-0" class="headerlink" title="②利用&amp;和* 的互逆性,因为him=&amp;fellow[0],则有*him=fellow[0]"></a>②利用&amp;和* 的互逆性,因为him=&amp;fellow[0],则有*him=fellow[0]</h3><h3 id="4-使用指针传递结构成员"><a href="#4-使用指针传递结构成员" class="headerlink" title="(4)使用指针传递结构成员"></a>(4)使用指针传递结构成员</h3><pre><code>#include &lt;stdio.h&gt;
+him=fellow[0]/*告诉指针它指向的地址*/
+</code></pre><h3 id="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。"><a href="#声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。" class="headerlink" title="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。"></a>声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。</h3><h3 id="同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。"><a href="#同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。" class="headerlink" title="同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。"></a>同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。</h3><h3 id="3-使用指针来访问结构体的成员时有两种方法："><a href="#3-使用指针来访问结构体的成员时有两种方法：" class="headerlink" title="(3)使用指针来访问结构体的成员时有两种方法："></a>(3)使用指针来访问结构体的成员时有两种方法：</h3><h3 id="①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即"><a href="#①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即" class="headerlink" title="①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:"></a>①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:</h3><pre><code>him-&gt;job is fellow[0].j0b if him == fellow[0]
+</code></pre><h3 id="②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有him-fellow-0"><a href="#②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有him-fellow-0" class="headerlink" title="②利用&amp;和 的互逆性,因为him=&amp;fellow[0],则有him=fellow[0]"></a>②利用&amp;和<em> 的互逆性,因为him=&amp;fellow[0],则有</em>him=fellow[0]</h3><h3 id="4-使用指针传递结构成员"><a href="#4-使用指针传递结构成员" class="headerlink" title="(4)使用指针传递结构成员"></a>(4)使用指针传递结构成员</h3><pre><code>#include &lt;stdio.h&gt;
 
 double people(const struct guy *)//people函数使用了指针作为参数
 
@@ -947,18 +897,18 @@ int main()
 double people(const struct guy * anyone)//确定指针为anyone
 &#123;
     return anyone-&gt;job;
-&#125;</code></pre>
-<h3 id="需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符"><a href="#需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符" class="headerlink" title="需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符"></a>需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符</h3><h3 id="5-结构指针与malloc"><a href="#5-结构指针与malloc" class="headerlink" title="(5)结构指针与malloc"></a>(5)结构指针与malloc</h3><h3 id="当我们在结构中使用指针来存储字符串时，例如："><a href="#当我们在结构中使用指针来存储字符串时，例如：" class="headerlink" title="当我们在结构中使用指针来存储字符串时，例如："></a>当我们在结构中使用指针来存储字符串时，例如：</h3><pre><code>struct pnames &#123;
+&#125;
+</code></pre><h3 id="需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符"><a href="#需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符" class="headerlink" title="需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符"></a>需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符</h3><h3 id="5-结构指针与malloc"><a href="#5-结构指针与malloc" class="headerlink" title="(5)结构指针与malloc"></a>(5)结构指针与malloc</h3><h3 id="当我们在结构中使用指针来存储字符串时，例如："><a href="#当我们在结构中使用指针来存储字符串时，例如：" class="headerlink" title="当我们在结构中使用指针来存储字符串时，例如："></a>当我们在结构中使用指针来存储字符串时，例如：</h3><pre><code>struct pnames &#123;
     char * first;
     char * last;
-&#125;</code></pre>
-<h3 id="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"><a href="#与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。" class="headerlink" title="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"></a>与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。</h3><h3 id="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。"><a href="#但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。" class="headerlink" title="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。"></a>但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。</h3><pre><code>pnames-&gt;first=(char*)malloc(sizeof(char))//成员指针被分配内存
-free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
-
+&#125;
+</code></pre><h3 id="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"><a href="#与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。" class="headerlink" title="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"></a>与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。</h3><h3 id="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。"><a href="#但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。" class="headerlink" title="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。"></a>但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。</h3><pre><code>pnames-&gt;first=(char*)malloc(sizeof(char))//成员指针被分配内存
+free(pnames-&gt;first)//不要忘记free掉不用的内存
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/02/20/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8B%EF%BC%89/" data-id="ckrjyw85m0004bkv0fcugfsdt" data-title="指针的部分总结（下）" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/02/20/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8B%EF%BC%89/" data-id="ckrk05mtj0004ewv08g400fjs" data-title="指针的部分总结（下）" class="article-share-link">Share</a>
       
       
       
@@ -999,20 +949,16 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
 <h2 id="二、为什么要学习指针-："><a href="#二、为什么要学习指针-：" class="headerlink" title="二、为什么要学习指针 #："></a>二、为什么要学习指针 #：</h2><p>这里有一个很多人问的问题：我们到底为什么需要指针，直接用变量名对数值进行操作不就可以了吗？</p>
 <p>用变量名当然可以，但是只是用变量名会出现很多bug，因为人脑的思维方式和电脑的运作方式不一样。我们知道int代表整数啊，char代表字符啊，但是计算机不知道，计算机只知道地址和指令（这个也是当本菜鸡学习汇编指令之后才明白的）。</p>
 <p>当我们查看编译之后的代码时，它长这样：</p>
-<img src="https://i.loli.net/2021/01/12/c1eigSFwhr9YNlj.png" style="zoom:50%;" />
-
+<p><img src="https://i.loli.net/2021/01/12/c1eigSFwhr9YNlj.png" style="zoom:50%;" /></p>
 <p>这里并没有我们习以为常的各种变量名，只有一系列抽象的数字串。所以在处理一些复杂项目的时候，全篇使用变量名可能会出现一些让人摸不着头脑的bug，而这些错误的源头位置也较难发现。</p>
-<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2760428880,4127050796&fm=26&gp=0.jpg" style="zoom:25%;" />
-
+<p><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2760428880,4127050796&fm=26&gp=0.jpg" style="zoom:25%;" /></p>
 <p>这样说还是抽象了点，接下来举个栗子：</p>
-<img src="https://i.loli.net/2021/01/12/o5HTvUbYjl4D6CF.png" style="zoom: 33%;" />
-
+<p><img src="https://i.loli.net/2021/01/12/o5HTvUbYjl4D6CF.png" style="zoom: 33%;" /></p>
 <p>如图是李明的部分代码，他在主函数中定义了整型变量a之后，在函数fun1中对a进行了修改，但在输出结果中，a的值没有改变。像这样，多个函数要对同一个数据进行读写操作的时候就需要用到指针。</p>
 <p>需要理解的是，在函数中对数据的改动只是对数据副本的更改，原本不动。如果想要对原值进行修改，就需要传入数据的地址，这样程序才能找到地址将其修改</p>
 <hr>
 <h2 id="三、对某个特定指针的理解："><a href="#三、对某个特定指针的理解：" class="headerlink" title="三、对某个特定指针的理解："></a>三、对某个特定指针的理解：</h2><h3 id="1-个人认为，学好指针的关键在于对计算机内存的理解。"><a href="#1-个人认为，学好指针的关键在于对计算机内存的理解。" class="headerlink" title="1. 个人认为，学好指针的关键在于对计算机内存的理解。"></a>1. 个人认为，学好指针的关键在于对计算机内存的理解。</h3><p>计算机的内存是用于储存数据的空间，空间的分布是建立在字节(byte)和位(bit)的概念之上的。一个位能表示0/1两个状态，而一个字节是一个8位的块，大多数计算机将字节作为最小的可寻址内存单位。不同的数据类型的占用内存的大小不同，int类型的数据占用4字节的内存而char类型的数据占用1字节的内存。</p>
-<img src="https://i.loli.net/2021/01/12/4FB6Edy8fmUkbVn.png" style="zoom:33%;" />
-
+<p><img src="https://i.loli.net/2021/01/12/4FB6Edy8fmUkbVn.png" style="zoom:33%;" /></p>
 <p>当我们声明一个变量的时候，实际上是向内存申请了一块空间来存放数据，而一个指针存储的数据就是该指针所指向变量的起始地址。</p>
 <h3 id="2-当我们看到一个指针的时候，需要搞定四道关卡：指针的类型、指针所指数据的类型、指针的值、指针本身所占的内存。"><a href="#2-当我们看到一个指针的时候，需要搞定四道关卡：指针的类型、指针所指数据的类型、指针的值、指针本身所占的内存。" class="headerlink" title="2.当我们看到一个指针的时候，需要搞定四道关卡：指针的类型、指针所指数据的类型、指针的值、指针本身所占的内存。"></a>2.当我们看到一个指针的时候，需要搞定四道关卡：指针的类型、指针所指数据的类型、指针的值、指针本身所占的内存。</h3><p>首先说用到最多的：指针的类型和指针所指数据的类型。</p>
 <p>从语法的角度看，将声明语句中指针的名字去掉剩下的就是指针的类型，而将指针名字以及其左边的指针声明符*去掉之后剩下的就是指针指向数据的类型。</p>
@@ -1029,7 +975,7 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
 <p>(4)    <code>int(*ptr)[3]</code></p>
 <p>指针类型：<code>int*[3]</code></p>
 <p>指针指向数据类型：<code>int[3]</code></p>
-<p>在这个例子中，从名称ptr出发，ptr先与*结合(加括号的原因是[ ]优先级高于 *，所以分析的时候可以去掉括号)，说明ptr是一个指针，指针与[]结合说明指针指向的内容是数组，然后与int结合说明数组元素是整型，所以p是指向整型数组的指针。</p>
+<p>在这个例子中，从名称ptr出发，ptr先与<em>结合(加括号的原因是[ ]优先级高于 </em>，所以分析的时候可以去掉括号)，说明ptr是一个指针，指针与[]结合说明指针指向的内容是数组，然后与int结合说明数组元素是整型，所以p是指向整型数组的指针。</p>
 <p>与指向数组的指针相对应的是指针数组：int*ptr[3]</p>
 <p>因为ptr首先与[ ]结合，所以ptr是一个数组，然后与*结合，说明这个数组中的元素是指针，然后与int结合，说明指针指向的是内容是整型。所以这是一个指向整型数据的指针组成的数组。</p>
 <p>(5)    <code>int *(*ptr)[4]</code></p>
@@ -1040,7 +986,8 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
 <p>指针本身所占的内存大小也就是说指针这种变量类型的字长，在64位机器(大部分机器)中是八字节。</p>
 <hr>
 <h2 id="四、指针的使用："><a href="#四、指针的使用：" class="headerlink" title="四、指针的使用："></a>四、指针的使用：</h2><h3 id="1、首先必须强调的一点是绝对不能对未初始化的指针取值！！！"><a href="#1、首先必须强调的一点是绝对不能对未初始化的指针取值！！！" class="headerlink" title="1、首先必须强调的一点是绝对不能对未初始化的指针取值！！！"></a>1、首先必须强调的一点是绝对不能对未初始化的指针取值！！！</h3><p>形如</p>
-<p><code>int *ptr;  *ptr=5;</code></p>
+<p><code>int *ptr; 
+*ptr=5;</code></p>
 <p>这样的未初始化的指针我们称之为“野指针”，其危害性极大。第二句表示将数值5存储在指针ptr所指向的地址中，但是因为指针未初始化，所以其值是随机的，我们不知道5会被存到什么位置。也许会存到某个已经有程序数据的地址，这样做的后果是原有的数据会被覆盖，可能导致程序崩溃。</p>
 <p>指针需要初始化的原因在于当创建指针的时候，系统之分配了用来存储指针本身的内存空间。并没有给它分配存储数据的内存空间。因此在使用指针之前，必须给它赋予一个已经分配的内存地址用来存储数据。 </p>
 <hr>
@@ -1050,14 +997,12 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
 <h3 id="3、数组与指针及数组的算术运算："><a href="#3、数组与指针及数组的算术运算：" class="headerlink" title="3、数组与指针及数组的算术运算："></a>3、数组与指针及数组的算术运算：</h3><p>数组标记其实是对指针的变相使用。对于数组：data[int size]，数组名data实际上就是该数组首元素的地址，即数组名就是指向数组起始元素的指针：data = = &amp;data[0]。</p>
 <p>在C语言中，对指针加1的结果是对该指针增加一个存储空间(即sizeof((指针指向的数据类型))。所以对一个数组data[size]来说，*(data+1)=data[1]。但是对于非数组指针来说，情况就会变得不太一样。</p>
 <p>举个栗子：</p>
-<img src="https://i.loli.net/2021/01/12/c438mSg9XwWE5hR.png" style="zoom:33%;" />
-
+<p><img src="https://i.loli.net/2021/01/12/c438mSg9XwWE5hR.png" style="zoom:33%;" /></p>
 <p>思考一下会输出什么？</p>
-<p>————————————————我是一道分隔符————————————————</p>
+<p>————————————————————————我是一道分隔符————————————————————————</p>
 <p>答案是：未知数</p>
-<img src="http://img.doutula.com/production/uploads/image/2019/07/08/20190708533814_FlUARy.jpg" style="zoom:25%;" />
-
-<p>我们来分析一下ptr这个指针,它的类型是char ** ，所指向的类型是char * ，所以当ptr执行递增操作时，指针会增加一个sizeof(char*)即指针原来指向的地址+8.数组是一系列连续排列的地址,但是指向数组的指针的地址可并不是连续排列的,而指针的地址+8，谁都不知道会指向哪里。 </p>
+<p><img src="http://img.doutula.com/production/uploads/image/2019/07/08/20190708533814_FlUARy.jpg" style="zoom:25%;" /></p>
+<p>我们来分析一下ptr这个指针,它的类型是char <em>* ，所指向的类型是char </em> ，所以当ptr执行递增操作时，指针会增加一个sizeof(char*)即指针原来指向的地址+8.数组是一系列连续排列的地址,但是指向数组的指针的地址可并不是连续排列的,而指针的地址+8，谁都不知道会指向哪里。 </p>
 <hr>
 <h3 id="4、指针与多维数组"><a href="#4、指针与多维数组" class="headerlink" title="4、指针与多维数组"></a>4、指针与多维数组</h3><p>假设有声明：<code>int zippo[4][2]</code></p>
 <p>那么有这么几个概念：zippo,zippo[0],zippo[0][0]</p>
@@ -1072,7 +1017,7 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
 <p><code>**zippo==*zippo[0]==zippo[0][0]</code></p>
 <p><code>zippo[2][1]==*(*(zippo+2)+1)</code></p>
 <p>对于最后一行等式，如果不理解可以看这里：</p>
-<table>
+<p><table>
   <tr>
       <td>zippo</td>
       <td>第一个一维数组的首元素地址</td>
@@ -1093,13 +1038,13 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
       <td>*(*(zippo+2)+1)</td>
       <td>第三个一维数组的第二个元素的值</td>
   </tr>
-</table>
-***
+</table></p>
+<hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/01/12/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/" data-id="ckrjyw85m0003bkv067qa8r17" data-title="指针的部分总结（上）" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/01/12/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/" data-id="ckrk05mtd0003ewv03z6md0wc" data-title="指针的部分总结（上）" class="article-share-link">Share</a>
       
       
       
@@ -1146,7 +1091,7 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/01/11/hello-world/" data-id="ckrjyw85l0002bkv0hu96bexu" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/01/11/hello-world/" data-id="ckrk05mta0002ewv0dv8736ib" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
