@@ -17,19 +17,19 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="四、指针的使用5.结构体指针(1)定义结构的一般形式为：struct    结构名{成员列表}；(2)使用指针来指向结构的解释说明：struct guy&amp;#123; char favfood; char job; float income; &amp;#125;  struct guy fellow[2];&#x2F;*这是一个结构数组*&#x2F; struct guy * him&#x2F;*声明一个指向结构的指针*&#x2F; him&#x3D;f">
+  <meta name="description" content="C语言指针后半部分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="指针的部分总结（下）">
 <meta property="og:url" content="http://example.com/2021/02/20/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8B%EF%BC%89/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="四、指针的使用5.结构体指针(1)定义结构的一般形式为：struct    结构名{成员列表}；(2)使用指针来指向结构的解释说明：struct guy&amp;#123; char favfood; char job; float income; &amp;#125;  struct guy fellow[2];&#x2F;*这是一个结构数组*&#x2F; struct guy * him&#x2F;*声明一个指向结构的指针*&#x2F; him&#x3D;f">
+<meta property="og:site_name" content="Eric&#39;s blog">
+<meta property="og:description" content="C语言指针后半部分">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T09:28:22.358Z">
-<meta property="article:modified_time" content="2021-02-23T15:54:04.121Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2021-07-26T04:33:40.608Z">
+<meta property="article:author" content="Eric Rong">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2021/02/20/%E6%8C%87%E9%92%88%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8B%EF%BC%89/">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>指针的部分总结（下） | Hexo</title>
+  <title>指针的部分总结（下） | Eric's blog</title>
   
 
 
@@ -96,9 +96,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">Eric's blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">打工人的搬砖进化之路</p>
   </div>
 
   <div class="site-nav-right">
@@ -154,12 +155,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Eric Rong">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Eric's blog">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -180,10 +181,11 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-23 23:54:04" itemprop="dateModified" datetime="2021-02-23T23:54:04+08:00">2021-02-23</time>
+                <time title="Modified: 2021-07-26 12:33:40" itemprop="dateModified" datetime="2021-07-26T12:33:40+08:00">2021-07-26</time>
               </span>
 
           
+            <div class="post-description">C语言指针后半部分</div>
 
         </div>
       </header>
@@ -194,37 +196,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="四、指针的使用"><a href="#四、指针的使用" class="headerlink" title="四、指针的使用"></a>四、指针的使用</h1><h2 id="5-结构体指针"><a href="#5-结构体指针" class="headerlink" title="5.结构体指针"></a>5.结构体指针</h2><h3 id="1-定义结构的一般形式为："><a href="#1-定义结构的一般形式为：" class="headerlink" title="(1)定义结构的一般形式为："></a>(1)定义结构的一般形式为：</h3><h3 id="struct-结构名"><a href="#struct-结构名" class="headerlink" title="struct    结构名{"></a>struct    结构名{</h3><h3 id="成员列表"><a href="#成员列表" class="headerlink" title="成员列表"></a>成员列表</h3><h3 id="；"><a href="#；" class="headerlink" title="}；"></a>}；</h3><h3 id="2-使用指针来指向结构的解释说明："><a href="#2-使用指针来指向结构的解释说明：" class="headerlink" title="(2)使用指针来指向结构的解释说明："></a>(2)使用指针来指向结构的解释说明：</h3><pre><code>struct guy&#123;
-char favfood;
-char job;
-float income;
-&#125;
+        <h2 id="指针的使用"><a href="#指针的使用" class="headerlink" title="指针的使用"></a>指针的使用</h2><h3 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h3><h4 id="定义结构的一般形式"><a href="#定义结构的一般形式" class="headerlink" title="定义结构的一般形式"></a>定义结构的一般形式</h4><p>struct    结构名{</p>
+<p>成员列表</p>
+<p>}；</p>
+<h4 id="使用指针来指向结构的解释说明："><a href="#使用指针来指向结构的解释说明：" class="headerlink" title="使用指针来指向结构的解释说明："></a>使用指针来指向结构的解释说明：</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">guy</span>&#123;</span></span><br><span class="line"><span class="keyword">char</span> favfood;</span><br><span class="line"><span class="keyword">char</span> job;</span><br><span class="line"><span class="keyword">float</span> income;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">guy</span> <span class="title">fellow</span>[2];</span><span class="comment">/*这是一个结构数组*/</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">guy</span> * <span class="title">him</span>/*声明一个指向结构的指针*/</span></span><br><span class="line"><span class="class"><span class="title">him</span>=</span>fellow[<span class="number">0</span>]<span class="comment">/*告诉指针它指向的地址*/</span></span><br></pre></td></tr></table></figure>
+<p>声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。</p>
+<p>同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。</p>
+<h4 id="使用指针来访问结构体的成员时有两种方法："><a href="#使用指针来访问结构体的成员时有两种方法：" class="headerlink" title="使用指针来访问结构体的成员时有两种方法："></a>使用指针来访问结构体的成员时有两种方法：</h4><h5 id="结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即"><a href="#结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即" class="headerlink" title="结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:"></a>结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:</h5><pre><code>him-&gt;job is fellow[0].j0b if him == fellow[0]
+</code></pre><h5 id="利用-amp-和-的互逆性-因为him-amp-fellow-0-则有"><a href="#利用-amp-和-的互逆性-因为him-amp-fellow-0-则有" class="headerlink" title="利用&amp;和* 的互逆性,因为him=&amp;fellow[0],则有"></a>利用&amp;和* 的互逆性,因为him=&amp;fellow[0],则有</h5><h5 id="him-fellow-0"><a href="#him-fellow-0" class="headerlink" title="*him=fellow[0]"></a>*him=fellow[0]</h5><h4 id="使用指针传递结构成员"><a href="#使用指针传递结构成员" class="headerlink" title="使用指针传递结构成员"></a>使用指针传递结构成员</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">people</span><span class="params">(<span class="keyword">const</span> struct guy *)</span><span class="comment">//people函数使用了指针作为参数</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%.2f&quot;</span>,people(&amp;him));<span class="comment">//把地址&amp;him传给该函数使得指针指向结构him</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">people</span><span class="params">(<span class="keyword">const</span> struct guy * anyone)</span><span class="comment">//确定指针为anyone</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> anyone-&gt;job;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符</p>
+<h4 id="结构指针与malloc"><a href="#结构指针与malloc" class="headerlink" title="结构指针与malloc"></a>结构指针与malloc</h4><p>当我们在结构中使用指针来存储字符串时，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pnames</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> * first;</span><br><span class="line">	<span class="keyword">char</span> * last;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。</p>
+<p>但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pnames-&gt;first=(<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>))<span class="comment">//成员指针被分配内存</span></span><br><span class="line"><span class="built_in">free</span>(pnames-&gt;first)<span class="comment">//不要忘记free掉不用的内存</span></span><br></pre></td></tr></table></figure>
+<p>​<br>​    </p>
 
-struct guy fellow[2];/*这是一个结构数组*/
-struct guy * him/*声明一个指向结构的指针*/
-him=fellow[0]/*告诉指针它指向的地址*/
-</code></pre><h3 id="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。"><a href="#声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow-0-则是对该指针的初始化。" class="headerlink" title="声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。"></a>声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。</h3><h3 id="同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。"><a href="#同样的，如果对him加1，那么指针指向的地址就加了1-1-4-6个字节，因为每个结构体占的内存空间为6。" class="headerlink" title="同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。"></a>同样的，如果对him加1，那么指针指向的地址就加了1+1+4=6个字节，因为每个结构体占的内存空间为6。</h3><h3 id="3-使用指针来访问结构体的成员时有两种方法："><a href="#3-使用指针来访问结构体的成员时有两种方法：" class="headerlink" title="(3)使用指针来访问结构体的成员时有两种方法："></a>(3)使用指针来访问结构体的成员时有两种方法：</h3><h3 id="①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即"><a href="#①结构指针后跟-gt-运算符，而需要注意的是结构名之后则需跟-点-运算符-即" class="headerlink" title="①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:"></a>①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:</h3><pre><code>him-&gt;job is fellow[0].j0b if him == fellow[0]
-</code></pre><h3 id="②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有him-fellow-0"><a href="#②利用-amp-和-的互逆性-因为him-amp-fellow-0-则有him-fellow-0" class="headerlink" title="②利用&amp;和 的互逆性,因为him=&amp;fellow[0],则有him=fellow[0]"></a>②利用&amp;和<em> 的互逆性,因为him=&amp;fellow[0],则有</em>him=fellow[0]</h3><h3 id="4-使用指针传递结构成员"><a href="#4-使用指针传递结构成员" class="headerlink" title="(4)使用指针传递结构成员"></a>(4)使用指针传递结构成员</h3><pre><code>#include &lt;stdio.h&gt;
-
-double people(const struct guy *)//people函数使用了指针作为参数
-
-int main()
-&#123;
-    printf(&quot;%.2f&quot;,people(&amp;him));//把地址&amp;him传给该函数使得指针指向结构him
-    return 0;
-&#125;
-
-double people(const struct guy * anyone)//确定指针为anyone
-&#123;
-    return anyone-&gt;job;
-&#125;
-</code></pre><h3 id="需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符"><a href="#需要注意的是-数组可以通过使用其数组名作为数组地址-但是结构不可以使用结构名作为其地址必须使用-amp-运算符" class="headerlink" title="需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符"></a>需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符</h3><h3 id="5-结构指针与malloc"><a href="#5-结构指针与malloc" class="headerlink" title="(5)结构指针与malloc"></a>(5)结构指针与malloc</h3><h3 id="当我们在结构中使用指针来存储字符串时，例如："><a href="#当我们在结构中使用指针来存储字符串时，例如：" class="headerlink" title="当我们在结构中使用指针来存储字符串时，例如："></a>当我们在结构中使用指针来存储字符串时，例如：</h3><pre><code>struct pnames &#123;
-    char * first;
-    char * last;
-&#125;
-</code></pre><h3 id="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"><a href="#与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。" class="headerlink" title="与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。"></a>与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。</h3><h3 id="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。"><a href="#但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc-分配内存。" class="headerlink" title="但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。"></a>但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。</h3><pre><code>pnames-&gt;first=(char*)malloc(sizeof(char))//成员指针被分配内存
-free(pnames-&gt;first)//不要忘记free掉不用的内存
-</code></pre>
     </div>
 
     
@@ -304,13 +291,13 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%8C%87%E9%92%88%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">四、指针的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88"><span class="nav-number">1.1.</span> <span class="nav-text">5.结构体指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%9A%E4%B9%89%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F%E4%B8%BA%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">(1)定义结构的一般形式为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#struct-%E7%BB%93%E6%9E%84%E5%90%8D"><span class="nav-number">1.1.2.</span> <span class="nav-text">struct    结构名{</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%88%97%E8%A1%A8"><span class="nav-number">1.1.3.</span> <span class="nav-text">成员列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%9B"><span class="nav-number">1.1.4.</span> <span class="nav-text">}；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E6%9D%A5%E6%8C%87%E5%90%91%E7%BB%93%E6%9E%84%E7%9A%84%E8%A7%A3%E9%87%8A%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="nav-number">1.1.5.</span> <span class="nav-text">(2)使用指针来指向结构的解释说明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E6%8C%87%E9%92%88%E7%9A%84%E8%AF%AD%E6%B3%95%E5%92%8C%E5%85%B6%E4%BB%96%E7%9A%84%E6%8C%87%E9%92%88%E5%A3%B0%E6%98%8E%E4%B8%80%E6%A0%B7%EF%BC%8C%E6%84%8F%E5%91%B3%E7%9D%80%E6%8C%87%E9%92%88him%E5%8F%AF%E4%BB%A5%E6%8C%87%E5%90%91%E4%BB%BB%E4%BD%95%E7%8E%B0%E6%9C%89%E7%9A%84guy%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BB%93%E6%9E%84%E3%80%82%E8%80%8C%E4%BB%A4%E6%8C%87%E9%92%88%E6%8C%87%E5%90%91fellow-0-%E5%88%99%E6%98%AF%E5%AF%B9%E8%AF%A5%E6%8C%87%E9%92%88%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E3%80%82"><span class="nav-number">1.1.6.</span> <span class="nav-text">声明指针的语法和其他的指针声明一样，意味着指针him可以指向任何现有的guy类型的结构。而令指针指向fellow[0]则是对该指针的初始化。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%A0%B7%E7%9A%84%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%AF%B9him%E5%8A%A01%EF%BC%8C%E9%82%A3%E4%B9%88%E6%8C%87%E9%92%88%E6%8C%87%E5%90%91%E7%9A%84%E5%9C%B0%E5%9D%80%E5%B0%B1%E5%8A%A0%E4%BA%861-1-4-6%E4%B8%AA%E5%AD%97%E8%8A%82%EF%BC%8C%E5%9B%A0%E4%B8%BA%E6%AF%8F%E4%B8%AA%E7%BB%93%E6%9E%84%E4%BD%93%E5%8D%A0%E7%9A%84%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E4%B8%BA6%E3%80%82"><span class="nav-number">1.1.7.</span> <span class="nav-text">同样的，如果对him加1，那么指针指向的地址就加了1+1+4&#x3D;6个字节，因为每个结构体占的内存空间为6。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E6%9D%A5%E8%AE%BF%E9%97%AE%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E6%88%90%E5%91%98%E6%97%B6%E6%9C%89%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">1.1.8.</span> <span class="nav-text">(3)使用指针来访问结构体的成员时有两种方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0%E7%BB%93%E6%9E%84%E6%8C%87%E9%92%88%E5%90%8E%E8%B7%9F-gt-%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%8C%E8%80%8C%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%98%AF%E7%BB%93%E6%9E%84%E5%90%8D%E4%B9%8B%E5%90%8E%E5%88%99%E9%9C%80%E8%B7%9F-%E7%82%B9-%E8%BF%90%E7%AE%97%E7%AC%A6-%E5%8D%B3"><span class="nav-number">1.1.9.</span> <span class="nav-text">①结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1%E5%88%A9%E7%94%A8-amp-%E5%92%8C-%E7%9A%84%E4%BA%92%E9%80%86%E6%80%A7-%E5%9B%A0%E4%B8%BAhim-amp-fellow-0-%E5%88%99%E6%9C%89him-fellow-0"><span class="nav-number">1.1.10.</span> <span class="nav-text">②利用&amp;和 的互逆性,因为him&#x3D;&amp;fellow[0],则有him&#x3D;fellow[0]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E4%BC%A0%E9%80%92%E7%BB%93%E6%9E%84%E6%88%90%E5%91%98"><span class="nav-number">1.1.11.</span> <span class="nav-text">(4)使用指针传递结构成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%98%AF-%E6%95%B0%E7%BB%84%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E4%BD%BF%E7%94%A8%E5%85%B6%E6%95%B0%E7%BB%84%E5%90%8D%E4%BD%9C%E4%B8%BA%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80-%E4%BD%86%E6%98%AF%E7%BB%93%E6%9E%84%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%BB%93%E6%9E%84%E5%90%8D%E4%BD%9C%E4%B8%BA%E5%85%B6%E5%9C%B0%E5%9D%80%E5%BF%85%E9%A1%BB%E4%BD%BF%E7%94%A8-amp-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.12.</span> <span class="nav-text">需要注意的是,数组可以通过使用其数组名作为数组地址,但是结构不可以使用结构名作为其地址必须使用&amp;运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%BB%93%E6%9E%84%E6%8C%87%E9%92%88%E4%B8%8Emalloc"><span class="nav-number">1.1.13.</span> <span class="nav-text">(5)结构指针与malloc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E6%88%91%E4%BB%AC%E5%9C%A8%E7%BB%93%E6%9E%84%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E6%9D%A5%E5%AD%98%E5%82%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E4%BE%8B%E5%A6%82%EF%BC%9A"><span class="nav-number">1.1.14.</span> <span class="nav-text">当我们在结构中使用指针来存储字符串时，例如：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E4%B8%8D%E5%90%8C%E7%9A%84%E6%98%AF%E6%98%AF%E7%8E%B0%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%98%E5%82%A8%E4%BA%8E%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%98%E5%82%A8%E5%AD%97%E7%AC%A6%E7%9A%84%E4%BB%BB%E6%84%8F%E4%BD%8D%E7%BD%AE%EF%BC%8C%E4%B8%8D%E5%B1%80%E9%99%90%E4%BA%8E%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%BB%93%E6%9E%84%E4%B8%AD%E5%AD%98%E6%94%BE%E7%9A%84%E5%8F%AA%E6%9C%898%E5%AD%97%E8%8A%82%E7%9A%84%E5%9C%B0%E5%9D%80%E4%BF%A1%E6%81%AF%E3%80%82"><span class="nav-number">1.1.15.</span> <span class="nav-text">与常用的字符数组不同的是是现在字符串存储于编译器存储字符的任意位置，不局限于结构内部，这个结构中存放的只有8字节的地址信息。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%86%E6%98%AF%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%98%AF%EF%BC%8Cpnames%E7%BB%93%E6%9E%84%E5%B9%B6%E4%B8%8D%E4%BC%9A%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E9%85%8D%E7%A9%BA%E9%97%B4%EF%BC%8C%E4%B8%BA%E4%BA%86%E9%81%BF%E5%85%8D%E5%87%BA%E9%94%99%EF%BC%8Cfirst%EF%BC%8Clast%E6%89%80%E6%8C%87%E5%90%91%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%80%E5%AE%9A%E6%98%AF%E5%9C%A8%E7%A8%8B%E5%BA%8F%E5%85%B6%E4%BB%96%E5%9C%B0%E6%96%B9%E5%B7%B2%E7%BB%8F%E5%88%86%E9%85%8D%E8%BF%87%E7%A9%BA%E9%97%B4%EF%BC%8C%E8%BF%99%E9%87%8C%E6%88%91%E4%BB%AC%E7%BB%8F%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%E6%98%AF%E4%BD%BF%E7%94%A8malloc-%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E3%80%82"><span class="nav-number">1.1.16.</span> <span class="nav-text">但是需要注意的是，pnames结构并不会为字符串分配空间，为了避免出错，first，last所指向的字符串一定是在程序其他地方已经分配过空间，这里我们经常用的方法是使用malloc()分配内存。</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">指针的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88"><span class="nav-number">1.1.</span> <span class="nav-text">结构体指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义结构的一般形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E6%9D%A5%E6%8C%87%E5%90%91%E7%BB%93%E6%9E%84%E7%9A%84%E8%A7%A3%E9%87%8A%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">使用指针来指向结构的解释说明：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E6%9D%A5%E8%AE%BF%E9%97%AE%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E6%88%90%E5%91%98%E6%97%B6%E6%9C%89%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用指针来访问结构体的成员时有两种方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E6%8C%87%E9%92%88%E5%90%8E%E8%B7%9F-gt-%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%8C%E8%80%8C%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%98%AF%E7%BB%93%E6%9E%84%E5%90%8D%E4%B9%8B%E5%90%8E%E5%88%99%E9%9C%80%E8%B7%9F-%E7%82%B9-%E8%BF%90%E7%AE%97%E7%AC%A6-%E5%8D%B3"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">结构指针后跟-&gt;运算符，而需要注意的是结构名之后则需跟.(点)运算符,即:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-amp-%E5%92%8C-%E7%9A%84%E4%BA%92%E9%80%86%E6%80%A7-%E5%9B%A0%E4%B8%BAhim-amp-fellow-0-%E5%88%99%E6%9C%89"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">利用&amp;和* 的互逆性,因为him&#x3D;&amp;fellow[0],则有</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#him-fellow-0"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">*him&#x3D;fellow[0]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E4%BC%A0%E9%80%92%E7%BB%93%E6%9E%84%E6%88%90%E5%91%98"><span class="nav-number">1.1.4.</span> <span class="nav-text">使用指针传递结构成员</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E6%8C%87%E9%92%88%E4%B8%8Emalloc"><span class="nav-number">1.1.5.</span> <span class="nav-text">结构指针与malloc</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
+  <p class="site-author-name" itemprop="name">Eric Rong</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -350,9 +337,9 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Eric Rong</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         
@@ -378,12 +365,13 @@ free(pnames-&gt;first)//不要忘记free掉不用的内存
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
 
 
+  <script defer src="/lib/three/three.min.js"></script>
 
 
   
