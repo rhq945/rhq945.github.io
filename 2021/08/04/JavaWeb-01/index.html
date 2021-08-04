@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Javaweb基本概念；Tomcat；HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaWeb-01">
+<meta property="og:url" content="http://example.com/2021/08/04/JavaWeb-01/index.html">
+<meta property="og:site_name" content="Eric&#39;s blog">
+<meta property="og:description" content="Javaweb基本概念；Tomcat；HTTP">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/08/04/WhEUYDIXLBmdk6x.png">
+<meta property="article:published_time" content="2021-08-04T01:04:36.000Z">
+<meta property="article:modified_time" content="2021-08-04T09:06:03.712Z">
+<meta property="article:author" content="Eric Rong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/08/04/WhEUYDIXLBmdk6x.png">
+
+<link rel="canonical" href="http://example.com/2021/08/04/JavaWeb-01/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>JavaWeb-01 | Eric's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Eric's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">打工人的搬砖进化之路</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/04/JavaWeb-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Eric Rong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eric's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaWeb-01
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-04 09:04:36 / Modified: 17:06:03" itemprop="dateCreated datePublished" datetime="2021-08-04T09:04:36+08:00">2021-08-04</time>
+            </span>
+
+          
+            <div class="post-description">Javaweb基本概念；Tomcat；HTTP</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="Web应用程序"><a href="#Web应用程序" class="headerlink" title="Web应用程序"></a>Web应用程序</h3><p>可以提供浏览器访问的程序；</p>
+<ul>
+<li>URL</li>
+<li>统一的Web资源会被放在同一个文件夹下，web应用程序通过由服务器统一管理之后交给外界使用(Tomcat)</li>
+<li>一个web应用有多部分组成（静态+动态）</li>
+</ul>
+<h3 id="静态web"><a href="#静态web" class="headerlink" title="静态web"></a>静态web</h3><ul>
+<li>技术手段：HTML，CSS；</li>
+<li>包括<em>.htm,  </em>.html等网页后缀，可以直接在网络上通过服务器进行读取；</li>
+<li>缺点：<ul>
+<li>Web页面无法动态更新，所有用户看到的都是一个页面；</li>
+<li>无法和数据库进行交互(数据无法持久化)；</li>
+</ul>
+</li>
+</ul>
+<h3 id="动态web"><a href="#动态web" class="headerlink" title="动态web"></a>动态web</h3><ul>
+<li>技术栈：Servlet/JSP，ASP，PHP；</li>
+<li>提供个性化，不同人不同时间看到的信息各不相同；</li>
+<li><strong>Java中，动态web资源开发技术统称为JavaWeb</strong></li>
+<li>原理架构</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/04/WhEUYDIXLBmdk6x.png" alt="image.png" style="zoom:50%;" /></p>
+<h3 id="Web服务器-WebServer"><a href="#Web服务器-WebServer" class="headerlink" title="Web服务器(WebServer)"></a>Web服务器(WebServer)</h3><p>服务器是一种被动的操作，用来处理用户的一些请求并且给用户响应信息；</p>
+<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p><code>conf-&gt;server.xml</code>是服务器的核心配置文件；</p>
+<p>进入文件后：</p>
+<p>可以修改配置启动的端口号（默认为8080）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--8080可修改为任意端口--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">&quot;8080&quot;</span> <span class="attr">protocol</span>=<span class="string">&quot;HTTP/1.1&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">connectionTimeout</span>=<span class="string">&quot;20000&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">redirectPort</span>=<span class="string">&quot;8443&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以配置主机名称（默认为localhost）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	Host name可以任意修改，如修改为123；</span></span><br><span class="line"><span class="comment">	还需要去C:\Windows\System32\drivers\etc的hosts文件中加入</span></span><br><span class="line"><span class="comment">	127.0.0.1  www.123.com </span></span><br><span class="line"><span class="comment">	也就是修改了系统</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Host</span> <span class="attr">name</span>=<span class="string">&quot;localhost&quot;</span>  <span class="attr">appBase</span>=<span class="string">&quot;webapps&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">unpackWARs</span>=<span class="string">&quot;true&quot;</span> <span class="attr">autoDeploy</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="发布一个web网站"><a href="#发布一个web网站" class="headerlink" title="发布一个web网站"></a>发布一个web网站</h3><p>网站在本地文件夹中的结构：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--webapps				<span class="comment">//Tomcat服务器的web目录</span></span><br><span class="line">    -ROOT				</span><br><span class="line">    -Eric_Webapp		<span class="comment">//网站的目录名</span></span><br><span class="line">    	-WEB-INF		<span class="comment">//网站程序文件夹</span></span><br><span class="line">    		-web.xml	<span class="comment">//网站配置文件</span></span><br><span class="line">    		-classes	<span class="comment">//java程序</span></span><br><span class="line">    		-lib		<span class="comment">//web应用所依赖的架构</span></span><br><span class="line">    	-index.html/jsp	 <span class="comment">//网站默认首页</span></span><br><span class="line">    	-<span class="keyword">static</span></span><br><span class="line">    		-css</span><br><span class="line">    			-style.scc</span><br><span class="line">    		-js</span><br><span class="line">    		-img</span><br><span class="line">    	-······</span><br></pre></td></tr></table></figure>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="什么是HTTP"><a href="#什么是HTTP" class="headerlink" title="什么是HTTP"></a>什么是HTTP</h3><pre><code>1. HTTP（超文本传输协议）是一个简单的请求-响应协议，它通常运行在[TCP](https://baike.baidu.com/item/TCP/33012)之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应；
+ 2. 端口号：80；
+</code></pre><h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>客户端-&gt;服务器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Request URL: https:/ /www.baidu.com/?tn=44004473_24_oem_dg       <span class="comment">//请求地址</span></span><br><span class="line">Request Method: GET											 <span class="comment">//get方法/post方法</span></span><br><span class="line">Status Code: <span class="number">200</span> OK											 <span class="comment">//200：状态码</span></span><br><span class="line">Remote Address: <span class="number">110.242</span><span class="number">.68</span><span class="number">.4</span>:<span class="number">443</span>							  <span class="comment">//远程地址，百度的地址+端口</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>请求行：</p>
+<ul>
+<li>请求方式：Get，Post，HEAD，DELETE，PUT，TRACT……<ul>
+<li>Get：能够请求携带的参数较少，有大小限制；会在浏览器的URL地址栏显示数据内容；不安全但高效</li>
+<li>Post：能够请求携带的参数无大小限制；不会在浏览器的URL地址栏显示数据内容；安全但不高效</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>消息头：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Accept												    <span class="comment">//告诉浏览器，它所支持的数据类型</span></span><br><span class="line">Accept-Encoding											<span class="comment">//支持的编码模式</span></span><br><span class="line">Accept-Language											<span class="comment">//语言环境</span></span><br><span class="line">Cache-Control											<span class="comment">//缓存控制</span></span><br><span class="line">Connection												<span class="comment">//请求完成是断开还是保持连接</span></span><br><span class="line">Host												    <span class="comment">//主机</span></span><br></pre></td></tr></table></figure>
+<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3></li>
+</ol>
+<p>服务器-&gt;客户端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cache-Control: <span class="keyword">private</span>										<span class="comment">//缓存控制</span></span><br><span class="line">Connection: keep-alive										<span class="comment">//连接</span></span><br><span class="line">Content-Encoding: gzip										<span class="comment">//编码</span></span><br><span class="line">Content-Type: text/html;charset=utf-<span class="number">8</span>                           <span class="comment">//编码类型</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>响应体</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Accept												    <span class="comment">//告诉浏览器，它所支持的数据类型</span></span><br><span class="line">Accept-Encoding											<span class="comment">//支持的编码模式</span></span><br><span class="line">Accept-Language											<span class="comment">//语言环境</span></span><br><span class="line">Cache-Control											<span class="comment">//缓存控制</span></span><br><span class="line">Connection												<span class="comment">//请求完成是断开还是保持连接</span></span><br><span class="line">Host												    <span class="comment">//主机</span></span><br><span class="line">Refresh												    <span class="comment">//刷新周期</span></span><br><span class="line">Location												<span class="comment">//让网页重定位</span></span><br></pre></td></tr></table></figure></li>
+<li><p>响应状态码</p>
+<p>2xx：请求响应成功</p>
+<p>3xx：请求重定向</p>
+<p>4xx：找不到资源</p>
+<p>5xx：服务器代码错误</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/03/MySQL-2/" rel="prev" title="MySQL-2">
+      <i class="fa fa-chevron-left"></i> MySQL-2
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.1.</span> <span class="nav-text">Web应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81web"><span class="nav-number">1.2.</span> <span class="nav-text">静态web</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81web"><span class="nav-number">1.3.</span> <span class="nav-text">动态web</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web%E6%9C%8D%E5%8A%A1%E5%99%A8-WebServer"><span class="nav-number">1.4.</span> <span class="nav-text">Web服务器(WebServer)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat"><span class="nav-number">2.</span> <span class="nav-text">Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E4%B8%80%E4%B8%AAweb%E7%BD%91%E7%AB%99"><span class="nav-number">2.2.</span> <span class="nav-text">发布一个web网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">3.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFHTTP"><span class="nav-number">3.1.</span> <span class="nav-text">什么是HTTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E8%AF%B7%E6%B1%82"><span class="nav-number">3.2.</span> <span class="nav-text">HTTP请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%93%8D%E5%BA%94"><span class="nav-number">3.3.</span> <span class="nav-text">HTTP响应</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Eric Rong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eric Rong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
