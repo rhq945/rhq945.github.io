@@ -22,7 +22,7 @@
 
   <meta name="description" content="Servlet工程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb-02">
+<meta property="og:title" content="JavaWeb-02-Servlet">
 <meta property="og:url" content="http://example.com/2021/08/04/JavaWeb-02/index.html">
 <meta property="og:site_name" content="Eric&#39;s blog">
 <meta property="og:description" content="Servlet工程">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/08/05/Q9L8PatiN5AHEK3.png">
 <meta property="og:image" content="https://i.loli.net/2021/08/05/8Rsjfwkdo6PIXlq.png">
 <meta property="article:published_time" content="2021-08-04T09:57:46.000Z">
-<meta property="article:modified_time" content="2021-08-05T12:22:06.156Z">
+<meta property="article:modified_time" content="2021-08-14T08:36:42.017Z">
 <meta property="article:author" content="Eric Rong">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/08/05/vgYJhC4ltWxdw1R.png">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>JavaWeb-02 | Eric's blog</title>
+  <title>JavaWeb-02-Servlet | Eric's blog</title>
   
 
 
@@ -169,7 +169,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaWeb-02
+          JavaWeb-02-Servlet
         </h1>
 
         <div class="post-meta">
@@ -186,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-05 20:22:06" itemprop="dateModified" datetime="2021-08-05T20:22:06+08:00">2021-08-05</time>
+                <time title="Modified: 2021-08-14 16:36:42" itemprop="dateModified" datetime="2021-08-14T16:36:42+08:00">2021-08-14</time>
               </span>
 
           
@@ -201,8 +201,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Servlet实践"><a href="#Servlet实践" class="headerlink" title="Servlet实践"></a>Servlet实践</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>是开发动态web的技术；</p>
-<p>把实现了Servlet接口的Java程序叫做Servlet</p>
+        <h2 id="Servlet实践"><a href="#Servlet实践" class="headerlink" title="Servlet实践"></a>Servlet实践</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>是一个接口，定义了Java类被浏览器访问到(Tomcat识别)的规则，用于开发动态web；</p>
+<p>把实现了Servlet接口的Java程序叫做Servlet！</p>
+<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><ol>
+<li>创建JavaEE项目；</li>
+<li>定义一个类，实现<code>servlet</code>接口</li>
+<li>实现接口中的抽象方法；</li>
+<li>配置<code>servlet</code></li>
+</ol>
 <h3 id="Hello-Servlet"><a href="#Hello-Servlet" class="headerlink" title="Hello Servlet"></a>Hello Servlet</h3><ol>
 <li><p>新建普通<code>Maven</code>工程作为父项目，删去其中的<code>src</code>目录</p>
 </li>
@@ -256,6 +262,37 @@
 </li>
 </ol>
 <h2 id="Servlet原理"><a href="#Servlet原理" class="headerlink" title="Servlet原理"></a>Servlet原理</h2><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="https://i.loli.net/2021/08/05/8Rsjfwkdo6PIXlq.png" alt="CC51056DE034C5A466106526B1854800.png" style="zoom:63%;" /></p>
+<h3 id="执行原理"><a href="#执行原理" class="headerlink" title="执行原理"></a>执行原理</h3><ol>
+<li>服务器接收到客户端浏览器的请求后，会解析请求的URL路径，获取访问的Servlrt的资源路径；</li>
+<li>查找web.xml文件，查找对应的<url-pattern>标签体内容；</li>
+<li>找到之后则找到对应的<code>&lt;servlet-class&gt;</code>的全类名；</li>
+<li>Tomcat会将字节码文件储存进内存并创建其对象；</li>
+<li>调用方法；</li>
+</ol>
+<h3 id="Servlet接口的方法"><a href="#Servlet接口的方法" class="headerlink" title="Servlet接口的方法"></a>Servlet接口的方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//销毁方法：在Servlet被创建时执行，执行一次;</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig servletConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//获取ServletConfig对象方法，ServletConfig是servlet的配置对象;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//提供服务方法，每一次servlet被访问时都要执行，执行多次;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello Servlet!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//获取Servlet信息方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//销毁方法：在服务器正常关闭时执行，执行一次;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>Servlet的生命周期：</p>
+<p>从执行<code>init</code>到执行<code>destroy</code>；</p>
+<ol>
+<li><p><code>servlet</code>的创建</p>
+<ul>
+<li><p>创建时间</p>
+<ul>
+<li><p>默认情况：servlet第一次被访问时；</p>
+</li>
+<li><p>可以指定创建时间：</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//x为负数，x默认为-1，在第一次被访问时创建</span></span><br><span class="line"><span class="comment">//x为0或正整数：在服务器启动时创建</span></span><br><span class="line">&lt;servlet&gt;</span><br><span class="line">	&lt;load-on-startup&gt; x &lt;/load-on-startup&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>servlet</code>的<code>init</code>只执行一次，说明一个<code>`servlet</code>在内存中只有一个对象，是单例的</p>
+<p>​    所以多个线程同时使用时，可能出现安全问题；</p>
+<p>​    解决方案：对于线程要修改的数据：尽量不要在Servlet中定义成员变量，使用局部变量；</p>
+</li>
+</ul>
+</li>
+<li><p><code>servlet</code>的销毁</p>
+<p><code>destory</code>执行之后，<code>servlet</code>被销毁，用于释放资源；</p>
+</li>
+</ol>
 <h3 id="Mapping问题"><a href="#Mapping问题" class="headerlink" title="Mapping问题"></a>Mapping问题</h3><ol>
 <li><p>一个Servlet可以指定一个/多个/通用映射路径</p>
 <ul>
@@ -293,8 +330,8 @@
       <i class="fa fa-chevron-left"></i> JavaWeb-01
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/08/06/JavaWeb-03/" rel="next" title="JavaWeb-03">
-      JavaWeb-03 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/08/06/JavaWeb-04/" rel="next" title="JavaWeb-04">
+      JavaWeb-04 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -354,7 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.</span> <span class="nav-text">Servlet实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hello-Servlet"><span class="nav-number">1.2.</span> <span class="nav-text">Hello Servlet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">Servlet原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mapping%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">Mapping问题</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.</span> <span class="nav-text">Servlet实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A5%E9%97%A8"><span class="nav-number">1.2.</span> <span class="nav-text">入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hello-Servlet"><span class="nav-number">1.3.</span> <span class="nav-text">Hello Servlet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">Servlet原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">执行原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">Servlet接口的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mapping%E9%97%AE%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">Mapping问题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -368,7 +405,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
